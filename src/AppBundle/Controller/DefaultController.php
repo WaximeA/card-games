@@ -37,20 +37,29 @@ class DefaultController extends Controller
         return $this->render("AppBundle:Default:page2.html.twig");
     }
 
-    //    INDEX
+//    //    INDEX TEST
+//    /**
+//     *@route("/index/{nom}", name="index")
+//     */
+//    public function indexAction($nom = '')
+//    {
+//        $tableau = array(
+//            array('prenom' => "Maxime", 'nom' => "aveline"),
+//            array('prenom' => "Anthony", 'nom' => "hengy"),
+//            array('prenom' => "David", 'nom' => "annebicque"),
+//        );
+//
+//        return $this->render("AppBundle:Default:index.html.twig", ['tab' => $tableau,'nom'=>$nom ]);
+//
+//
+//    }
+
+    //    JEU
     /**
-     *@route("/index/{nom}", name="index")
+     *@route("/", name="jeu")
      */
-    public function indexAction($nom = '')
+    public function jeuAction()
     {
-        $tableau = array(
-            array('prenom' => "Maxime", 'nom' => "aveline"),
-            array('prenom' => "Anthony", 'nom' => "hengy"),
-            array('prenom' => "David", 'nom' => "annebicque"),
-        );
-
-        return $this->render("AppBundle:Default:index.html.twig", ['tab' => $tableau,'nom'=>$nom ]);
-
-
+        return $this->render("AppBundle:Default:index.html.twig");
     }
 }
