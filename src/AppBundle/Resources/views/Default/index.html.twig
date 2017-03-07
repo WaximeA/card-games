@@ -1,18 +1,41 @@
 {% extends '::base.html.twig' %}
 
-{% block title %}Test de template{% endblock %}
-{% block stylesheets %} {% endblock %}
+{% block title %}Défiez les FUNNY MONSTERS bientôt !{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/countdown.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/mainhome.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}">
+{% endblock %}
+
+{% block font %}
+    <link href="https://fonts.googleapis.com/css?family=Andika|Lato" rel="stylesheet">{% endblock %}
+
 
 
 {% block body %}
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1>test template</h1>
 
-                <h5></h5>
+        <h2 id="main_title">Vous pourrez très prochainement défier les FUNNY MONSTERS !</h2>
+        <img src="{{ asset('assets/img/monstre.png') }}" alt="" id="monstre1">
+        <img src="{{ asset('assets/img/logo2.png') }}" alt="" id="logo">
+        <img src="{{ asset('assets/img/mouchoir.png') }}" alt="" id="monstre2">
 
-            </div>
-        </div>
-    </div>
+
+
+
+        <footer>
+            <p>
+                © Copyright , 2017 - Donkey game.
+                <img src="{{ asset('assets/img/donkey_game_logo.png') }}" alt="" class="dkl_footer">
+            </p>
+        </footer>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('assets/js/countdown.js') }}"></script>
+    <script src="{{ asset('assets/js/wow.js') }}"></script>
+    <script>
+        new WOW().init();
+    </script>
 {% endblock %}

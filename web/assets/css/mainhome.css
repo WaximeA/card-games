@@ -1,0 +1,66 @@
+body {
+	position: absolute;
+	background: url("../img/childrenbk.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+
+
+#main_title {
+	text-align: center;
+	font-family: 'Andika', sans-serif;
+	color: #426A97;
+}
+
+#monstre1{
+	width: 10%;
+	margin-top:50px;
+	margin-right: 75px;
+	transition: all 0.5s ease-in-out;
+}
+
+#monstre1:hover{
+	transform: scale(2) rotate(-60deg) translate(-50px,-50px);
+	transition: all 0.5s ease-in-out;
+}
+
+#monstre2{
+	width: 10%;
+	margin-top:50px;
+	margin-left: 75px;
+	transition: all 0.5s ease-in-out;
+}
+
+#monstre2:hover{
+	transform: scale(2) rotate(60deg) translate(50px, -50px);
+	transition: all 0.5s ease-in-out;
+}
+
+#logo {
+	width: 20%;
+	margin-top:50px;
+	transition: all 0.3s ease-in-out;
+}
+
+#logo:hover {
+	transform: scale(1.5);
+	transition: all 0.3s ease-in-out;
+}
+
+footer {
+
+	background-color:rgba(0, 0, 0, 0.2);
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	color: white;
+}
+
+.dkl_footer {
+	width: 5%;
+}
