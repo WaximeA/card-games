@@ -1,0 +1,46 @@
+body {
+	background: url("../img/funnymonstersbg.png") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#main_title {
+	text-align: center;
+	font-family: 'Andika', sans-serif;
+	color: #426A97;
+}
+
+footer {
+	background-color:rgba(0, 0, 0, 0.2);
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	color: white;
+}
+
+.dkl_footer {
+	width: 5%;
+}
+
+.content_fouser{
+	margin: auto;
+	margin-top:150px;
+	width: 50%;
+	padding:30px;
+	text-align: center;
+	background-color:rgba(255, 255, 255, 0.8);
+	font-family: 'Andika', sans-serif;
+
+}
+
+.content_fouser label {
+	text-transform: uppercase;
+	color: #426A97;
+}
+
+
+
