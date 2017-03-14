@@ -1,0 +1,24 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block title %}Défiez les FUNNY MONSTERS bientôt !{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/stylefouser.css') }}">
+{% endblock %}
+
+{% block font %}
+    <link href="https://fonts.googleapis.com/css?family=Andika|Lato" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <div class="content_fouser">
+        <h2 id="main_title">Connectez-vous pour jouer !</h2>
+
+
+        {% block fos_user_content %}
+            {% include "@FOSUser/Registration/register_content.html.twig" %}
+        {% endblock fos_user_content %}
+
+    </div>
+{% endblock %}
+
+

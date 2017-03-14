@@ -70,7 +70,7 @@ swiftmailer:
     spool:     { type: memory }
 
 
-# app/config/config.yml
+# FosUser configuration
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
