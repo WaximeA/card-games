@@ -1,53 +1,61 @@
+/*body {*/
+	/*position: absolute;*/
+	/*background: url("../img/childrenbk.jpg") no-repeat center center fixed;*/
+	/*-webkit-background-size: cover;*/
+	/*-moz-background-size: cover;*/
+	/*-o-background-size: cover;*/
+	/*background-size: cover;*/
+/*}*/
+
+
+
+/*#main_title {*/
+	/*text-align: center;*/
+	/*font-family: 'Andika', sans-serif;*/
+	/*color: #426A97;*/
+/*}*/
+
+/*#monstre1{*/
+	/*width: 10%;*/
+	/*margin-top:50px;*/
+	/*margin-right: 75px;*/
+	/*transition: all 0.5s ease-in-out;*/
+/*}*/
+
+/*#monstre1:hover{*/
+	/*transform: scale(2) rotate(-60deg) translate(-50px,-50px);*/
+	/*transition: all 0.5s ease-in-out;*/
+/*}*/
+
+/*#monstre2{*/
+	/*width: 10%;*/
+	/*margin-top:50px;*/
+	/*margin-left: 75px;*/
+	/*transition: all 0.5s ease-in-out;*/
+/*}*/
+
+/*#monstre2:hover{*/
+	/*transform: scale(2) rotate(60deg) translate(50px, -50px);*/
+	/*transition: all 0.5s ease-in-out;*/
+/*}*/
+
+/*#logo {*/
+	/*width: 20%;*/
+	/*margin-top:50px;*/
+	/*transition: all 0.3s ease-in-out;*/
+/*}*/
+
+/*#logo:hover {*/
+	/*transform: scale(1.5);*/
+	/*transition: all 0.3s ease-in-out;*/
+/*}*/
+
 body {
-	position: absolute;
-	background: url("../img/childrenbk.jpg") no-repeat center center fixed;
+	background: url("../img/funnymonstersbg.png") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-}
-
-
-
-#main_title {
-	text-align: center;
-	font-family: 'Andika', sans-serif;
-	color: #426A97;
-}
-
-#monstre1{
-	width: 10%;
-	margin-top:50px;
-	margin-right: 75px;
-	transition: all 0.5s ease-in-out;
-}
-
-#monstre1:hover{
-	transform: scale(2) rotate(-60deg) translate(-50px,-50px);
-	transition: all 0.5s ease-in-out;
-}
-
-#monstre2{
-	width: 10%;
-	margin-top:50px;
-	margin-left: 75px;
-	transition: all 0.5s ease-in-out;
-}
-
-#monstre2:hover{
-	transform: scale(2) rotate(60deg) translate(50px, -50px);
-	transition: all 0.5s ease-in-out;
-}
-
-#logo {
-	width: 20%;
-	margin-top:50px;
-	transition: all 0.3s ease-in-out;
-}
-
-#logo:hover {
-	transform: scale(1.5);
-	transition: all 0.3s ease-in-out;
 }
 
 footer {
@@ -65,3 +73,39 @@ footer {
 	width: 5%;
 }
 
+
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+section {
+	margin-top:80px;
+	margin-bottom:100px;
+}
+
+header img {
+	height: 200%;
+}
+
+
+
+.monboutton {
+	margin-top: 10px;
+	color: black;
+	text-transform: uppercase;
+	border-color: rgb(255, 199, 87);
+}
+
+
+.boutonpartiejouer {
+	background-color: rgb(178, 188, 218);
+	border: none;
+	color: white;
+}
+
+h4 {
+	color: rgb(178, 188, 218);
+}
