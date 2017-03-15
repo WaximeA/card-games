@@ -10,25 +10,61 @@
     <link href="https://fonts.googleapis.com/css?family=Andika|Lato" rel="stylesheet">
 {% endblock %}
 
+{% block header %}
+    <header>
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#accueil">
+                    <img alt="Logo"  src="{{ asset('assets/img/donkey_game_logo.png') }}" class="pull-left"/>
+                </a>
+            </div>
 
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#">Accueil</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://89.234.182.91/jeu">Jouer</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#evenements">Parents</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="http://89.234.182.91/promo/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- navbar-collapse -->
+        </div>
+        <!-- fin de la navigation -->
+    </nav>
+    </header>
+{% endblock %}
 
 {% block body %}
-        <h2 id="main_title">Vous pourrez très prochainement défier les FUNNY MONSTERS !</h2>
-        <img src="{{ asset('assets/img/monstre.png') }}" alt="" id="monstre1">
-        <img src="{{ asset('assets/img/logo2.png') }}" alt="" id="logo">
-        <img src="{{ asset('assets/img/mouchoir.png') }}" alt="" id="monstre2">
-        <footer>
-            <p>
-                © Copyright , 2017 - Donkey game.
-                <img src="{{ asset('assets/img/donkey_game_logo.png') }}" alt="" class="dkl_footer">
-            </p>
-        </footer>
+        <div class="container" id="accueil">
+            <div class="row">
+                <div class="col-lg-6 text-center">
+                    <a href="http://89.234.182.91/jeu/app.php/login"><button type="button" class="btn btn-secondary btn-lg monboutton boutonpartiejouer">Connexion</button></a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <a href="http://89.234.182.91/jeu/app.php/register"><button type="button" class="btn btn-secondary btn-lg monboutton boutonpartiejouer">Inscription</button></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <a href="http://89.234.182.91/promo"><button type="button" class="btn btn-secondary btn-lg monboutton boutonpartiejouer">En savoir plus</button></a>
+                </div>
+            </div>
+        </div>
 {% endblock %}
 
-{% block javascripts %}
-    <script src="{{ asset('assets/js/countdown.js') }}"></script>
-    <script src="{{ asset('assets/js/wow.js') }}"></script>
-    <script>
-        new WOW().init();
-    </script>
-{% endblock %}
