@@ -87,16 +87,7 @@ section {
 }
 
 header img {
-	height: 200%;
-}
-
-
-
-.monboutton {
-	margin-top: 10px;
-	color: black;
-	text-transform: uppercase;
-	border-color: rgb(255, 199, 87);
+	height: 100%;
 }
 
 
