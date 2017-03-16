@@ -23,6 +23,7 @@
             {% else %}
                 <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
             {% endif %}
+            {#<a href="{{ path('fos_user_resetting_reset') }}">  {{ 'resetting.reset.submit'|trans({}, 'FOSUserBundle') }}</a>#}
         </div>
 
         {% block fos_user_content %}

@@ -14,9 +14,14 @@
     <div class="content_fouser">
         <h2 id="main_title">Bienvenue {{ user.username }}</h2>
 
+
         {% block fos_user_content %}
             {% include "@FOSUser/Profile/show_content.html.twig" %}
+            <a href="{{path('fos_user_profile_edit') }}"> {{ 'profile.edit.submit'| trans({}, 'FOSUserBundle') }}</a> |
+            <a href="{{path('fos_user_change_password') }}">  {{ 'resetting.reset.submit'|trans({}, 'FOSUserBundle') }}</a>
+
         {% endblock fos_user_content %}
+
 
     </div>
 {% endblock %}
