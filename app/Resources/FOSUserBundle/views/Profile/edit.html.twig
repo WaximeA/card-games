@@ -12,12 +12,18 @@
 
 {% block body %}
     <div class="content_fouser">
-        <h2 id="main_title">Mettez à jour votre profil !</h2>
+        <h2 id="main_title">Mettez à jour votre profil !</h2><br>
 
 
         {% block fos_user_content %}
             {% include "@FOSUser/Profile/edit_content.html.twig" %}
         {% endblock fos_user_content %}
+        <br>
+        <p class="home-button">
+            <a href="http://89.234.182.91/jeu">
+                <button type="button" class="btn btn-primary btn-xs">Page d'accueil</button>
+            </a>
+        </p>
 
     </div>
 {% endblock %}

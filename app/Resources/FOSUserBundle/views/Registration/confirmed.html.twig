@@ -2,9 +2,25 @@
 
 {% trans_default_domain 'FOSUserBundle' %}
 
-{% block fos_user_content %}
-    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
-    {% if targetUrl %}
-    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
-    {% endif %}
-{% endblock fos_user_content %}
+{% block body %}
+    <div class="content_fouser">
+        <h2 id="main_title">Bienvenue {{ user.username }} !</h2><br>
+
+
+        {% block fos_user_content %}
+            <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+            {% if targetUrl %}
+                <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+            {% endif %}
+        {% endblock fos_user_content %}
+        <br>
+
+        <p class="home-button">
+            <a href="http://89.234.182.91/jeu">
+                <button type="button" class="btn btn-primary btn-xs">Page d'accueil</button>
+            </a>
+        </p>
+    </div>
+{% endblock %}
+
+

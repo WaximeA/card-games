@@ -12,11 +12,9 @@
 {% block body %}
     <div class="content_fouser">
         <h2 id="main_title">Connectez-vous pour jouer !</h2>
-
-
         <div>
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                <a href="">{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</a> |
+                <a href="{{ path('fos_user_profile_show') }}">{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</a> |
                 <a href="{{ path('fos_user_security_logout') }}">
                     {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
                 </a>
@@ -30,7 +28,13 @@
             {{ include('@FOSUser/Security/login_content.html.twig') }}
         {% endblock fos_user_content %}
 
-            <a href="{{ path('fos_user_registration_register') }}">Vous n'avez pas de compte ? Inscrivez vous !</a>
+
+            <p> <span>Vous n'avez pas de compte ?</span><a href="{{ path('fos_user_registration_register') }}"> Inscrivez vous ici !</a></p>
+            <p class="home-button">
+                <a href="http://89.234.182.91/jeu">
+                    <button type="button" class="btn btn-primary btn-xs">Page d'accueil</button>
+                </a>
+            </p>
 
     </div>
 {% endblock %}
