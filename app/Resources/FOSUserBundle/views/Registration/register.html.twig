@@ -11,13 +11,19 @@
 
 {% block body %}
     <div class="content_fouser">
-        <h2 id="main_title">Connectez-vous pour jouer !</h2>
+        <h2 id="main_title">Connectez-vous pour jouer !</h2><br>
 
 
         {% block fos_user_content %}
             {% include "@FOSUser/Registration/register_content.html.twig" %}
         {% endblock fos_user_content %}
-
+        <br>
+        <p> <span>Vous avez déjà un compte ?</span><a href="{{ path('fos_user_security_login') }}"> Connectez-vous ici !</a></p>
+        <p class="home-button">
+            <a href="http://89.234.182.91/jeu">
+                <button type="button" class="btn btn-primary btn-xs">Page d'accueil</button>
+            </a>
+        </p>
     </div>
 {% endblock %}
 
