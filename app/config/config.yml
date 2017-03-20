@@ -81,7 +81,7 @@ fos_user:
 
 # EasyAdmin configuration
 easy_admin:
-    site_name: 'PANNEL ADMINISTRATEUR <em style="font-size: 60%; color: #FFF;">FUNNY MONSTER</em>'
+    site_name: '<img style="width:10O%;" src="http://89.234.182.91/promo/images/logo2.png"/> PANNEL ADMINISTRATEUR <em style="font-size: 60%; color: #FFF;">FUNNY MONSTERS</em>'
     design:
         brand_color: '#426A97'
         color_scheme: 'light'
