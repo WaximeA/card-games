@@ -14,6 +14,7 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
-.idea
+.idea/workspace.xml
+
 
 
