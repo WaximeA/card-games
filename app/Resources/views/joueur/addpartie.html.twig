@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="content_fouser">
+        <h1 id="main_title">Espace joueur: {{ user.username }}</h1>
+        <h2 id="main_title">Créer une nouvelle partie</h2>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                    <tr class="info">
+                        <td>Joueurs</td>
+                        <td>Inviter à jouer</td>
+                    </tr>
+                {% for joueur in joueurs if joueur.username != user.username %}
+                    <tr class="inviterj">
+                        <td>{{ joueur.username }}</td>
+                        <td><a href="{{ path('creer_partie', {'joueur':joueur.id}) }}"><img  class="lancebtn" src="{{ asset('assets/img/lance.png') }}" alt=""></a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <p class="home-button">
+            <a href="{{ path('joueur_homepage') }}">
+                <button type="button" class="btn btn-primary btn-xs">Retours</button>
+            </a>
+        </p>
+    </div>
+
+
+
+    <a href="{{ path('joueur_homepage') }}">Retour</a>
+{% endblock %}

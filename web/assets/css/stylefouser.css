@@ -46,3 +46,17 @@ footer {
 	float:right;
 }
 
+.lancebtn{
+	width: 7%;
+}
+
+.lancebtn:hover {
+	width: 10%;
+	-moz-transition: width 0.5s;
+	-webkit-transition: width 0.5s;
+	transition-timing-function: ease-out;
+}
+
+.inviterj {
+	background-color: #FFF;
+}
