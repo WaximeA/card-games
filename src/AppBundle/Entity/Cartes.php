@@ -1,7 +1,6 @@
 <?php
 
 namespace AppBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -22,39 +21,31 @@ class Cartes
     private $id;
 
     /**
-     * @var string
      *
-     * @ORM\Column(name="carte_famille", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Categories")
      */
-    private $carteFamille;
+    private $categorie;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="carte_nom", type="string", length=255)
+     * @ORM\Column(name="type", type="string", length=100)
      */
-    private $carteNom;
+    private $type;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="carte_valeur", type="integer")
+     * @ORM\Column(name="valeur", type="integer")
      */
-    private $carteValeur;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="carte_extra", type="boolean")
-     */
-    private $carteExtra;
+    private $valeur;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="carte_image", type="string", length=255)
+     * @ORM\Column(name="image", type="string", length=100)
      */
-    private $carteImage;
+    private $image;
 
 
     /**
@@ -68,123 +59,94 @@ class Cartes
     }
 
     /**
-     * Set carteFamille
+     * Set type
      *
-     * @param string $carteFamille
+     * @param string $type
      *
      * @return Cartes
      */
-    public function setCarteFamille($carteFamille)
+    public function setType($type)
     {
-        $this->carteFamille = $carteFamille;
-
+        $this->type = $type;
         return $this;
     }
 
     /**
-     * Get carteFamille
+     * Get type
      *
      * @return string
      */
-    public function getCarteFamille()
+    public function getType()
     {
-        return $this->carteFamille;
+        return $this->type;
     }
 
     /**
-     * Set carteNom
+     * Set valeur
      *
-     * @param string $carteNom
+     * @param integer $valeur
      *
      * @return Cartes
      */
-    public function setCarteNom($carteNom)
+    public function setValeur($valeur)
     {
-        $this->carteNom = $carteNom;
-
+        $this->valeur = $valeur;
         return $this;
     }
 
     /**
-     * Get carteNom
-     *
-     * @return string
-     */
-    public function getCarteNom()
-    {
-        return $this->carteNom;
-    }
-
-    /**
-     * Set carteValeur
-     *
-     * @param integer $carteValeur
-     *
-     * @return Cartes
-     */
-    public function setCarteValeur($carteValeur)
-    {
-        $this->carteValeur = $carteValeur;
-
-        return $this;
-    }
-
-    /**
-     * Get carteValeur
+     * Get valeur
      *
      * @return int
      */
-    public function getCarteValeur()
+    public function getValeur()
     {
-        return $this->carteValeur;
+        return $this->valeur;
     }
 
     /**
-     * Set carteExtra
+     * Set image
      *
-     * @param boolean $carteExtra
+     * @param string $image
      *
      * @return Cartes
      */
-    public function setCarteExtra($carteExtra)
+    public function setImage($image)
     {
-        $this->carteExtra = $carteExtra;
-
+        $this->image = $image;
         return $this;
     }
 
     /**
-     * Get carteExtra
-     *
-     * @return bool
-     */
-    public function getCarteExtra()
-    {
-        return $this->carteExtra;
-    }
-
-    /**
-     * Set carteImage
-     *
-     * @param string $carteImage
-     *
-     * @return Cartes
-     */
-    public function setCarteImage($carteImage)
-    {
-        $this->carteImage = $carteImage;
-
-        return $this;
-    }
-
-    /**
-     * Get carteImage
+     * Get image
      *
      * @return string
      */
-    public function getCarteImage()
+    public function getImage()
     {
-        return $this->carteImage;
+        return $this->image;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param \AppBundle\Entity\Categories $categorie
+     *
+     * @return Cartes
+     */
+    public function setCategorie(\AppBundle\Entity\Categories $categorie = null)
+    {
+        $this->categorie = $categorie;
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \AppBundle\Entity\Categories
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
     }
 }
-

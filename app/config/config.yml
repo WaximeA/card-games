@@ -107,3 +107,4 @@ easy_admin:
                         - { property: 'password', label: 'Mot de passe' }
                         - { property: 'roles', label: 'Role de l''utilisateur' }
                         - { property: 'enabled', label: 'Activer l''utilisateur' }
+

@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
-    //    HELLO WORL
+    //    HELLO WORLD
     /**
      * @Route("/hello", name="hello_world")
      */
@@ -38,12 +38,12 @@ class DefaultController extends Controller
     }
 
 
-    //    JEU
+    //    JEU !IMPORTANT!
     /**
      *@route("/", name="jeu")
      */
     public function jeuAction()
     {
-        return $this->render("AppBundle:Default:index.html.twig");
+        return $this->render("AppBundle:Default:index.html.twig" , []);
     }
 }
