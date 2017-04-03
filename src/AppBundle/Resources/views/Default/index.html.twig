@@ -48,6 +48,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}         <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="{{ path('fos_user_profile_show') }}">Profil</a></li>
+                                    <li><a href="{{ path('joueur_homepage') }}">  Jouer  </a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="{{ path('fos_user_security_logout') }}">  {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></li>
 

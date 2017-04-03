@@ -2,25 +2,35 @@
 
 {% block body %}
     <h1>Partie entre {{ partie.joueur1.username }} et {{ partie.joueur2.username }}</h1>
+    <div class="container">
+    {% if partie.joueur1.id == user.id %}
+        <div>
+            <h2>Cartes de {{ partie.joueur1.username }}</h2>
+            <table class="table table-bordered">
+                <tr class="info">
+                    {% for carte in plateau.mainJ1 %}
+                        <td>
+                            {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                        </td>
+                    {% endfor %}
+                </tr>
+            </table>
+        </div>
+    {% elseif partie.joueur2.id == user.id %}
+        <div>
+            <h2>Cartes de {{ partie.joueur2.username }}</h2>
+            <table class="table table-bordered">
+                <tr class="info">
+                    {% for carte in plateau.mainJ2 %}
+                        <td>
+                            {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                        </td>
+                    {% endfor %}
+                </tr>
+            </table>
 
-
-    <div>
-        <h2>Cartes du joueur 1</h2>
-        <ul>
-            {% for carte in plateau.mainJ1 %}
-                <li>{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }}</li>
-            {% endfor %}
-        </ul>
+        </div>
+    {% endif %}
+        <button type="button" class="pioche">Pioche batard</button>
     </div>
-
-    <div>
-        <h2>Cartes du joueur 2</h2>
-        <ul>
-            {% for carte in plateau.mainJ2 %}
-                <li>{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }}</li>
-            {% endfor %}
-        </ul>
-
-    </div>
-
 {% endblock %}
