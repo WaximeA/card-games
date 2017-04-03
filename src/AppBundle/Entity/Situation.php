@@ -235,4 +235,7 @@ class Situation
     {
         return $this->partie;
     }
+
+
 }
+

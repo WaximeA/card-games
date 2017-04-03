@@ -13,6 +13,7 @@
                                 <td>Vous avez joué contre</td>
                                 <td>Points du joueur 2</td>
                                 <td>Vos points</td>
+                                <td>Rejoindre cette partie</td>
                                 {#<td>Début</td>#}
                                 {#<td>Fin</td>#}
                             </tr>
@@ -23,6 +24,7 @@
                                 <td>{{ partie.joueur2.username }}</td>
                                 <td>{{ partie.pointJ2 }}</td>
                                 <td>{{ partie.pointJ1 }}</td>
+                                <td> <a href="{{ path('afficher_partie', {'id' : partie.id }) }}"> ici </a></td>
                                 {#<td>{{ partie.debut }}</td>#}
                                 {#<td>{{ partie.fin }}</td>#}
                             </tr>

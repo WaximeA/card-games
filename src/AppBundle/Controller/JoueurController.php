@@ -41,7 +41,7 @@ class JoueurController extends Controller
         $user = $this->getUser();
         // récupérer tous les joueurs existants
         $joueurs = $this->getDoctrine()->getRepository('AppBundle:User')->findAll();
-        return $this->render("joueur/addPartie.html.twig", ['user' => $user]);
+        return $this->render("joueur/addPartie.html.twig", ['user' => $user, 'joueurs' => $joueurs]);
     }
 
     /**
@@ -51,18 +51,8 @@ class JoueurController extends Controller
     public function creerPartieAction(User $joueur)
     {
         $user = $this->getUser();
-
-        $partie = new Parties();
-
-        $partie->setJoueur1($user);
-        $partie->setJoueur2($joueur);
-
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($partie);
-        $em->flush();
-
         $situation = new Situation();
-        $situation->setPartie($partie);
+
 
         // récupérer les cartes
         $cartes = $this->getDoctrine()->getRepository('AppBundle:Cartes')->findAll();
@@ -70,12 +60,12 @@ class JoueurController extends Controller
         //on mélange les cartes
         shuffle($cartes);
 
-
         $t = array();
         for($i = 0; $i<8; $i++)
         {
             $t[] = $cartes[$i]->getId();
         }
+
         $situation->setMainJ1(json_encode($t));
 
         $t = array();
@@ -91,12 +81,24 @@ class JoueurController extends Controller
         {
             $t[] = $cartes[$i]->getId();
         }
+
         $situation->setPioche(json_encode($t));
+
+        $em = $this->getDoctrine()->getManager();
 
         $em->persist($situation);
         $em->flush();
 
-        return $this->render('joueur/partie.html.twig', ['partie' => $partie]);
+        $partie = new Parties();
+        $partie->setJoueur1($user);
+        $partie->setJoueur2($joueur);
+        $partie->setSituation($situation);
+
+        $em->persist($partie);
+        $em->flush();
+
+//        return $this->render('joueur/partie.html.twig', ['partie' => $partie]);
+        return $this->redirectToRoute('afficher_partie', ['id' => $partie->getId()]);
     }
 
     /**
@@ -108,12 +110,22 @@ class JoueurController extends Controller
         $cartes = $this->getDoctrine()->getRepository('AppBundle:Cartes')->getAll();
         $user = $this->getUser();
 
+
+        // afficher les main des joueurs
         $situation = $id->getSituation();
 
-        $plateau['mainJ1'] = json_decode($situation->getMainJ1());
-        $plateau['mainJ2'] = json_decode($situation->getMainJ2());
+        $main_joueur1 = $situation->getMainJ1();
+        $main_joueur2 = $situation->getMainJ2();
+
+        $plateau['mainJ1'] = json_decode($main_joueur1);
+        $plateau['mainJ2'] = json_decode($main_joueur2);
+
+//        $defausse = $situation->getDefausse();
+//        $defausse['defausse'] = json_decode($defausse);
 
         return $this->render(':joueur:afficherpartie.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user, 'plateau' => $plateau]);
     }
+
+
 
 }

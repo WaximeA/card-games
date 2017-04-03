@@ -1,11 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Espace joueur: {{ user.nom }}</h1>
+    <div class="content_fouser">
+        <h1 id="main_title">Espace joueur: {{ user.nom }}</h1>
 
 
     <ul>
         <li><a href="{{ path('joueur_parties') }}">Mes parties</a></li>
         <li><a href="{{ path('joueur_parties_add') }}">Nouvelle Partie</a></li>
     </ul>
+        <p class="home-button">
+            <a href="http://89.234.182.91/jeu">
+                <button type="button" class="btn btn-primary btn-xs">Page d'accueil</button>
+            </a>
+        </p>
+    </div>
 {% endblock %}
