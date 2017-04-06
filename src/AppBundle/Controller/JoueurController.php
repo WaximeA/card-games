@@ -118,12 +118,14 @@ class JoueurController extends Controller
         $plateau['mainJ1'] = json_decode($main_joueur1);
         $plateau['mainJ2'] = json_decode($main_joueur2);
 
+        // recup tour de
+        $tourde = $id->getTourde();
+
 //        $defausse = $situation->getDefausse();
 //        $defausse['defausse'] = json_decode($defausse);
 
-        return $this->render(':joueur:afficherpartie.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user, 'plateau' => $plateau]);
+        return $this->render(':joueur:afficherpartie.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user, 'plateau' => $plateau, 'tourde' => $tourde]);
     }
-
 
     /**
      * @param Parties $id
@@ -131,41 +133,94 @@ class JoueurController extends Controller
      */
     public function piocherCarteAction(Parties $id)
     {
+        // $id = partie
+
         $cartes = $this->getDoctrine()->getRepository('AppBundle:Cartes')->getAll();
         $user = $this->getUser();
-
-
         $situation = $id->getSituation();
 
         $pioche = $situation->getPioche();
         $piochetab = json_decode($pioche);
 
-        // selectionner le dernier élément du tableau pioche dans dernier
+//         selectionner le dernier élément du tableau pioche dans dernier
         $dernier=array_pop($piochetab);
 
-        // nouvelle pioche sans le $dernier
+//         nouvelle pioche sans le $dernier
         $nouvellepioche = array_diff($piochetab, [$dernier]);
 
-        if ('1'=='1'){
-            $main_joueur1 = $situation->getMainJ1();
-            $plateau['mainJ1'] = json_decode($main_joueur1);
-            $mainj1 = $plateau['mainJ1'];
+        // récuperer l'id des deux joueurs
+        $j1=$id->getJoueur1();
+        $idj1=$j1->getId();
 
-            // ajout de dernier dans main du joueur 1
-            $mainj1[]=$dernier;
-            $situation->setMainJ1($mainj1);
+        $j2=$id->getJoueur2();
+        $idj2=$j2->getId();
 
-            // on remet les tableaux en json avec les nouvelles valeurs dans la bdd
-            $em = $this->getDoctrine()->getManager();
-            $situation->setMainJ1(json_encode($mainj1));
-            $situation->setPioche(json_encode($nouvellepioche));
-//            $em->persist($situation);
-//            $em->flush();
+        // j actif
+        $jactif = $user->getId();
 
+
+        // recup tour de
+        $tourde = $id->getTourde();
+
+        if ($tourde == $jactif){
+            if ($jactif ==  $idj1 ){
+                $main_joueur1 = $situation->getMainJ1();
+                $plateau['mainJ1'] = json_decode($main_joueur1);
+                $mainj1 = $plateau['mainJ1'];
+
+                //   ajout de dernier dans main du joueur 1
+                $mainj1[]=$dernier;
+                $situation->setMainJ1($mainj1);
+
+                //  on remet les tableaux en json avec les nouvelles valeurs dans la bdd
+                $em = $this->getDoctrine()->getManager();
+                $situation->setMainJ1(json_encode($mainj1));
+                $situation->setPioche(json_encode($nouvellepioche));
+                $em->persist($situation);
+                $em->flush();
+
+                // gestion tour
+                $em = $this->getDoctrine()->getManager();
+                $nouveautour = $idj2;
+                $id->setTourde($nouveautour);
+                $em->persist($id);
+                $em->flush();
+            }
+
+            if ($jactif ==  $idj2 ){
+                $main_joueur2 = $situation->getMainJ2();
+                $plateau['mainJ2'] = json_decode($main_joueur2);
+                $mainj2 = $plateau['mainJ2'];
+
+                //   ajout de dernier dans main du joueur 2
+                $mainj2[]=$dernier;
+                $situation->setMainJ2($mainj2);
+
+                //   on remet les tableaux en json avec les nouvelles valeurs dans la bdd
+                $em = $this->getDoctrine()->getManager();
+                $situation->setMainJ2(json_encode($mainj2));
+                $situation->setPioche(json_encode($nouvellepioche));
+                $em->persist($situation);
+                $em->flush();
+
+                // gestion tour
+                $em = $this->getDoctrine()->getManager();
+                $nouveautour = $idj1;
+                $id->setTourde($nouveautour);
+                $em->persist($id);
+                $em->flush();
+            }
         }
 
 
-        return $this->render(':joueur:pioche.html.twig', ['cartes' => $cartes, 'id' => $id, 'user' => $user, 'pioche' => $pioche,'partie' => $id, 'piochetab' => $piochetab, 'nouvellepioche' => $nouvellepioche, 'dernier' => $dernier]);
+
+//        return $this->render(':joueur:pioche.html.twig', ['cartes' => $cartes, 'id' => $id, 'user' => $user, 'pioche' => $pioche,'partie' => $id, 'piochetab' => $piochetab, 'nouvellepioche' => $nouvellepioche, 'dernier' => $dernier]);
+        return $this->redirectToRoute('afficher_partie', ['id' => $id->getId()]);
     }
+
+
+
+
+
 
 }
