@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ dump(partie.situation) }}
+    <br>
+    <h1>PIOCHE</h1>
+    {{ dump(pioche) }}
+
+    {{ dump(pioche) }}
+
+    <br>
+    <h1>MAINJ1</h1>
+    {{ dump(partie.situation.mainJ1) }}
+    <br>
+    <h1>MAINJ2</h1>
+    {{ dump(partie.situation.mainJ2) }}
+    <br>
+
+    {#{% for cartepioche in plateau.pioche %}#}
+        {#{{ pioche[cartepioche].id }}#}
+    {#{% endfor %}#}
+    {{ dump(dernier) }}
+    {{ dump(nouvellepioche) }}
+
+
+
+{% endblock %}
