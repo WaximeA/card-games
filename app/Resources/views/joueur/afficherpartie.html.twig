@@ -3,6 +3,8 @@
 {% block body %}
     <h1>Partie entre {{ partie.joueur1.username }} et {{ partie.joueur2.username }}</h1>
     <div class="container">
+
+
     {% if partie.joueur1.id == user.id %}
         <div>
             <h2>Cartes de {{ partie.joueur1.username }}</h2>
@@ -14,8 +16,20 @@
                         </td>
                     {% endfor %}
                 </tr>
+                <tr class="success">
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
             </table>
         </div>
+
+
     {% elseif partie.joueur2.id == user.id %}
         <div>
             <h2>Cartes de {{ partie.joueur2.username }}</h2>
@@ -27,10 +41,22 @@
                         </td>
                     {% endfor %}
                 </tr>
+                <tr class="success">
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
             </table>
 
         </div>
     {% endif %}
-        <button type="button" class="pioche">Pioche batard</button>
+    {{ dump(partie.situation) }}
+
+        <a href="{{ path('piocher_carte', {id:partie.id}) }}" class="piocher">Pioche batard</a>
     </div>
 {% endblock %}

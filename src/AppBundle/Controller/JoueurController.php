@@ -110,8 +110,6 @@ class JoueurController extends Controller
         $cartes = $this->getDoctrine()->getRepository('AppBundle:Cartes')->getAll();
         $user = $this->getUser();
 
-
-        // afficher les main des joueurs
         $situation = $id->getSituation();
 
         $main_joueur1 = $situation->getMainJ1();
@@ -127,5 +125,47 @@ class JoueurController extends Controller
     }
 
 
+    /**
+     * @param Parties $id
+     * @Route("/piocher/{id}", name="piocher_carte")
+     */
+    public function piocherCarteAction(Parties $id)
+    {
+        $cartes = $this->getDoctrine()->getRepository('AppBundle:Cartes')->getAll();
+        $user = $this->getUser();
+
+
+        $situation = $id->getSituation();
+
+        $pioche = $situation->getPioche();
+        $piochetab = json_decode($pioche);
+
+        // selectionner le dernier élément du tableau pioche dans dernier
+        $dernier=array_pop($piochetab);
+
+        // nouvelle pioche sans le $dernier
+        $nouvellepioche = array_diff($piochetab, [$dernier]);
+
+        if ('1'=='1'){
+            $main_joueur1 = $situation->getMainJ1();
+            $plateau['mainJ1'] = json_decode($main_joueur1);
+            $mainj1 = $plateau['mainJ1'];
+
+            // ajout de dernier dans main du joueur 1
+            $mainj1[]=$dernier;
+            $situation->setMainJ1($mainj1);
+
+            // on remet les tableaux en json avec les nouvelles valeurs dans la bdd
+            $em = $this->getDoctrine()->getManager();
+            $situation->setMainJ1(json_encode($mainj1));
+            $situation->setPioche(json_encode($nouvellepioche));
+//            $em->persist($situation);
+//            $em->flush();
+
+        }
+
+
+        return $this->render(':joueur:pioche.html.twig', ['cartes' => $cartes, 'id' => $id, 'user' => $user, 'pioche' => $pioche,'partie' => $id, 'piochetab' => $piochetab, 'nouvellepioche' => $nouvellepioche, 'dernier' => $dernier]);
+    }
 
 }
