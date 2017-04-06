@@ -5,6 +5,7 @@
     <div class="container">
 
 
+
     {% if partie.joueur1.id == user.id %}
         <div>
             <h2>Cartes de {{ partie.joueur1.username }}</h2>
@@ -17,14 +18,9 @@
                     {% endfor %}
                 </tr>
                 <tr class="success">
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
+                    {% for carte in plateau.mainJ1 %}
+                        <td><input type="checkbox"></td>
+                    {% endfor %}
                 </tr>
             </table>
         </div>
@@ -42,14 +38,9 @@
                     {% endfor %}
                 </tr>
                 <tr class="success">
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
-                    <td><input type="checkbox"></td>
+                    {% for carte in plateau.mainJ2 %}
+                        <td><input type="checkbox"></td>
+                    {% endfor %}
                 </tr>
             </table>
 
@@ -57,6 +48,12 @@
     {% endif %}
     {{ dump(partie.situation) }}
 
+
+
+    {% if tourde == user.id %}
         <a href="{{ path('piocher_carte', {id:partie.id}) }}" class="piocher">Pioche batard</a>
+    {% else  %}
+        <p>Vous ne pouvez pas jouer, l'adversaire est en train de jouer</p>
+    {% endif %}
     </div>
 {% endblock %}
