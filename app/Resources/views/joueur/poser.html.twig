@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>PLATEAU</h1>
+    {{ dump(plateau) }}
+    <br>
+    <h1>CARTE J1</h1>
+    {{ dump(partie.situation.mainJ1) }}
+    <br>
+    <h1>CARTE J2</h1>
+    {{ dump(partie.situation.mainJ2) }}
+    <br>
+    <h1>carte select</h1>
+    {{ dump(carteselect) }}
+    <br>
+    <h1>carte nouvelle main</h1>
+    {#{{ dump(new_main_j1) }}#}
+    {#{{ dump(new_main_j2) }}#}
+
+    <a href="{{ path('afficher_partie', {id:partie.id}) }}">EHFOZJLKEJZLKFJLZKEJFLEKZ</a>
+
+{% endblock %}

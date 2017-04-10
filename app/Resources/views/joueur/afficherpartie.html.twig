@@ -3,55 +3,91 @@
 {% block body %}
     <h1>Partie entre {{ partie.joueur1.username }} et {{ partie.joueur2.username }}</h1>
     <div class="container">
+        <form action="{{ path('poser_carte', {id:partie.id}) }}" method="get" id="1">
+                        <div>
+                            <table class="table table-bordered">
+                                <!-- pour afficher les catégories-->
+                                <tr class="info">
+                                    <td>ECAILLES (bleu)</td>
+                                    <td>PLUMES (jaune)</td>
+                                    <td>POILS (violet)</td>
+                                    <td>ALIENS (vert)</td>
+                                    <td>CORNE (rouge)</td>
+                                </tr>
+                                <!-- pour afficher les checkbox defausse -->
+                                <tr class="info"><td>Posez vos cartes dans la defausse pour vous en séparer -> </td></tr>
+                                <tr class="success">
+                                    <td><input name="defausse" value="1" type="radio"></td>
+                                    <td><input name="defausse" value="2" type="radio"></td>
+                                    <td><input name="defausse" value="3" type="radio"></td>
+                                    <td><input name="defausse" value="4 "type="radio"></td>
+                                    <td><input name="defausse" value="5" type="radio"></td>
+                                </tr>
 
 
-
-    {% if partie.joueur1.id == user.id %}
-        <div>
-            <h2>Cartes de {{ partie.joueur1.username }}</h2>
-            <table class="table table-bordered">
-                <tr class="info">
-                    {% for carte in plateau.mainJ1 %}
-                        <td>
-                            {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
-                        </td>
-                    {% endfor %}
-                </tr>
-                <tr class="success">
-                    {% for carte in plateau.mainJ1 %}
-                        <td><input type="checkbox"></td>
-                    {% endfor %}
-                </tr>
-            </table>
-        </div>
+                                <!-- pour afficher les checkbox jouer -->
+                                <tr class="info"><td>Posez vos cartes ici pour les jouer -> </td></tr>
+                                <tr class="success">
+                                    <td><input name="categoriepose" value="1" type="radio"></td>
+                                    <td><input name="categoriepose" value="2" type="radio"></td>
+                                    <td><input name="categoriepose" value="3" type="radio"></td>
+                                    <td><input name="categoriepose" value="4" type="radio"></td>
+                                    <td><input name="categoriepose" value="5" type="radio"></td>
+                                </tr>
+                            </table>
+                        </div>
 
 
-    {% elseif partie.joueur2.id == user.id %}
-        <div>
-            <h2>Cartes de {{ partie.joueur2.username }}</h2>
-            <table class="table table-bordered">
-                <tr class="info">
-                    {% for carte in plateau.mainJ2 %}
-                        <td>
-                            {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
-                        </td>
-                    {% endfor %}
-                </tr>
-                <tr class="success">
-                    {% for carte in plateau.mainJ2 %}
-                        <td><input type="checkbox"></td>
-                    {% endfor %}
-                </tr>
-            </table>
+                         <!-- pour afficher carte du joueur 1 -->
+                    {% if partie.joueur1.id == user.id %}
+                        <div>
+                            <h2>Cartes de {{ partie.joueur1.username }}</h2>
+                            <table class="table table-bordered">
+                                <tr class="info">
+                                    {% for carte in plateau.mainJ1 %}
+                                        <td>
+                                            {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                        </td>
+                                    {% endfor %}
+                                </tr>
+                                <tr class="success">
+                                    {% for carte in plateau.mainJ1 %}
+                                        <td><input name="carteselect" value="{{ cartes[carte].id }}" type="radio"></td>
+                                    {% endfor %}
+                                </tr>
+                            </table>
+                        </div>
 
-        </div>
-    {% endif %}
+                        <!-- pour afficher carte du joueur 2 -->
+                    {% elseif partie.joueur2.id == user.id %}
+                        <div>
+                            <h2>Cartes de {{ partie.joueur2.username }}</h2>
+                            <table class="table table-bordered">
+                                <tr class="info">
+                                    {% for carte in plateau.mainJ2 %}
+                                        <td>
+                                            {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                        </td>
+                                    {% endfor %}
+                                </tr>
+                                <tr class="success">
+                                    {% for carte in plateau.mainJ2 %}
+                                        <td><input name="carteselect" value="{{ cartes[carte].id }}" type="radio"></td>
+                                    {% endfor %}
+                                </tr>
+                            </table>
+
+                        </div>
+                    {% endif %}
+            <button type="submit" value="valider le placement de la carte" id="1">Valider le placement de la carte</button>
+        </form>
+
     {{ dump(partie.situation) }}
 
-
-
+    <h2>tour de : {{ dump(tourde) }}</h2>
+        <h2>tour de : {{ dump(user.id) }}</h2>
     {% if tourde == user.id %}
-        <a href="{{ path('piocher_carte', {id:partie.id}) }}" class="piocher">Pioche batard</a>
+        <a href="{{ path('piocher_carte', {id:partie.id}) }}" class="piocher">PIOCHE</a>
     {% else  %}
         <p>Vous ne pouvez pas jouer, l'adversaire est en train de jouer</p>
     {% endif %}
