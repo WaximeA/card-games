@@ -21,13 +21,6 @@ class Situation
     /**
      * @var array
      *
-     * @ORM\Column(name="defausse", type="array", nullable=true)
-     */
-    private $defausse;
-
-    /**
-     * @var array
-     *
      * @ORM\Column(name="main_j1", type="json_array")
      */
     private $mainJ1;
@@ -46,19 +39,738 @@ class Situation
      */
     private $pioche;
 
-    /**
-     * @var array
-     *
-     * @ORM\Column(name="cartes_posees_j1", type="json_array", nullable=true)
-     */
-    private $cartesPoseesJ1;
+
+
+
+
+
+
+
+
+
+
+//                   *--------- POSER DEBUT ---------*
+//                                  *--------- POSER J1 DEBUT ---------*
+//    /**
+//     * @var array
+//     *
+//     * @ORM\Column(name="cartes_posees_j1", type="json_array", nullable=true)
+//     */
+//    private $cartesPoseesJ1;
+
+    // Cartes posées -> 5 catégries -> J1
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_posees_j1_cat1", type="json_array", nullable=true)
+                     */
+                    private $cartesPoseesJ1Cat1;
+
+                                /**
+                                 * Set cartesPoseesJ1Cat1
+                                 *
+                                 * @param array $cartesPoseesJ1Cat1
+                                 *
+                                 * @return Situation
+                                 */
+                                public function setcartesPoseesJ1Cat1($cartesPoseesJ1Cat1)
+                                {
+                                    $this->cartesPoseesJ1Cat1 = $cartesPoseesJ1Cat1;
+                                    return $this;
+                                }
+
+                                /**
+                                 * Get cartesPoseesJ1Cat1
+                                 *
+                                 * @return array
+                                 */
+                                public function getcartesPoseesJ1Cat1()
+                                {
+                                    return $this->cartesPoseesJ1Cat1;
+                                }
+
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_posees_j1_cat2", type="json_array", nullable=true)
+                     */
+                    private $cartesPoseesJ1Cat2;
+
+                                /**
+                                 * Set cartesPoseesJ1Cat2
+                                 *
+                                 * @param array $cartesPoseesJ1Cat2
+                                 *
+                                 * @return Situation
+                                 */
+                                public function setcartesPoseesJ1Cat2($cartesPoseesJ1Cat2)
+                                {
+                                    $this->cartesPoseesJ1Cat2 = $cartesPoseesJ1Cat2;
+                                    return $this;
+                                }
+
+                                /**
+                                 * Get cartesPoseesJ1Cat2
+                                 *
+                                 * @return array
+                                 */
+                                public function getcartesPoseesJ1Cat2()
+                                {
+                                    return $this->cartesPoseesJ1Cat2;
+                                }
+
+
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_posees_j1_cat3", type="json_array", nullable=true)
+                     */
+                    private $cartesPoseesJ1Cat3;
+
+                                /**
+                                 * Set cartesPoseesJ1Cat3
+                                 *
+                                 * @param array $cartesPoseesJ1Cat3
+                                 *
+                                 * @return Situation
+                                 */
+                                public function setcartesPoseesJ1Cat3($cartesPoseesJ1Cat3)
+                                {
+                                    $this->cartesPoseesJ1Cat3 = $cartesPoseesJ1Cat3;
+                                    return $this;
+                                }
+
+                                /**
+                                 * Get cartesPoseesJ1Cat3
+                                 *
+                                 * @return array
+                                 */
+                                public function getcartesPoseesJ1Cat3()
+                                {
+                                    return $this->cartesPoseesJ1Cat3;
+                                }
+
+
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_posees_j1_cat4", type="json_array", nullable=true)
+                     */
+                    private $cartesPoseesJ1Cat4;
+
+                                /**
+                                 * Set cartesPoseesJ1Cat4
+                                 *
+                                 * @param array $cartesPoseesJ1Cat4
+                                 *
+                                 * @return Situation
+                                 */
+                                public function setcartesPoseesJ1Cat4($cartesPoseesJ1Cat4)
+                                {
+                                    $this->cartesPoseesJ1Cat4 = $cartesPoseesJ1Cat4;
+                                    return $this;
+                                }
+
+                                /**
+                                 * Get cartesPoseesJ1Cat4
+                                 *
+                                 * @return array
+                                 */
+                                public function getcartesPoseesJ1Cat4()
+                                {
+                                    return $this->cartesPoseesJ1Cat4;
+                                }
+
+
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_posees_j1_cat5", type="json_array", nullable=true)
+                     */
+                    private $cartesPoseesJ1Cat5;
+
+                                /**
+                                 * Set cartesPoseesJ1Cat5
+                                 *
+                                 * @param array $cartesPoseesJ1Cat5
+                                 *
+                                 * @return Situation
+                                 */
+                                public function setcartesPoseesJ1Cat5($cartesPoseesJ1Cat5)
+                                {
+                                    $this->cartesPoseesJ1Cat5 = $cartesPoseesJ1Cat5;
+                                    return $this;
+                                }
+
+                                /**
+                                 * Get cartesPoseesJ1Cat5
+                                 *
+                                 * @return array
+                                 */
+                                public function getcartesPoseesJ1Cat5()
+                                {
+                                    return $this->cartesPoseesJ1Cat5;
+                                }
+
+//    /**
+//     * Set cartesPoseesJ1
+//     *
+//     * @param array $cartesPoseesJ1
+//     *
+//     * @return Situation
+//     */
+//    public function setCartesPoseesJ1($cartesPoseesJ1)
+//    {
+//        $this->cartesPoseesJ1 = $cartesPoseesJ1;
+//        return $this;
+//    }
+//
+//    /**
+//     * Get cartesPoseesJ1
+//     *
+//     * @return array
+//     */
+//    public function getCartesPoseesJ1()
+//    {
+//        return $this->cartesPoseesJ1;
+//    }
+//                                  *--------- POSER J1 FIN ---------*
+
+
+//                                  *--------- POSER J2 DEBUT ---------*
+//    /**
+//     * @var array
+//     *
+//     * @ORM\Column(name="cartes_posees_j2", type="json_array", nullable=true)
+//     */
+//    private $cartesPoseesJ2;
+
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_posees_j2_cat1", type="json_array", nullable=true)
+                     */
+                    private $cartesPoseesJ2Cat1;
+
+                            /**
+                             * Set cartesPoseesJ2Cat1
+                             *
+                             * @param array $cartesPoseesJ2Cat1
+                             *
+                             * @return Situation
+                             */
+                            public function setcartesPoseesJ2Cat1($cartesPoseesJ2Cat1)
+                            {
+                                $this->cartesPoseesJ2Cat1 = $cartesPoseesJ2Cat1;
+                                return $this;
+                            }
+
+                            /**
+                             * Get cartesPoseesJ2Cat1
+                             *
+                             * @return array
+                             */
+                            public function getcartesPoseesJ2Cat1()
+                            {
+                                return $this->cartesPoseesJ2Cat1;
+                            }
+
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_posees_j2_cat2", type="json_array", nullable=true)
+                     */
+                    private $cartesPoseesJ2Cat2;
+
+                            /**
+                             * Set cartesPoseesJ2Cat2
+                             *
+                             * @param array $cartesPoseesJ2Cat2
+                             *
+                             * @return Situation
+                             */
+                            public function setcartesPoseesJ2Cat2($cartesPoseesJ2Cat2)
+                            {
+                                $this->cartesPoseesJ2Cat2 = $cartesPoseesJ2Cat2;
+                                return $this;
+                            }
+
+                            /**
+                             * Get cartesPoseesJ2Cat2
+                             *
+                             * @return array
+                             */
+                            public function getcartesPoseesJ2Cat2()
+                            {
+                                return $this->cartesPoseesJ2Cat2;
+                            }
+
+
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_posees_j2_cat3", type="json_array", nullable=true)
+                     */
+                    private $cartesPoseesJ2Cat3;
+
+                            /**
+                             * Set cartesPoseesJ2Cat3
+                             *
+                             * @param array $cartesPoseesJ2Cat3
+                             *
+                             * @return Situation
+                             */
+                            public function setcartesPoseesJ2Cat3($cartesPoseesJ2Cat3)
+                            {
+                                $this->cartesPoseesJ2Cat3 = $cartesPoseesJ2Cat3;
+                                return $this;
+                            }
+
+                            /**
+                             * Get cartesPoseesJ2Cat3
+                             *
+                             * @return array
+                             */
+                            public function getcartesPoseesJ2Cat3()
+                            {
+                                return $this->cartesPoseesJ2Cat3;
+                            }
+
+
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_posees_j2_cat4", type="json_array", nullable=true)
+                     */
+                    private $cartesPoseesJ2Cat4;
+
+                            /**
+                             * Set cartesPoseesJ2Cat4
+                             *
+                             * @param array $cartesPoseesJ2Cat4
+                             *
+                             * @return Situation
+                             */
+                            public function setcartesPoseesJ2Cat4($cartesPoseesJ2Cat4)
+                            {
+                                $this->cartesPoseesJ2Cat4 = $cartesPoseesJ2Cat4;
+                                return $this;
+                            }
+
+                            /**
+                             * Get cartesPoseesJ2Cat4
+                             *
+                             * @return array
+                             */
+                            public function getcartesPoseesJ2Cat4()
+                            {
+                                return $this->cartesPoseesJ2Cat4;
+                            }
+
+
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_posees_j2_cat5", type="json_array", nullable=true)
+                     */
+                    private $cartesPoseesJ2Cat5;
+
+                            /**
+                             * Set cartesPoseesJ2Cat5
+                             *
+                             * @param array $cartesPoseesJ2Cat5
+                             *
+                             * @return Situation
+                             */
+                            public function setcartesPoseesJ2Cat5($cartesPoseesJ2Cat5)
+                            {
+                                $this->cartesPoseesJ2Cat5 = $cartesPoseesJ2Cat5;
+                                return $this;
+                            }
+
+                            /**
+                             * Get cartesPoseesJ2Cat5
+                             *
+                             * @return array
+                             */
+                            public function getcartesPoseesJ2Cat5()
+                            {
+                                return $this->cartesPoseesJ2Cat5;
+                            }
+
+//    /**
+//     * Set cartesPoseesJ2
+//     *
+//     * @param array $cartesPoseesJ2
+//     *
+//     * @return Situation
+//     */
+//    public function setCartesPoseesJ2($cartesPoseesJ2)
+//    {
+//        $this->cartesPoseesJ2 = $cartesPoseesJ2;
+//        return $this;
+//    }
+//
+//    /**
+//     * Get cartesPoseesJ2
+//     *
+//     * @return array
+//     */
+//    public function getCartesPoseesJ2()
+//    {
+//        return $this->cartesPoseesJ2;
+//    }
+
+    //                                  *--------- POSER J2 FIN ---------*
+
+//                   *--------- POSER FIN ---------*
+
+
+
+
+//                   *--------- DEFAUSSE DEBUT ---------*
+//                                  *--------- DEFAUSSE J1 DEBUT ---------*
+
 
     /**
      * @var array
      *
-     * @ORM\Column(name="cartes_posees_j2", type="json_array", nullable=true)
+     * @ORM\Column(name="defausse", type="array", nullable=true)
      */
-    private $cartesPoseesJ2;
+    private $defausse;
+
+    // Cartes defaussées -> 5 catégries -> J1
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_defaussees_j1_cat1", type="json_array", nullable=true)
+                     */
+                    private $cartesDefausseesJ1Cat1;
+                                /**
+                                 * Set cartesDefausseesJ1Cat1
+                                 *
+                                 * @param array $cartesDefausseesJ1Cat1
+                                 *
+                                 * @return Situation
+                                 */
+                                public function setcartesDefausseesJ1Cat1($cartesDefausseesJ1Cat1)
+                                {
+                                    $this->defausse = $cartesDefausseesJ1Cat1;
+                                    return $this;
+                                }
+
+                                /**
+                                 * Get cartesDefausseesJ1Cat1
+                                 *
+                                 * @return array
+                                 */
+                                public function getcartesDefausseesJ1Cat1()
+                                {
+                                    return $this->cartesDefausseesJ1Cat1;
+                                }
+
+
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_defaussees_j1_cat2", type="json_array", nullable=true)
+                     */
+                    private $cartesDefausseesJ1Cat2;
+                                /**
+                                 * Set cartesDefausseesJ1Cat2
+                                 *
+                                 * @param array $cartesDefausseesJ1Cat2
+                                 *
+                                 * @return Situation
+                                 */
+                                public function setcartesDefausseesJ1Cat2($cartesDefausseesJ1Cat2)
+                                {
+                                    $this->defausse = $cartesDefausseesJ1Cat2;
+                                    return $this;
+                                }
+
+                                /**
+                                 * Get cartesDefausseesJ1Cat2
+                                 *
+                                 * @return array
+                                 */
+                                public function getcartesDefausseesJ1Cat2()
+                                {
+                                    return $this->cartesDefausseesJ1Cat2;
+                                }
+
+
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_defaussees_j1_cat3", type="json_array", nullable=true)
+                     */
+                    private $cartesDefausseesJ1Cat3;
+                                /**
+                                 * Set cartesDefausseesJ1Cat3
+                                 *
+                                 * @param array $cartesDefausseesJ1Cat3
+                                 *
+                                 * @return Situation
+                                 */
+                                public function setcartesDefausseesJ1Cat3($cartesDefausseesJ1Cat3)
+                                {
+                                    $this->defausse = $cartesDefausseesJ1Cat3;
+                                    return $this;
+                                }
+
+                                /**
+                                 * Get cartesDefausseesJ1Cat3
+                                 *
+                                 * @return array
+                                 */
+                                public function getcartesDefausseesJ1Cat3()
+                                {
+                                    return $this->cartesDefausseesJ1Cat3;
+                                }
+
+
+
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_defaussees_j1_cat4", type="json_array", nullable=true)
+                     */
+                    private $cartesDefausseesJ1Cat4;
+                                /**
+                                 * Set cartesDefausseesJ1Cat4
+                                 *
+                                 * @param array $cartesDefausseesJ1Cat4
+                                 *
+                                 * @return Situation
+                                 */
+                                public function setcartesDefausseesJ1Cat4($cartesDefausseesJ1Cat4)
+                                {
+                                    $this->defausse = $cartesDefausseesJ1Cat4;
+                                    return $this;
+                                }
+
+                                /**
+                                 * Get cartesDefausseesJ1Cat4
+                                 *
+                                 * @return array
+                                 */
+                                public function getcartesDefausseesJ1Cat4()
+                                {
+                                    return $this->cartesDefausseesJ1Cat4;
+                                }
+
+
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_defaussees_j1_cat5", type="json_array", nullable=true)
+                     */
+                    private $cartesDefausseesJ1Cat5;
+                                /**
+                                 * Set cartesDefausseesJ1Cat5
+                                 *
+                                 * @param array $cartesDefausseesJ1Cat5
+                                 *
+                                 * @return Situation
+                                 */
+                                public function setcartesDefausseesJ1Cat5($cartesDefausseesJ1Cat5)
+                                {
+                                    $this->defausse = $cartesDefausseesJ1Cat5;
+                                    return $this;
+                                }
+
+                                /**
+                                 * Get cartesDefausseesJ1Cat5
+                                 *
+                                 * @return array
+                                 */
+                                public function getcartesDefausseesJ1Cat5()
+                                {
+                                    return $this->cartesDefausseesJ1Cat5;
+                                }
+
+
+    // Cartes defaussées -> 5 catégries -> J2
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_defaussees_j2_cat1", type="json_array", nullable=true)
+                     */
+                    private $cartesDefausseesJ2Cat1;
+                                /**
+                                 * Set cartesDefausseesJ2Cat1
+                                 *
+                                 * @param array $cartesDefausseesJ2Cat1
+                                 *
+                                 * @return Situation
+                                 */
+                                public function setcartesDefausseesJ2Cat1($cartesDefausseesJ2Cat1)
+                                {
+                                    $this->defausse = $cartesDefausseesJ2Cat1;
+                                    return $this;
+                                }
+
+                                /**
+                                 * Get cartesDefausseesJ2Cat1
+                                 *
+                                 * @return array
+                                 */
+                                public function getcartesDefausseesJ2Cat1()
+                                {
+                                    return $this->cartesDefausseesJ2Cat1;
+                                }
+
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_defaussees_j2_cat2", type="json_array", nullable=true)
+                     */
+                    private $cartesDefausseesJ2Cat2;
+                                /**
+                                 * Set cartesDefausseesJ2Cat2
+                                 *
+                                 * @param array $cartesDefausseesJ2Cat2
+                                 *
+                                 * @return Situation
+                                 */
+                                public function setcartesDefausseesJ2Cat2($cartesDefausseesJ2Cat2)
+                                {
+                                    $this->defausse = $cartesDefausseesJ2Cat2;
+                                    return $this;
+                                }
+
+                                /**
+                                 * Get cartesDefausseesJ2Cat2
+                                 *
+                                 * @return array
+                                 */
+                                public function getcartesDefausseesJ2Cat2()
+                                {
+                                    return $this->cartesDefausseesJ2Cat2;
+                                }
+
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_defaussees_j2_cat3", type="json_array", nullable=true)
+                     */
+                    private $cartesDefausseesJ2Cat3;
+                                /**
+                                 * Set cartesDefausseesJ2Cat3
+                                 *
+                                 * @param array $cartesDefausseesJ2Cat3
+                                 *
+                                 * @return Situation
+                                 */
+                                public function setcartesDefausseesJ2Cat3($cartesDefausseesJ2Cat3)
+                                {
+                                    $this->defausse = $cartesDefausseesJ2Cat3;
+                                    return $this;
+                                }
+
+                                /**
+                                 * Get cartesDefausseesJ2Cat3
+                                 *
+                                 * @return array
+                                 */
+                                public function getcartesDefausseesJ2Cat3()
+                                {
+                                    return $this->cartesDefausseesJ2Cat3;
+                                }
+
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_defaussees_j2_cat4", type="json_array", nullable=true)
+                     */
+                    private $cartesDefausseesJ2Cat4;
+                                /**
+                                 * Set cartesDefausseesJ2Cat4
+                                 *
+                                 * @param array $cartesDefausseesJ2Cat4
+                                 *
+                                 * @return Situation
+                                 */
+                                public function setcartesDefausseesJ2Cat4($cartesDefausseesJ2Cat4)
+                                {
+                                    $this->defausse = $cartesDefausseesJ2Cat4;
+                                    return $this;
+                                }
+
+                                /**
+                                 * Get cartesDefausseesJ2Cat4
+                                 *
+                                 * @return array
+                                 */
+                                public function getcartesDefausseesJ2Cat4()
+                                {
+                                    return $this->cartesDefausseesJ2Cat4;
+                                }
+
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_defaussees_j2_cat5", type="json_array", nullable=true)
+                     */
+                    private $cartesDefausseesJ2Cat5;
+                                /**
+                                 * Set cartesDefausseesJ2Cat5
+                                 *
+                                 * @param array $cartesDefausseesJ2Cat5
+                                 *
+                                 * @return Situation
+                                 */
+                                public function setcartesDefausseesJ2Cat5($cartesDefausseesJ2Cat5)
+                                {
+                                    $this->defausse = $cartesDefausseesJ2Cat5;
+                                    return $this;
+                                }
+
+                                /**
+                                 * Get cartesDefausseesJ2Cat5
+                                 *
+                                 * @return array
+                                 */
+                                public function getcartesDefausseesJ2Cat5()
+                                {
+                                    return $this->cartesDefausseesJ2Cat5;
+                                }
+
+//    /**
+//     * Set defausse
+//     *
+//     * @param array $defausse
+//     *
+//     * @return Situation
+//     */
+//    public function setDefausse($defausse)
+//    {
+//        $this->defausse = $defausse;
+//        return $this;
+//    }
+//
+//    /**
+//     * Get defausse
+//     *
+//     * @return array
+//     */
+//    public function getDefausse()
+//    {
+//        return $this->defausse;
+//    }
+
+
+
+
+//                   *--------- DEFAUSSE FIN ---------*
+
+
+
+
+
+
+
 
     /**
      * @ORM\OneToOne(targetEntity="AppBundle\Entity\Parties", mappedBy="situation")
@@ -73,29 +785,6 @@ class Situation
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set defausse
-     *
-     * @param array $defausse
-     *
-     * @return Situation
-     */
-    public function setDefausse($defausse)
-    {
-        $this->defausse = $defausse;
-        return $this;
-    }
-
-    /**
-     * Get defausse
-     *
-     * @return array
-     */
-    public function getDefausse()
-    {
-        return $this->defausse;
     }
 
     /**
@@ -167,51 +856,6 @@ class Situation
         return $this->pioche;
     }
 
-    /**
-     * Set cartesPoseesJ1
-     *
-     * @param array $cartesPoseesJ1
-     *
-     * @return Situation
-     */
-    public function setCartesPoseesJ1($cartesPoseesJ1)
-    {
-        $this->cartesPoseesJ1 = $cartesPoseesJ1;
-        return $this;
-    }
-
-    /**
-     * Get cartesPoseesJ1
-     *
-     * @return array
-     */
-    public function getCartesPoseesJ1()
-    {
-        return $this->cartesPoseesJ1;
-    }
-
-    /**
-     * Set cartesPoseesJ2
-     *
-     * @param array $cartesPoseesJ2
-     *
-     * @return Situation
-     */
-    public function setCartesPoseesJ2($cartesPoseesJ2)
-    {
-        $this->cartesPoseesJ2 = $cartesPoseesJ2;
-        return $this;
-    }
-
-    /**
-     * Get cartesPoseesJ2
-     *
-     * @return array
-     */
-    public function getCartesPoseesJ2()
-    {
-        return $this->cartesPoseesJ2;
-    }
 
     /**
      * Set partie

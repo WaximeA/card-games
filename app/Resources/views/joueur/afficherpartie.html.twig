@@ -6,7 +6,66 @@
         <form action="{{ path('poser_carte', {id:partie.id}) }}" method="get" id="1">
                         <div>
                             <table class="table table-bordered">
-                                <!-- pour afficher les catégories-->
+                                {# afficher les carte de l'adversaire #}
+                                {% if partie.joueur1.id != user.id %}
+                                    <tr class="success">
+                                        <td>
+                                            {% for carte in tapis.pose_j1cat1 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            {% for carte in tapis.pose_j1cat2 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            {% for carte in tapis.pose_j1cat3 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            {% for carte in tapis.pose_j1cat4 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            {% for carte in tapis.pose_j1cat5 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                    </tr>
+                                {% elseif partie.joueur2.id != user.id %}
+                                    <tr class="success">
+                                        <td>
+                                            {% for carte in tapis.pose_j2cat1 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            {% for carte in tapis.pose_j2cat2 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            {% for carte in tapis.pose_j2cat3 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            {% for carte in tapis.pose_j2cat4 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            {% for carte in tapis.pose_j2cat5 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                    </tr>
+                                {% endif %}
+
+                               {# NOMS - ZONE CATEGORIES#}
                                 <tr class="info">
                                     <td>ECAILLES (bleu)</td>
                                     <td>PLUMES (jaune)</td>
@@ -14,26 +73,65 @@
                                     <td>ALIENS (vert)</td>
                                     <td>CORNE (rouge)</td>
                                 </tr>
-                                <!-- pour afficher les checkbox defausse -->
-                                <tr class="info"><td>Posez vos cartes dans la defausse pour vous en séparer -> </td></tr>
-                                <tr class="success">
-                                    <td><input name="defausse" value="1" type="radio"></td>
-                                    <td><input name="defausse" value="2" type="radio"></td>
-                                    <td><input name="defausse" value="3" type="radio"></td>
-                                    <td><input name="defausse" value="4 "type="radio"></td>
-                                    <td><input name="defausse" value="5" type="radio"></td>
-                                </tr>
 
-
-                                <!-- pour afficher les checkbox jouer -->
-                                <tr class="info"><td>Posez vos cartes ici pour les jouer -> </td></tr>
-                                <tr class="success">
-                                    <td><input name="categoriepose" value="1" type="radio"></td>
-                                    <td><input name="categoriepose" value="2" type="radio"></td>
-                                    <td><input name="categoriepose" value="3" type="radio"></td>
-                                    <td><input name="categoriepose" value="4" type="radio"></td>
-                                    <td><input name="categoriepose" value="5" type="radio"></td>
-                                </tr>
+                                {# afficher les carte du joueur actif #}
+                                {% if partie.joueur1.id == user.id %}
+                                    <tr class="success">
+                                        <td>
+                                        {% for carte in tapis.pose_j1cat1 %}
+                                             {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                        {% endfor %}
+                                        </td>
+                                        <td>
+                                            {% for carte in tapis.pose_j1cat2 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            {% for carte in tapis.pose_j1cat3 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            {% for carte in tapis.pose_j1cat4 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            {% for carte in tapis.pose_j1cat5 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                    </tr>
+                                {% elseif partie.joueur2.id == user.id %}
+                                    <tr class="success">
+                                        <td>
+                                            {% for carte in tapis.pose_j2cat1 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            {% for carte in tapis.pose_j2cat2 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            {% for carte in tapis.pose_j2cat3 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            {% for carte in tapis.pose_j2cat4 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            {% for carte in tapis.pose_j2cat5 %}
+                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            {% endfor %}
+                                        </td>
+                                    </tr>
+                                {% endif %}
                             </table>
                         </div>
 
@@ -79,13 +177,14 @@
 
                         </div>
                     {% endif %}
-            <button type="submit" value="valider le placement de la carte" id="1">Valider le placement de la carte</button>
+            <button type="submit" value="palcer_carte" id="1">Placer cette carte</button>
         </form>
 
     {{ dump(partie.situation) }}
 
     <h2>tour de : {{ dump(tourde) }}</h2>
-        <h2>tour de : {{ dump(user.id) }}</h2>
+
+    <h2>Joueur n° : {{ dump(user.id) }}</h2>
     {% if tourde == user.id %}
         <a href="{{ path('piocher_carte', {id:partie.id}) }}" class="piocher">PIOCHE</a>
     {% else  %}
