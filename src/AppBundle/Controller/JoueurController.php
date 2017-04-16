@@ -791,6 +791,362 @@ class JoueurController extends Controller
     }
 
 
+    /**
+     * @param Parties $id
+     * @Route("/piocher_def2/{id}", name="piocher_def2_carte")
+     */
+    public function piocherDef2CarteAction(Parties $id)
+    {
+
+        $cartes = $this->getDoctrine()->getRepository('AppBundle:Cartes')->getAll();
+        $user = $this->getUser();
+        $situation = $id->getSituation();
+
+
+        $pioche_def2 = $situation->getcartesDefausseesCat2();
+        $piochetab2 = json_decode($pioche_def2);
+
+        // selectionner le dernier élément du tableau pioche dans dernier
+        $dernier=array_pop($piochetab2);
+
+        // nouvelle pioche sans le $dernier
+        $nouvellepioche2 = array_diff($piochetab2, [$dernier]);
+
+        // récuperer l'id des deux joueurs
+        $j1=$id->getJoueur1();
+        $idj1=$j1->getId();
+
+        $j2=$id->getJoueur2();
+        $idj2=$j2->getId();
+
+        // joueur actif
+        $jactif = $user->getId();
+
+        // recup tour de
+        $tourde = $id->getTourde();
+
+
+        if ($tourde == $jactif){
+            // Si je joueur actif = à l'id du joueur 1
+            if ($jactif ==  $idj1 ){
+                $plateau['mainJ1'] = json_decode($situation->getMainJ1());
+                $mainj1 = $plateau['mainJ1'];
+
+                //   ajout de dernier dans main du joueur 1
+                $mainj1[]=$dernier;
+                $situation->setMainJ1($mainj1);
+
+                //  on remet les tableaux en json avec les nouvelles valeurs dans la bdd
+                $em = $this->getDoctrine()->getManager();
+                $situation->setMainJ1(json_encode($mainj1));
+                $situation->setcartesDefausseesCat2(json_encode($nouvellepioche2));
+                $em->persist($situation);
+                $em->flush();
+
+                // gestion tour
+                $em = $this->getDoctrine()->getManager();
+                $nouveautour = $idj2;
+                $id->setTourde($nouveautour);
+                $em->persist($id);
+                $em->flush();
+            }
+
+
+            // Si je joueur actif = à l'id du joueur 2
+            if ($jactif ==  $idj2 ){
+                $plateau['mainJ2'] = json_decode($situation->getMainJ2());
+                $mainj2 = $plateau['mainJ2'];
+
+                //   ajout de dernier dans main du joueur 2
+                $mainj2[]=$dernier;
+                $situation->setMainJ2($mainj2);
+
+                //   on remet les tableaux en json avec les nouvelles valeurs dans la bdd
+                $em = $this->getDoctrine()->getManager();
+                $situation->setMainJ2(json_encode($mainj2));
+                $situation->setcartesDefausseesCat2(json_encode($nouvellepioche2));
+                $em->persist($situation);
+                $em->flush();
+
+                // gestion tour
+                $em = $this->getDoctrine()->getManager();
+                $nouveautour = $idj1;
+                $id->setTourde($nouveautour);
+                $em->persist($id);
+                $em->flush();
+            }
+        }
+
+        return $this->redirectToRoute('afficher_partie', ['id' => $id->getId()]);
+    }
+
+    /**
+     * @param Parties $id
+     * @Route("/piocher_def3/{id}", name="piocher_def3_carte")
+     */
+    public function piocherDef3CarteAction(Parties $id)
+    {
+
+        $cartes = $this->getDoctrine()->getRepository('AppBundle:Cartes')->getAll();
+        $user = $this->getUser();
+        $situation = $id->getSituation();
+
+
+        $pioche_def3 = $situation->getcartesDefausseesCat3();
+        $piochetab3 = json_decode($pioche_def3);
+
+        // selectionner le dernier élément du tableau pioche dans dernier
+        $dernier=array_pop($piochetab3);
+
+        // nouvelle pioche sans le $dernier
+        $nouvellepioche3 = array_diff($piochetab3, [$dernier]);
+
+        // récuperer l'id des deux joueurs
+        $j1=$id->getJoueur1();
+        $idj1=$j1->getId();
+
+        $j2=$id->getJoueur2();
+        $idj2=$j2->getId();
+
+        // joueur actif
+        $jactif = $user->getId();
+
+        // recup tour de
+        $tourde = $id->getTourde();
+
+
+        if ($tourde == $jactif){
+            // Si je joueur actif = à l'id du joueur 1
+            if ($jactif ==  $idj1 ){
+                $plateau['mainJ1'] = json_decode($situation->getMainJ1());
+                $mainj1 = $plateau['mainJ1'];
+
+                //   ajout de dernier dans main du joueur 1
+                $mainj1[]=$dernier;
+                $situation->setMainJ1($mainj1);
+
+                //  on remet les tableaux en json avec les nouvelles valeurs dans la bdd
+                $em = $this->getDoctrine()->getManager();
+                $situation->setMainJ1(json_encode($mainj1));
+                $situation->setcartesDefausseesCat3(json_encode($nouvellepioche3));
+                $em->persist($situation);
+                $em->flush();
+
+                // gestion tour
+                $em = $this->getDoctrine()->getManager();
+                $nouveautour = $idj2;
+                $id->setTourde($nouveautour);
+                $em->persist($id);
+                $em->flush();
+            }
+
+
+            // Si je joueur actif = à l'id du joueur 2
+            if ($jactif ==  $idj2 ){
+                $plateau['mainJ2'] = json_decode($situation->getMainJ2());
+                $mainj2 = $plateau['mainJ2'];
+
+                //   ajout de dernier dans main du joueur 2
+                $mainj2[]=$dernier;
+                $situation->setMainJ2($mainj2);
+
+                //   on remet les tableaux en json avec les nouvelles valeurs dans la bdd
+                $em = $this->getDoctrine()->getManager();
+                $situation->setMainJ2(json_encode($mainj2));
+                $situation->setcartesDefausseesCat3(json_encode($nouvellepioche3));
+                $em->persist($situation);
+                $em->flush();
+
+                // gestion tour
+                $em = $this->getDoctrine()->getManager();
+                $nouveautour = $idj1;
+                $id->setTourde($nouveautour);
+                $em->persist($id);
+                $em->flush();
+            }
+        }
+
+        return $this->redirectToRoute('afficher_partie', ['id' => $id->getId()]);
+    }
+
+
+    /**
+     * @param Parties $id
+     * @Route("/piocher_def4/{id}", name="piocher_def4_carte")
+     */
+    public function piocherDef4CarteAction(Parties $id)
+    {
+
+        $cartes = $this->getDoctrine()->getRepository('AppBundle:Cartes')->getAll();
+        $user = $this->getUser();
+        $situation = $id->getSituation();
+
+
+        $pioche_def4 = $situation->getcartesDefausseesCat4();
+        $piochetab4 = json_decode($pioche_def4);
+
+        // selectionner le dernier élément du tableau pioche dans dernier
+        $dernier=array_pop($piochetab4);
+
+        // nouvelle pioche sans le $dernier
+        $nouvellepioche4 = array_diff($piochetab4, [$dernier]);
+
+        // récuperer l'id des deux joueurs
+        $j1=$id->getJoueur1();
+        $idj1=$j1->getId();
+
+        $j2=$id->getJoueur2();
+        $idj2=$j2->getId();
+
+        // joueur actif
+        $jactif = $user->getId();
+
+        // recup tour de
+        $tourde = $id->getTourde();
+
+
+        if ($tourde == $jactif){
+            // Si je joueur actif = à l'id du joueur 1
+            if ($jactif ==  $idj1 ){
+                $plateau['mainJ1'] = json_decode($situation->getMainJ1());
+                $mainj1 = $plateau['mainJ1'];
+
+                //   ajout de dernier dans main du joueur 1
+                $mainj1[]=$dernier;
+                $situation->setMainJ1($mainj1);
+
+                //  on remet les tableaux en json avec les nouvelles valeurs dans la bdd
+                $em = $this->getDoctrine()->getManager();
+                $situation->setMainJ1(json_encode($mainj1));
+                $situation->setcartesDefausseesCat4(json_encode($nouvellepioche4));
+                $em->persist($situation);
+                $em->flush();
+
+                // gestion tour
+                $em = $this->getDoctrine()->getManager();
+                $nouveautour = $idj2;
+                $id->setTourde($nouveautour);
+                $em->persist($id);
+                $em->flush();
+            }
+
+
+            // Si je joueur actif = à l'id du joueur 2
+            if ($jactif ==  $idj2 ){
+                $plateau['mainJ2'] = json_decode($situation->getMainJ2());
+                $mainj2 = $plateau['mainJ2'];
+
+                //   ajout de dernier dans main du joueur 2
+                $mainj2[]=$dernier;
+                $situation->setMainJ2($mainj2);
+
+                //   on remet les tableaux en json avec les nouvelles valeurs dans la bdd
+                $em = $this->getDoctrine()->getManager();
+                $situation->setMainJ2(json_encode($mainj2));
+                $situation->setcartesDefausseesCat4(json_encode($nouvellepioche4));
+                $em->persist($situation);
+                $em->flush();
+
+                // gestion tour
+                $em = $this->getDoctrine()->getManager();
+                $nouveautour = $idj1;
+                $id->setTourde($nouveautour);
+                $em->persist($id);
+                $em->flush();
+            }
+        }
+
+        return $this->redirectToRoute('afficher_partie', ['id' => $id->getId()]);
+    }
+
+    /**
+     * @param Parties $id
+     * @Route("/piocher_def5/{id}", name="piocher_def5_carte")
+     */
+    public function piocherDef5CarteAction(Parties $id)
+    {
+
+        $cartes = $this->getDoctrine()->getRepository('AppBundle:Cartes')->getAll();
+        $user = $this->getUser();
+        $situation = $id->getSituation();
+
+
+        $pioche_def5 = $situation->getcartesDefausseesCat5();
+        $piochetab5 = json_decode($pioche_def5);
+
+        // selectionner le dernier élément du tableau pioche dans dernier
+        $dernier=array_pop($piochetab5);
+
+        // nouvelle pioche sans le $dernier
+        $nouvellepioche5 = array_diff($piochetab5, [$dernier]);
+
+        // récuperer l'id des deux joueurs
+        $j1=$id->getJoueur1();
+        $idj1=$j1->getId();
+
+        $j2=$id->getJoueur2();
+        $idj2=$j2->getId();
+
+        // joueur actif
+        $jactif = $user->getId();
+
+        // recup tour de
+        $tourde = $id->getTourde();
+
+
+        if ($tourde == $jactif){
+            // Si je joueur actif = à l'id du joueur 1
+            if ($jactif ==  $idj1 ){
+                $plateau['mainJ1'] = json_decode($situation->getMainJ1());
+                $mainj1 = $plateau['mainJ1'];
+
+                //   ajout de dernier dans main du joueur 1
+                $mainj1[]=$dernier;
+                $situation->setMainJ1($mainj1);
+
+                //  on remet les tableaux en json avec les nouvelles valeurs dans la bdd
+                $em = $this->getDoctrine()->getManager();
+                $situation->setMainJ1(json_encode($mainj1));
+                $situation->setcartesDefausseesCat5(json_encode($nouvellepioche5));
+                $em->persist($situation);
+                $em->flush();
+
+                // gestion tour
+                $em = $this->getDoctrine()->getManager();
+                $nouveautour = $idj2;
+                $id->setTourde($nouveautour);
+                $em->persist($id);
+                $em->flush();
+            }
+
+
+            // Si je joueur actif = à l'id du joueur 2
+            if ($jactif ==  $idj2 ){
+                $plateau['mainJ2'] = json_decode($situation->getMainJ2());
+                $mainj2 = $plateau['mainJ2'];
+
+                //   ajout de dernier dans main du joueur 2
+                $mainj2[]=$dernier;
+                $situation->setMainJ2($mainj2);
+
+                //   on remet les tableaux en json avec les nouvelles valeurs dans la bdd
+                $em = $this->getDoctrine()->getManager();
+                $situation->setMainJ2(json_encode($mainj2));
+                $situation->setcartesDefausseesCat5(json_encode($nouvellepioche5));
+                $em->persist($situation);
+                $em->flush();
+
+                // gestion tour
+                $em = $this->getDoctrine()->getManager();
+                $nouveautour = $idj1;
+                $id->setTourde($nouveautour);
+                $em->persist($id);
+                $em->flush();
+            }
+        }
+
+        return $this->redirectToRoute('afficher_partie', ['id' => $id->getId()]);
+    }
 
     private function supprimeCarteMain($mainj1,$carteselect)
     {

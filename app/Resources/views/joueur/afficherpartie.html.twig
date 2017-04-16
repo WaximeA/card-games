@@ -101,64 +101,64 @@
                                     </td>
                                 </tr>
 
-                                {# afficher les carte du joueur actif #}
-                                {% if partie.joueur1.id == user.id %}
-                                    <tr class="success">
-                                        <td>
-                                        {% for carte in tapis.pose_j1cat1 %}
-                                             {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
-                                        {% endfor %}
-                                        </td>
-                                        <td>
-                                            {% for carte in tapis.pose_j1cat2 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                    {# afficher les carte du joueur actif #}
+                                    {% if partie.joueur1.id == user.id %}
+                                        <tr class="success">
+                                            <td>
+                                            {% for carte in tapis.pose_j1cat1 %}
+                                                 {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
                                             {% endfor %}
-                                        </td>
-                                        <td>
-                                            {% for carte in tapis.pose_j1cat3 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
-                                            {% endfor %}
-                                        </td>
-                                        <td>
-                                            {% for carte in tapis.pose_j1cat4 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
-                                            {% endfor %}
-                                        </td>
-                                        <td>
-                                            {% for carte in tapis.pose_j1cat5 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
-                                            {% endfor %}
-                                        </td>
-                                    </tr>
-                                {% elseif partie.joueur2.id == user.id %}
-                                    <tr class="success">
-                                        <td>
-                                            {% for carte in tapis.pose_j2cat1 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
-                                            {% endfor %}
-                                        </td>
-                                        <td>
-                                            {% for carte in tapis.pose_j2cat2 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
-                                            {% endfor %}
-                                        </td>
-                                        <td>
-                                            {% for carte in tapis.pose_j2cat3 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
-                                            {% endfor %}
-                                        </td>
-                                        <td>
-                                            {% for carte in tapis.pose_j2cat4 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
-                                            {% endfor %}
-                                        </td>
-                                        <td>
-                                            {% for carte in tapis.pose_j2cat5 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
-                                            {% endfor %}
-                                        </td>
-                                    </tr>
-                                {% endif %}
+                                            </td>
+                                            <td>
+                                                {% for carte in tapis.pose_j1cat2 %}
+                                                    {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                {% endfor %}
+                                            </td>
+                                            <td>
+                                                {% for carte in tapis.pose_j1cat3 %}
+                                                    {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                {% endfor %}
+                                            </td>
+                                            <td>
+                                                {% for carte in tapis.pose_j1cat4 %}
+                                                    {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                {% endfor %}
+                                            </td>
+                                            <td>
+                                                {% for carte in tapis.pose_j1cat5 %}
+                                                    {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                {% endfor %}
+                                            </td>
+                                        </tr>
+                                    {% elseif partie.joueur2.id == user.id %}
+                                        <tr class="success">
+                                            <td>
+                                                {% for carte in tapis.pose_j2cat1 %}
+                                                    {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                {% endfor %}
+                                            </td>
+                                            <td>
+                                                {% for carte in tapis.pose_j2cat2 %}
+                                                    {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                {% endfor %}
+                                            </td>
+                                            <td>
+                                                {% for carte in tapis.pose_j2cat3 %}
+                                                    {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                {% endfor %}
+                                            </td>
+                                            <td>
+                                                {% for carte in tapis.pose_j2cat4 %}
+                                                    {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                {% endfor %}
+                                            </td>
+                                            <td>
+                                                {% for carte in tapis.pose_j2cat5 %}
+                                                    {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                {% endfor %}
+                                            </td>
+                                        </tr>
+                                    {% endif %}
                             </table>
                         </div>
 
@@ -205,12 +205,58 @@
                         </div>
                     {% endif %}
 
+
+            {# Si c'est le tour du joueur & si c'est le joueur 1 & si son plateau = 8 --> afficher placer sinon piocher & piocher dans defausse si > 0#}
             {% if tourde == user.id %}
-                <button type="button" value="placer" name="placer" id="placer" onclick="return OnButton1();">Placer cette carte</button>
-                <button type="button" value="defausser" name="defausser" id="defausser" onclick="return OnButton2();">Defausser cette carte</button>
-                <br><br>
-                <button type="button" value="piocher" name="piocher" id="piocher" onclick="return OnButton0();">Piocher une carte</button>
-                <button type="button" value="piocher_def1" name="piocher_def1" id="piocher_def1" onclick="return OnButton3();">Piocher chez les écailles</button>
+                {% if partie.joueur1.id == user.id %}
+                    {% if plateau.mainJ1|length  == 8 %}
+                        <button type="button" value="placer" name="placer" id="placer" onclick="return OnButton1();">Placer cette carte</button>
+                        <button type="button" value="defausser" name="defausser" id="defausser" onclick="return OnButton2();">Defausser cette carte</button>
+                    {% else  %}
+                        <br><br>
+                        <button type="button" value="piocher" name="piocher" id="piocher" onclick="return OnButton0();">Piocher une carte</button>
+                        <br>
+                        {% if tapisdef.def_cat1|length > 0 %}
+                            <button type="button" value="piocher_def1" name="piocher_def1" id="piocher_def1" onclick="return OnButton3();">Piocher chez les écailles</button>
+                        {% endif %}
+                        {% if tapisdef.def_cat2|length > 0 %}
+                            <button type="button" value="piocher_def2" name="piocher_def2" id="piocher_def2" onclick="return OnButton4();">Piocher chez les plumes</button>
+                        {% endif %}
+                        {% if tapisdef.def_cat3|length > 0 %}
+                            <button type="button" value="piocher_def3" name="piocher_def3" id="piocher_def3" onclick="return OnButton5();">Piocher chez les poils</button>
+                        {% endif %}
+                        {% if tapisdef.def_cat4|length > 0 %}
+                            <button type="button" value="piocher_def4" name="piocher_def4" id="piocher_def4" onclick="return OnButton6();">Piocher chez les aliens</button>
+                        {% endif %}
+                        {% if tapisdef.def_cat5|length > 0 %}
+                            <button type="button" value="piocher_def5" name="piocher_def5" id="piocher_def5" onclick="return OnButton7();">Piocher chez les cornes</button>
+                        {% endif %}
+                    {% endif %}
+                {% else  %}
+                    {% if plateau.mainJ2|length  == 8 %}
+                        <button type="button" value="placer" name="placer" id="placer" onclick="return OnButton1();">Placer cette carte</button>
+                        <button type="button" value="defausser" name="defausser" id="defausser" onclick="return OnButton2();">Defausser cette carte</button>
+                    {% else  %}
+                        <br><br>
+                        <button type="button" value="piocher" name="piocher" id="piocher" onclick="return OnButton0();">Piocher une carte</button>
+                        <br>
+                        {% if tapisdef.def_cat1|length > 0 %}
+                            <button type="button" value="piocher_def1" name="piocher_def1" id="piocher_def1" onclick="return OnButton3();">Piocher chez les écailles</button>
+                        {% endif %}
+                        {% if tapisdef.def_cat2|length > 0 %}
+                            <button type="button" value="piocher_def2" name="piocher_def2" id="piocher_def2" onclick="return OnButton4();">Piocher chez les plumes</button>
+                        {% endif %}
+                        {% if tapisdef.def_cat3|length > 0 %}
+                            <button type="button" value="piocher_def3" name="piocher_def3" id="piocher_def3" onclick="return OnButton5();">Piocher chez les poils</button>
+                        {% endif %}
+                        {% if tapisdef.def_cat4|length > 0 %}
+                            <button type="button" value="piocher_def4" name="piocher_def4" id="piocher_def4" onclick="return OnButton6();">Piocher chez les aliens</button>
+                        {% endif %}
+                        {% if tapisdef.def_cat5|length > 0 %}
+                            <button type="button" value="piocher_def5" name="piocher_def5" id="piocher_def5" onclick="return OnButton7();">Piocher chez les cornes</button>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
             {% else  %}
                 <p>Vous ne pouvez pas jouer, l'adversaire est en train de jouer</p>
             {% endif %}
@@ -226,6 +272,8 @@
     <h2>tour de : {{ dump(tourde) }}</h2>
 
     <h2>Joueur n° : {{ dump(user.id) }}</h2>
+
+
 
     </div>
 {% endblock %}
@@ -252,9 +300,31 @@
         document.form1.submit();
     }
 
+
+
     function OnButton3()
     {
         document.form1.action = "{{ path('piocher_def1_carte', {id:partie.id}) }}"
+        document.form1.submit();
+    }
+    function OnButton4()
+    {
+        document.form1.action = "{{ path('piocher_def2_carte', {id:partie.id}) }}"
+        document.form1.submit();
+    }
+    function OnButton5()
+    {
+        document.form1.action = "{{ path('piocher_def3_carte', {id:partie.id}) }}"
+        document.form1.submit();
+    }
+    function OnButton6()
+    {
+        document.form1.action = "{{ path('piocher_def4_carte', {id:partie.id}) }}"
+        document.form1.submit();
+    }
+    function OnButton7()
+    {
+        document.form1.action = "{{ path('piocher_def5_carte', {id:partie.id}) }}"
         document.form1.submit();
     }
     </script>
