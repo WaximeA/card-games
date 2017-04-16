@@ -127,26 +127,130 @@ class JoueurController extends Controller
         $plateau['mainJ1'] = json_decode($situation->getMainJ1());
         $plateau['mainJ2'] = json_decode($situation->getMainJ2());
 
-        // recup dans cartes J1 posées dans un tapis
-        $tapis['pose_j1cat1'] = json_decode($situation->getCartesPoseesJ1Cat1());
-        $tapis['pose_j1cat2'] = json_decode($situation->getCartesPoseesJ1Cat2());
-        $tapis['pose_j1cat3'] = json_decode($situation->getCartesPoseesJ1Cat3());
-        $tapis['pose_j1cat4'] = json_decode($situation->getCartesPoseesJ1Cat4());
-        $tapis['pose_j1cat5'] = json_decode($situation->getCartesPoseesJ1Cat5());
+//        // recup dans cartes J1 posées dans un tapis
+//        $tapis['pose_j1cat1'] = json_decode($situation->getCartesPoseesJ1Cat1());
+//        $tapis['pose_j1cat2'] = json_decode($situation->getCartesPoseesJ1Cat2());
+//        $tapis['pose_j1cat3'] = json_decode($situation->getCartesPoseesJ1Cat3());
+//        $tapis['pose_j1cat4'] = json_decode($situation->getCartesPoseesJ1Cat4());
+//        $tapis['pose_j1cat5'] = json_decode($situation->getCartesPoseesJ1Cat5());
+//
+//        // recup dans cartes J2 posées dans un tapis
+//        $tapis['pose_j2cat1'] = json_decode($situation->getCartesPoseesJ2Cat1());
+//        $tapis['pose_j2cat2'] = json_decode($situation->getCartesPoseesJ2Cat2());
+//        $tapis['pose_j2cat3'] = json_decode($situation->getCartesPoseesJ2Cat3());
+//        $tapis['pose_j2cat4'] = json_decode($situation->getCartesPoseesJ2Cat4());
+//        $tapis['pose_j2cat5'] = json_decode($situation->getCartesPoseesJ2Cat5());
 
-        // recup dans cartes J2 posées dans un tapis
-        $tapis['pose_j2cat1'] = json_decode($situation->getCartesPoseesJ2Cat1());
-        $tapis['pose_j2cat2'] = json_decode($situation->getCartesPoseesJ2Cat2());
-        $tapis['pose_j2cat3'] = json_decode($situation->getCartesPoseesJ2Cat3());
-        $tapis['pose_j2cat4'] = json_decode($situation->getCartesPoseesJ2Cat4());
-        $tapis['pose_j2cat5'] = json_decode($situation->getCartesPoseesJ2Cat5());
+                                    // recup des cartes posées j1 : en decode si vide / en ajout tab si plein
+                                    if (!empty($situation->getCartesPoseesJ1Cat1())){
+                                        $tapis['pose_j1cat1'] = json_decode($situation->getCartesPoseesJ1Cat1());
+                                    }else {
+                                        $tapis['pose_j1cat1'] = $situation->getCartesPoseesJ1Cat1();
+                                        $tapis['pose_j1cat1'] = array();
+                                    }
+                                    if (!empty($situation->getCartesPoseesJ1Cat2())){
+                                        $tapis['pose_j1cat2'] = json_decode($situation->getCartesPoseesJ1Cat2());
+                                    }else {
+                                        $tapis['pose_j1cat2'] = $situation->getCartesPoseesJ1Cat2();
+                                        $tapis['pose_j1cat2'] = array();
+                                    }
+                                    if (!empty($situation->getCartesPoseesJ1Cat3())){
+                                        $tapis['pose_j1cat3'] = json_decode($situation->getCartesPoseesJ1Cat3());
+                                    }else {
+                                        $tapis['pose_j1cat3'] = $situation->getCartesPoseesJ1Cat3();
+                                        $tapis['pose_j1cat3'] = array();
+                                    }
+                                    if (!empty($situation->getCartesPoseesJ1Cat4())){
+                                        $tapis['pose_j1cat4'] = json_decode($situation->getCartesPoseesJ1Cat4());
+                                    }else {
+                                        $tapis['pose_j1cat4'] = $situation->getCartesPoseesJ1Cat4();
+                                        $tapis['pose_j1cat4'] = array();
+                                    }
+                                    if (!empty($situation->getCartesPoseesJ1Cat2())){
+                                        $tapis['pose_j1cat5'] = json_decode($situation->getCartesPoseesJ1Cat5());
+                                    }else {
+                                        $tapis['pose_j1cat5'] = $situation->getCartesPoseesJ1Cat5();
+                                        $tapis['pose_j1cat5'] = array();
+                                    }
 
+                                    // recup des cartes posées j2 : en decode si vide / en ajout tab si plein
+                                    if (!empty($situation->getCartesPoseesJ2Cat1())){
+                                        $tapis['pose_j2cat1'] = json_decode($situation->getCartesPoseesJ2Cat1());
+                                    }else {
+                                        $tapis['pose_j2cat1'] = $situation->getCartesPoseesJ2Cat1();
+                                        $tapis['pose_j2cat1'] = array();
+                                    }
+                                    if (!empty($situation->getCartesPoseesJ2Cat2())){
+                                        $tapis['pose_j2cat2'] = json_decode($situation->getCartesPoseesJ2Cat2());
+                                    }else {
+                                        $tapis['pose_j2cat2'] = $situation->getCartesPoseesJ2Cat2();
+                                        $tapis['pose_j1cat2'] = array();
+                                    }
+                                    if (!empty($situation->getCartesPoseesJ2Cat3())){
+                                        $tapis['pose_j2cat3'] = json_decode($situation->getCartesPoseesJ2Cat3());
+                                    }else {
+                                        $tapis['pose_j2cat3'] = $situation->getCartesPoseesJ2Cat3();
+                                        $tapis['pose_j2cat3'] = array();
+                                    }
+                                    if (!empty($situation->getCartesPoseesJ2Cat4())){
+                                        $tapis['pose_j2cat4'] = json_decode($situation->getCartesPoseesJ2Cat4());
+                                    }else {
+                                        $tapis['pose_j2cat4'] = $situation->getCartesPoseesJ2Cat4();
+                                        $tapis['pose_j2cat4'] = array();
+                                    }
+                                    if (!empty($situation->getCartesPoseesJ2Cat2())){
+                                        $tapis['pose_j2cat5'] = json_decode($situation->getCartesPoseesJ2Cat5());
+                                    }else {
+                                        $tapis['pose_j2cat5'] = $situation->getCartesPoseesJ2Cat5();
+                                        $tapis['pose_j2cat5'] = array();
+                                    }
+
+
+
+
+
+
+// recup des cartes defaussées : en decode si vide / en ajout tab si plein
+        if (!empty($situation->getcartesDefausseesCat1())){
+            $tapisdef['def_cat1'] = json_decode($situation->getcartesDefausseesCat1());
+        }else {
+            $tapisdef['def_cat1'] = $situation->getcartesDefausseesCat1();
+            $tapisdef['def_cat1'] = array();
+        }
+
+        if (!empty($situation->getcartesDefausseesCat2())){
+            $tapisdef['def_cat2'] = json_decode($situation->getcartesDefausseesCat2());
+        }else {
+            $tapisdef['def_cat2'] = $situation->getcartesDefausseesCat2();
+            $tapisdef['def_cat2'] = array();
+        }
+
+        if (!empty($situation->getcartesDefausseesCat3())){
+            $tapisdef['def_cat3'] = json_decode($situation->getcartesDefausseesCat3());
+        }else {
+            $tapisdef['def_cat3'] = $situation->getcartesDefausseesCat3();
+            $tapisdef['def_cat3'] = array();
+        }
+
+        if (!empty($situation->getcartesDefausseesCat4())){
+            $tapisdef['def_cat4'] = json_decode($situation->getcartesDefausseesCat4());
+        }else {
+            $tapisdef['def_cat4'] = $situation->getcartesDefausseesCat4();
+            $tapisdef['def_cat4'] = array();
+        }
+
+        if (!empty($situation->getcartesDefausseesCat5())){
+            $tapisdef['def_cat5'] = json_decode($situation->getcartesDefausseesCat5());
+        }else {
+            $tapisdef['def_cat5'] = $situation->getcartesDefausseesCat5();
+            $tapisdef['def_cat5'] = array();
+        }
 
 
         // recup tour de
         $tourde = $id->getTourde();
 
-        return $this->render(':joueur:afficherpartie.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user, 'plateau' => $plateau, 'tourde' => $tourde, 'tapis' => $tapis]);
+        return $this->render(':joueur:afficherpartie.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user, 'plateau' => $plateau, 'tourde' => $tourde, 'tapis' => $tapis, 'tapisdef' => $tapisdef]);
     }
 
     /**
@@ -240,6 +344,7 @@ class JoueurController extends Controller
 //        return $this->render(':joueur:pioche.html.twig', ['cartes' => $cartes, 'id' => $id, 'user' => $user, 'pioche' => $pioche,'partie' => $id, 'piochetab' => $piochetab, 'nouvellepioche' => $nouvellepioche, 'dernier' => $dernier]);
         return $this->redirectToRoute('afficher_partie', ['id' => $id->getId()]);
     }
+
 
 
     /**
@@ -347,32 +452,29 @@ class JoueurController extends Controller
             $categoriepose = $request->get('categoriepose');
 
             // Actu le plateau avec la carte en fonction de la cat
-            if( $categorie_carteselect == 1){
-                array_push($tapis['pose_j1cat1'],$carteselect);
-            }
-            if ( $categorie_carteselect == 2) {
-                array_push($tapis['pose_j1cat2'],$carteselect);
-            }
-            if ( $categorie_carteselect == 3){
-                array_push($tapis['pose_j1cat3'],$carteselect);
-            }
-            if ( $categorie_carteselect == 4){
-                array_push($tapis['pose_j1cat4'],$carteselect);
-            }
-            if ( $categorie_carteselect == 5){
-                array_push($tapis['pose_j1cat5'],$carteselect);
+            switch ($categorie_carteselect) {
+                case 1:
+                    array_push($tapis['pose_j1cat1'],$carteselect);
+                    break;
+                case 2:
+                    array_push($tapis['pose_j1cat2'],$carteselect);
+                    break;
+                case 3:
+                    array_push($tapis['pose_j1cat3'],$carteselect);
+                    break;
+                case 4:
+                    array_push($tapis['pose_j1cat4'],$carteselect);
+                    break;
+                case 5:
+                    array_push($tapis['pose_j1cat5'],$carteselect);
+                    break;
             }
             $em = $this->getDoctrine()->getManager();
 
-            //Set dans la catégorie 1
             $situation->setCartesPoseesJ1Cat1(json_encode($tapis['pose_j1cat1']));
-            //Set dans la catégorie 2
             $situation->setCartesPoseesJ1Cat2(json_encode($tapis['pose_j1cat2']));
-            //Set dans la catégorie 3
             $situation->setCartesPoseesJ1Cat3(json_encode($tapis['pose_j1cat3']));
-            //Set dans la catégorie 4
             $situation->setCartesPoseesJ1Cat4(json_encode($tapis['pose_j1cat4']));
-            //Set dans la catégorie 5
             $situation->setCartesPoseesJ1Cat5(json_encode($tapis['pose_j1cat5']));
 
 
@@ -404,33 +506,29 @@ class JoueurController extends Controller
             $categoriepose = $request->get('categoriepose');
 
             // Actu le plateau avec la carte en fonction de la cat
-            if( $categorie_carteselect == 1){
-                array_push($tapis['pose_j2cat1'],$carteselect);
-            }
-            if ( $categorie_carteselect == 2)
-            {
-                array_push($tapis['pose_j2cat2'],$carteselect);
-            }
-            if ( $categorie_carteselect == 3){
-                array_push($tapis['pose_j2cat3'],$carteselect);
-            }
-            if ( $categorie_carteselect == 4){
-                array_push($tapis['pose_j2cat4'],$carteselect);
-            }
-            if ( $categorie_carteselect == 5){
-                array_push($tapis['pose_j2cat5'],$carteselect);
+            switch ($categorie_carteselect) {
+                case 1:
+                    array_push($tapis['pose_j2cat1'],$carteselect);
+                    break;
+                case 2:
+                    array_push($tapis['pose_j2cat2'],$carteselect);
+                    break;
+                case 3:
+                    array_push($tapis['pose_j2cat3'],$carteselect);
+                    break;
+                case 4:
+                    array_push($tapis['pose_j2cat4'],$carteselect);
+                    break;
+                case 5:
+                    array_push($tapis['pose_j2cat5'],$carteselect);
+                    break;
             }
             $em = $this->getDoctrine()->getManager();
 
-            //Set dans la catégorie 1
             $situation->setCartesPoseesJ2Cat1(json_encode($tapis['pose_j2cat1']));
-            //Set dans la catégorie 2
             $situation->setCartesPoseesJ2Cat2(json_encode($tapis['pose_j2cat2']));
-            //Set dans la catégorie 3
             $situation->setCartesPoseesJ2Cat3(json_encode($tapis['pose_j2cat3']));
-            //Set dans la catégorie 4
             $situation->setCartesPoseesJ2Cat4(json_encode($tapis['pose_j2cat4']));
-            //Set dans la catégorie 5
             $situation->setCartesPoseesJ2Cat5(json_encode($tapis['pose_j2cat5']));
 
 
@@ -451,16 +549,255 @@ class JoueurController extends Controller
         }
 
 
-//        return $this->render(':joueur:poser.html.twig', ['plateau' => $plateau, 'partie' => $id, 'carteselect' => $carteselect]);
+//        return $this->render(':joueur:poser.html.twig', ['plateau' => $plateau, 'partie' => $id, 'carteselect' => $carteselect, 'j2_cat4' => $tapis['pose_j2cat5'], 'j1_cat4' => $tapis['pose_j1cat5']]);
         return $this->redirectToRoute('afficher_partie', ['id' => $id->getId(), 'tapis' => $tapis]);
     }
 
-    private function supprimeCarteMain($mainj1,$cartecheck)
+    /**
+     * @param Parties $id
+     * @Route("/defausser/{id}", name="defausser_carte")
+     */
+    public function defausserCartePartieAction(Parties $id, Request $request)
+    {
+        $cartes = $this->getDoctrine()->getRepository('AppBundle:Cartes')->getAll();
+        $user = $this->getUser();
+        $situation = $id->getSituation();
+
+        // récuperer l'id des deux joueurs
+        $j1=$id->getJoueur1();
+        $idj1=$j1->getId();
+
+        $j2=$id->getJoueur2();
+        $idj2=$j2->getId();
+
+        // joueur actif
+        $jactif = $user->getId();
+
+        // recup tour de
+        $tourde = $id->getTourde();
+
+        // recup du plateau des mains des joueurs
+        $plateau['mainJ1'] = json_decode($situation->getMainJ1());
+        $plateau['mainJ2'] = json_decode($situation->getMainJ2());
+        $main_j1=$plateau['mainJ1'];
+        $main_j2=$plateau['mainJ2'];
+
+
+        // recup des cartes defaussées : en decode si vide / en ajout tab si plein
+        if (!empty($situation->getcartesDefausseesCat1())){
+            $tapisdef['def_cat1'] = json_decode($situation->getcartesDefausseesCat1());
+        }else {
+            $tapisdef['def_cat1'] = $situation->getcartesDefausseesCat1();
+            $tapisdef['def_cat1'] = array();
+        }
+
+        if (!empty($situation->getcartesDefausseesCat2())){
+            $tapisdef['def_cat2'] = json_decode($situation->getcartesDefausseesCat2());
+        }else {
+            $tapisdef['def_cat2'] = $situation->getcartesDefausseesCat2();
+            $tapisdef['def_cat2'] = array();
+        }
+
+        if (!empty($situation->getcartesDefausseesCat3())){
+            $tapisdef['def_cat3'] = json_decode($situation->getcartesDefausseesCat3());
+        }else {
+            $tapisdef['def_cat3'] = $situation->getcartesDefausseesCat3();
+            $tapisdef['def_cat3'] = array();
+        }
+
+        if (!empty($situation->getcartesDefausseesCat4())){
+            $tapisdef['def_cat4'] = json_decode($situation->getcartesDefausseesCat4());
+        }else {
+            $tapisdef['def_cat4'] = $situation->getcartesDefausseesCat4();
+            $tapisdef['def_cat4'] = array();
+        }
+
+        if (!empty($situation->getcartesDefausseesCat5())){
+            $tapisdef['def_cat5'] = json_decode($situation->getcartesDefausseesCat5());
+        }else {
+            $tapisdef['def_cat5'] = $situation->getcartesDefausseesCat5();
+            $tapisdef['def_cat5'] = array();
+        }
+
+
+        // recup de la carte select
+        $carteselect = $request->get('carteselect');
+        $categorie_carteselect = $cartes[$carteselect]->getCategorie()->getId();
+
+
+        // Actu le plateau avec la carte en fonction de la cat
+        switch ($categorie_carteselect) {
+            case 1:
+                array_push($tapisdef['def_cat1'],$carteselect);
+                break;
+            case 2:
+                array_push($tapisdef['def_cat2'],$carteselect);
+                break;
+            case 3:
+                array_push($tapisdef['def_cat3'],$carteselect);
+                break;
+            case 4:
+                array_push($tapisdef['def_cat4'],$carteselect);
+                break;
+            case 5:
+                array_push($tapisdef['def_cat5'],$carteselect);
+                break;
+        }
+        $em = $this->getDoctrine()->getManager();
+
+
+        $situation->setcartesDefausseesCat1(json_encode($tapisdef['def_cat1']));
+        $situation->setcartesDefausseesCat2(json_encode($tapisdef['def_cat2']));
+        $situation->setcartesDefausseesCat3(json_encode($tapisdef['def_cat3']));
+        $situation->setcartesDefausseesCat4(json_encode($tapisdef['def_cat4']));
+        $situation->setcartesDefausseesCat5(json_encode($tapisdef['def_cat5']));
+
+        $partie=$situation->getId();
+        $em->persist($situation);
+        $em->flush();
+
+
+
+        if ($jactif == $idj1){
+            $main_j1=$plateau['mainJ1'];
+
+            // recup de la carte select
+            $carteselect = $request->get('carteselect');
+            $categorie_carteselect = $cartes[$carteselect]->getCategorie()->getId();
+
+
+            $main_j1 = array();
+            $main_j1 = $plateau['mainJ1'];
+            $new_main_j1 = $this->supprimeCarteMain($main_j1,$carteselect);
+
+            $em = $this->getDoctrine()->getManager();
+            $new_main_j1_encode = json_encode($new_main_j1);
+            $situation->setMainJ1($new_main_j1_encode);
+            $em->persist($situation);
+            $em->flush();
+        }
+
+        if ($jactif == $idj2){
+            $main_j2=$plateau['mainJ2'];
+
+            // recup de la carte select
+            $carteselect = $request->get('carteselect');
+            $categorie_carteselect = $cartes[$carteselect]->getCategorie()->getId();
+
+
+            $main_j2 = array();
+            $main_j2 = $plateau['mainJ2'];
+            $new_main_j2 = $this->supprimeCarteMain($main_j2,$carteselect);
+
+            $em = $this->getDoctrine()->getManager();
+            $new_main_j2_encode = json_encode($new_main_j2);
+            $situation->setMainJ2($new_main_j2_encode);
+            $em->persist($situation);
+            $em->flush();
+        }
+
+
+//                return $this->render(':joueur:defausser.html.twig', ['plateau' => $plateau, 'partie' => $id, 'carteselect' => $carteselect, 'tapisdef' => $tapisdef, 'def_cat4' => $tapisdef['def_cat5']]);
+        return $this->redirectToRoute('afficher_partie', ['id' => $id->getId(), 'tapisdef' => $tapisdef]);
+    }
+
+    /**
+     * @param Parties $id
+     * @Route("/piocher_def1/{id}", name="piocher_def1_carte")
+     */
+    public function piocherDef1CarteAction(Parties $id)
+    {
+
+        $cartes = $this->getDoctrine()->getRepository('AppBundle:Cartes')->getAll();
+        $user = $this->getUser();
+        $situation = $id->getSituation();
+
+
+        $pioche_def1 = $situation->getcartesDefausseesCat1();
+            $piochetab1 = json_decode($pioche_def1);
+
+            // selectionner le dernier élément du tableau pioche dans dernier
+            $dernier=array_pop($piochetab1);
+
+            // nouvelle pioche sans le $dernier
+            $nouvellepioche1 = array_diff($piochetab1, [$dernier]);
+
+            // récuperer l'id des deux joueurs
+            $j1=$id->getJoueur1();
+            $idj1=$j1->getId();
+
+            $j2=$id->getJoueur2();
+            $idj2=$j2->getId();
+
+            // joueur actif
+            $jactif = $user->getId();
+
+            // recup tour de
+            $tourde = $id->getTourde();
+
+
+            if ($tourde == $jactif){
+                // Si je joueur actif = à l'id du joueur 1
+                if ($jactif ==  $idj1 ){
+                    $plateau['mainJ1'] = json_decode($situation->getMainJ1());
+                    $mainj1 = $plateau['mainJ1'];
+
+                    //   ajout de dernier dans main du joueur 1
+                    $mainj1[]=$dernier;
+                    $situation->setMainJ1($mainj1);
+
+                    //  on remet les tableaux en json avec les nouvelles valeurs dans la bdd
+                    $em = $this->getDoctrine()->getManager();
+                    $situation->setMainJ1(json_encode($mainj1));
+                    $situation->setcartesDefausseesCat1(json_encode($nouvellepioche1));
+                    $em->persist($situation);
+                    $em->flush();
+
+                    // gestion tour
+                    $em = $this->getDoctrine()->getManager();
+                    $nouveautour = $idj2;
+                    $id->setTourde($nouveautour);
+                    $em->persist($id);
+                    $em->flush();
+                }
+
+
+                // Si je joueur actif = à l'id du joueur 2
+                if ($jactif ==  $idj2 ){
+                    $plateau['mainJ2'] = json_decode($situation->getMainJ2());
+                    $mainj2 = $plateau['mainJ2'];
+
+                    //   ajout de dernier dans main du joueur 2
+                    $mainj2[]=$dernier;
+                    $situation->setMainJ2($mainj2);
+
+                    //   on remet les tableaux en json avec les nouvelles valeurs dans la bdd
+                    $em = $this->getDoctrine()->getManager();
+                    $situation->setMainJ2(json_encode($mainj2));
+                    $situation->setcartesDefausseesCat1(json_encode($nouvellepioche1));
+                    $em->persist($situation);
+                    $em->flush();
+
+                    // gestion tour
+                    $em = $this->getDoctrine()->getManager();
+                    $nouveautour = $idj1;
+                    $id->setTourde($nouveautour);
+                    $em->persist($id);
+                    $em->flush();
+                }
+            }
+
+        return $this->redirectToRoute('afficher_partie', ['id' => $id->getId()]);
+    }
+
+
+
+    private function supprimeCarteMain($mainj1,$carteselect)
     {
         $t =array();
         foreach ($mainj1 as $m)
         {
-            if ($m != $cartecheck)
+            if ($m != $carteselect)
             {
                 $t[] = $m;
             }
@@ -468,8 +805,6 @@ class JoueurController extends Controller
 
         return $t;
     }
-
-
 
 
 }

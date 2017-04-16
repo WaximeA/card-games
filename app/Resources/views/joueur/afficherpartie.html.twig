@@ -3,7 +3,9 @@
 {% block body %}
     <h1>Partie entre {{ partie.joueur1.username }} et {{ partie.joueur2.username }}</h1>
     <div class="container">
-        <form action="{{ path('poser_carte', {id:partie.id}) }}" method="get" id="1">
+
+        <form name="form1" method="get" id="1">
+
                         <div>
                             <table class="table table-bordered">
                                 {# afficher les carte de l'adversaire #}
@@ -67,11 +69,36 @@
 
                                {# NOMS - ZONE CATEGORIES#}
                                 <tr class="info">
-                                    <td>ECAILLES (bleu)</td>
-                                    <td>PLUMES (jaune)</td>
-                                    <td>POILS (violet)</td>
-                                    <td>ALIENS (vert)</td>
-                                    <td>CORNE (rouge)</td>
+                                    <td>
+                                        ECAILLES (bleu)
+                                        {% for carte in tapisdef.def_cat1 %}
+                                            {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        PLUMES (jaune)
+                                        {% for carte in tapisdef.def_cat2 %}
+                                            {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        POILS (violet)
+                                        {% for carte in tapisdef.def_cat3 %}
+                                            {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        ALIENS (vert)
+                                        {% for carte in tapisdef.def_cat4 %}
+                                            {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        CORNE (rouge)
+                                        {% for carte in tapisdef.def_cat5 %}
+                                            {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                        {% endfor %}
+                                    </td>
                                 </tr>
 
                                 {# afficher les carte du joueur actif #}
@@ -177,18 +204,59 @@
 
                         </div>
                     {% endif %}
-            <button type="submit" value="palcer_carte" id="1">Placer cette carte</button>
+
+            {% if tourde == user.id %}
+                <button type="button" value="placer" name="placer" id="placer" onclick="return OnButton1();">Placer cette carte</button>
+                <button type="button" value="defausser" name="defausser" id="defausser" onclick="return OnButton2();">Defausser cette carte</button>
+                <br><br>
+                <button type="button" value="piocher" name="piocher" id="piocher" onclick="return OnButton0();">Piocher une carte</button>
+                <button type="button" value="piocher_def1" name="piocher_def1" id="piocher_def1" onclick="return OnButton3();">Piocher chez les écailles</button>
+            {% else  %}
+                <p>Vous ne pouvez pas jouer, l'adversaire est en train de jouer</p>
+            {% endif %}
+
+
         </form>
+
+
+
 
     {{ dump(partie.situation) }}
 
     <h2>tour de : {{ dump(tourde) }}</h2>
 
     <h2>Joueur n° : {{ dump(user.id) }}</h2>
-    {% if tourde == user.id %}
-        <a href="{{ path('piocher_carte', {id:partie.id}) }}" class="piocher">PIOCHE</a>
-    {% else  %}
-        <p>Vous ne pouvez pas jouer, l'adversaire est en train de jouer</p>
-    {% endif %}
+
     </div>
+{% endblock %}
+
+{# Modifier l'action du formulaire en fonction du bouton #}
+{% block javascripts %}
+    <script>
+
+    function OnButton0()
+        {
+            document.form1.action = "{{ path('piocher_carte', {id:partie.id}) }}"
+            document.form1.submit();
+        }
+
+    function OnButton1()
+    {
+        document.form1.action = "{{ path('poser_carte', {id:partie.id}) }}"
+        document.form1.submit();
+    }
+
+    function OnButton2()
+    {
+        document.form1.action = "{{ path('defausser_carte', {id:partie.id}) }}"
+        document.form1.submit();
+    }
+
+    function OnButton3()
+    {
+        document.form1.action = "{{ path('piocher_def1_carte', {id:partie.id}) }}"
+        document.form1.submit();
+    }
+    </script>
+
 {% endblock %}
