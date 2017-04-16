@@ -428,105 +428,108 @@ class Situation
 
 
 
+
+
 //                   *--------- DEFAUSSE DEBUT ---------*
-//                                  *--------- DEFAUSSE J1 DEBUT ---------*
+//
+//    /**
+//     * @var array
+//     *
+//     * @ORM\Column(name="defausse", type="array", nullable=true)
+//     */
+//    private $defausse;
 
-
-    /**
-     * @var array
-     *
-     * @ORM\Column(name="defausse", type="array", nullable=true)
-     */
-    private $defausse;
-
-    // Cartes defaussées -> 5 catégries -> J1
+    // Cartes defaussées -> 5 catégries
                     /**
                      * @var array
                      *
-                     * @ORM\Column(name="cartes_defaussees_j1_cat1", type="json_array", nullable=true)
+                     * @ORM\Column(name="cartes_defaussees_cat1", type="json_array", nullable=true)
                      */
-                    private $cartesDefausseesJ1Cat1;
+                    private $cartesDefausseesCat1;
+
                                 /**
-                                 * Set cartesDefausseesJ1Cat1
+                                 * Set cartesDefausseesCat1
                                  *
-                                 * @param array $cartesDefausseesJ1Cat1
+                                 * @param array $cartesDefausseesCat1
                                  *
                                  * @return Situation
                                  */
-                                public function setcartesDefausseesJ1Cat1($cartesDefausseesJ1Cat1)
+                                public function setcartesDefausseesCat1($cartesDefausseesCat1)
                                 {
-                                    $this->defausse = $cartesDefausseesJ1Cat1;
+                                    $this->cartesDefausseesCat1 = $cartesDefausseesCat1;
                                     return $this;
                                 }
 
                                 /**
-                                 * Get cartesDefausseesJ1Cat1
+                                 * Get cartesDefausseesCat1
                                  *
                                  * @return array
                                  */
-                                public function getcartesDefausseesJ1Cat1()
+                                public function getcartesDefausseesCat1()
                                 {
-                                    return $this->cartesDefausseesJ1Cat1;
-                                }
-
-
-                    /**
-                     * @var array
-                     *
-                     * @ORM\Column(name="cartes_defaussees_j1_cat2", type="json_array", nullable=true)
-                     */
-                    private $cartesDefausseesJ1Cat2;
-                                /**
-                                 * Set cartesDefausseesJ1Cat2
-                                 *
-                                 * @param array $cartesDefausseesJ1Cat2
-                                 *
-                                 * @return Situation
-                                 */
-                                public function setcartesDefausseesJ1Cat2($cartesDefausseesJ1Cat2)
-                                {
-                                    $this->defausse = $cartesDefausseesJ1Cat2;
-                                    return $this;
-                                }
-
-                                /**
-                                 * Get cartesDefausseesJ1Cat2
-                                 *
-                                 * @return array
-                                 */
-                                public function getcartesDefausseesJ1Cat2()
-                                {
-                                    return $this->cartesDefausseesJ1Cat2;
+                                    return $this->cartesDefausseesCat1;
                                 }
 
 
                     /**
                      * @var array
                      *
-                     * @ORM\Column(name="cartes_defaussees_j1_cat3", type="json_array", nullable=true)
+                     * @ORM\Column(name="cartes_defaussees_cat2", type="json_array", nullable=true)
                      */
-                    private $cartesDefausseesJ1Cat3;
+                    private $cartesDefausseesCat2;
+
                                 /**
-                                 * Set cartesDefausseesJ1Cat3
+                                 * Set cartesDefausseesCat2
                                  *
-                                 * @param array $cartesDefausseesJ1Cat3
+                                 * @param array $cartesDefausseesCat2
                                  *
                                  * @return Situation
                                  */
-                                public function setcartesDefausseesJ1Cat3($cartesDefausseesJ1Cat3)
+                                public function setcartesDefausseesCat2($cartesDefausseesCat2)
                                 {
-                                    $this->defausse = $cartesDefausseesJ1Cat3;
+                                    $this->cartesDefausseesCat2 = $cartesDefausseesCat2;
                                     return $this;
                                 }
 
                                 /**
-                                 * Get cartesDefausseesJ1Cat3
+                                 * Get cartesDefausseesCat2
                                  *
                                  * @return array
                                  */
-                                public function getcartesDefausseesJ1Cat3()
+                                public function getcartesDefausseesCat2()
                                 {
-                                    return $this->cartesDefausseesJ1Cat3;
+                                    return $this->cartesDefausseesCat2;
+                                }
+
+
+                    /**
+                     * @var array
+                     *
+                     * @ORM\Column(name="cartes_defaussees_cat3", type="json_array", nullable=true)
+                     */
+                    private $cartesDefausseesCat3;
+
+                                /**
+                                 * Set cartesDefausseesCat3
+                                 *
+                                 * @param array $cartesDefausseesCat3
+                                 *
+                                 * @return Situation
+                                 */
+                                public function setcartesDefausseesCat3($cartesDefausseesCat3)
+                                {
+                                    $this->cartesDefausseesCat3 = $cartesDefausseesCat3;
+                                    return $this;
+                                }
+
+                                /**
+                                 * Get cartesDefausseesCat3
+                                 *
+                                 * @return array
+                                 */
+                                public function getcartesDefausseesCat3()
+                                {
+                                    return $this->cartesDefausseesCat3;
                                 }
 
 
@@ -534,208 +537,64 @@ class Situation
                     /**
                      * @var array
                      *
-                     * @ORM\Column(name="cartes_defaussees_j1_cat4", type="json_array", nullable=true)
+                     * @ORM\Column(name="cartes_defaussees_cat4", type="json_array", nullable=true)
                      */
-                    private $cartesDefausseesJ1Cat4;
+                    private $cartesDefausseesCat4;
+
                                 /**
-                                 * Set cartesDefausseesJ1Cat4
+                                 * Set cartesDefausseesCat4
                                  *
-                                 * @param array $cartesDefausseesJ1Cat4
+                                 * @param array $cartesDefausseesCat4
                                  *
                                  * @return Situation
                                  */
-                                public function setcartesDefausseesJ1Cat4($cartesDefausseesJ1Cat4)
+                                public function setcartesDefausseesCat4($cartesDefausseesCat4)
                                 {
-                                    $this->defausse = $cartesDefausseesJ1Cat4;
+                                    $this->cartesDefausseesCat4 = $cartesDefausseesCat4;
                                     return $this;
                                 }
 
                                 /**
-                                 * Get cartesDefausseesJ1Cat4
+                                 * Get cartesDefausseesCat4
                                  *
                                  * @return array
                                  */
-                                public function getcartesDefausseesJ1Cat4()
+                                public function getcartesDefausseesCat4()
                                 {
-                                    return $this->cartesDefausseesJ1Cat4;
+                                    return $this->cartesDefausseesCat4;
                                 }
 
 
                     /**
                      * @var array
                      *
-                     * @ORM\Column(name="cartes_defaussees_j1_cat5", type="json_array", nullable=true)
+                     * @ORM\Column(name="cartes_defaussees_cat5", type="json_array", nullable=true)
                      */
-                    private $cartesDefausseesJ1Cat5;
+                    private $cartesDefausseesCat5;
                                 /**
-                                 * Set cartesDefausseesJ1Cat5
+                                 * Set cartesDefausseesCat5
                                  *
-                                 * @param array $cartesDefausseesJ1Cat5
+                                 * @param array $cartesDefausseesCat5
                                  *
                                  * @return Situation
                                  */
-                                public function setcartesDefausseesJ1Cat5($cartesDefausseesJ1Cat5)
+                                public function setcartesDefausseesCat5($cartesDefausseesCat5)
                                 {
-                                    $this->defausse = $cartesDefausseesJ1Cat5;
+                                    $this->cartesDefausseesCat5 = $cartesDefausseesCat5;
                                     return $this;
                                 }
 
                                 /**
-                                 * Get cartesDefausseesJ1Cat5
+                                 * Get cartesDefausseesCat5
                                  *
                                  * @return array
                                  */
-                                public function getcartesDefausseesJ1Cat5()
+                                public function getcartesDefausseesCat5()
                                 {
-                                    return $this->cartesDefausseesJ1Cat5;
+                                    return $this->cartesDefausseesCat5;
                                 }
 
 
-    // Cartes defaussées -> 5 catégries -> J2
-                    /**
-                     * @var array
-                     *
-                     * @ORM\Column(name="cartes_defaussees_j2_cat1", type="json_array", nullable=true)
-                     */
-                    private $cartesDefausseesJ2Cat1;
-                                /**
-                                 * Set cartesDefausseesJ2Cat1
-                                 *
-                                 * @param array $cartesDefausseesJ2Cat1
-                                 *
-                                 * @return Situation
-                                 */
-                                public function setcartesDefausseesJ2Cat1($cartesDefausseesJ2Cat1)
-                                {
-                                    $this->defausse = $cartesDefausseesJ2Cat1;
-                                    return $this;
-                                }
-
-                                /**
-                                 * Get cartesDefausseesJ2Cat1
-                                 *
-                                 * @return array
-                                 */
-                                public function getcartesDefausseesJ2Cat1()
-                                {
-                                    return $this->cartesDefausseesJ2Cat1;
-                                }
-
-                    /**
-                     * @var array
-                     *
-                     * @ORM\Column(name="cartes_defaussees_j2_cat2", type="json_array", nullable=true)
-                     */
-                    private $cartesDefausseesJ2Cat2;
-                                /**
-                                 * Set cartesDefausseesJ2Cat2
-                                 *
-                                 * @param array $cartesDefausseesJ2Cat2
-                                 *
-                                 * @return Situation
-                                 */
-                                public function setcartesDefausseesJ2Cat2($cartesDefausseesJ2Cat2)
-                                {
-                                    $this->defausse = $cartesDefausseesJ2Cat2;
-                                    return $this;
-                                }
-
-                                /**
-                                 * Get cartesDefausseesJ2Cat2
-                                 *
-                                 * @return array
-                                 */
-                                public function getcartesDefausseesJ2Cat2()
-                                {
-                                    return $this->cartesDefausseesJ2Cat2;
-                                }
-
-                    /**
-                     * @var array
-                     *
-                     * @ORM\Column(name="cartes_defaussees_j2_cat3", type="json_array", nullable=true)
-                     */
-                    private $cartesDefausseesJ2Cat3;
-                                /**
-                                 * Set cartesDefausseesJ2Cat3
-                                 *
-                                 * @param array $cartesDefausseesJ2Cat3
-                                 *
-                                 * @return Situation
-                                 */
-                                public function setcartesDefausseesJ2Cat3($cartesDefausseesJ2Cat3)
-                                {
-                                    $this->defausse = $cartesDefausseesJ2Cat3;
-                                    return $this;
-                                }
-
-                                /**
-                                 * Get cartesDefausseesJ2Cat3
-                                 *
-                                 * @return array
-                                 */
-                                public function getcartesDefausseesJ2Cat3()
-                                {
-                                    return $this->cartesDefausseesJ2Cat3;
-                                }
-
-                    /**
-                     * @var array
-                     *
-                     * @ORM\Column(name="cartes_defaussees_j2_cat4", type="json_array", nullable=true)
-                     */
-                    private $cartesDefausseesJ2Cat4;
-                                /**
-                                 * Set cartesDefausseesJ2Cat4
-                                 *
-                                 * @param array $cartesDefausseesJ2Cat4
-                                 *
-                                 * @return Situation
-                                 */
-                                public function setcartesDefausseesJ2Cat4($cartesDefausseesJ2Cat4)
-                                {
-                                    $this->defausse = $cartesDefausseesJ2Cat4;
-                                    return $this;
-                                }
-
-                                /**
-                                 * Get cartesDefausseesJ2Cat4
-                                 *
-                                 * @return array
-                                 */
-                                public function getcartesDefausseesJ2Cat4()
-                                {
-                                    return $this->cartesDefausseesJ2Cat4;
-                                }
-
-                    /**
-                     * @var array
-                     *
-                     * @ORM\Column(name="cartes_defaussees_j2_cat5", type="json_array", nullable=true)
-                     */
-                    private $cartesDefausseesJ2Cat5;
-                                /**
-                                 * Set cartesDefausseesJ2Cat5
-                                 *
-                                 * @param array $cartesDefausseesJ2Cat5
-                                 *
-                                 * @return Situation
-                                 */
-                                public function setcartesDefausseesJ2Cat5($cartesDefausseesJ2Cat5)
-                                {
-                                    $this->defausse = $cartesDefausseesJ2Cat5;
-                                    return $this;
-                                }
-
-                                /**
-                                 * Get cartesDefausseesJ2Cat5
-                                 *
-                                 * @return array
-                                 */
-                                public function getcartesDefausseesJ2Cat5()
-                                {
-                                    return $this->cartesDefausseesJ2Cat5;
-                                }
 
 //    /**
 //     * Set defausse
@@ -759,9 +618,6 @@ class Situation
 //    {
 //        return $this->defausse;
 //    }
-
-
-
 
 //                   *--------- DEFAUSSE FIN ---------*
 
