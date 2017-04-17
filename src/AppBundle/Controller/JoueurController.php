@@ -375,7 +375,9 @@ class JoueurController extends Controller
         $plateau['mainJ2'] = json_decode($situation->getMainJ2());
 
 
-        // recup des cartes posées j1 : en decode si vide / en ajout tab si plein
+
+
+            // recup des cartes posées j1 : en decode si vide / en ajout tab si plein
         if (!empty($situation->getCartesPoseesJ1Cat1())){
             $tapis['pose_j1cat1'] = json_decode($situation->getCartesPoseesJ1Cat1());
         }else {
@@ -439,35 +441,187 @@ class JoueurController extends Controller
             $tapis['pose_j2cat5'] = array();
         }
 
+        // recup de la carte select
+        $carteselect = $request->get('carteselect');
+        $dernière_carte_cat =1;
 
         // Joueur 1
-        if ($jactif == $idj1){
+        if ($jactif == $idj1) {
             $main_j1 = $plateau['mainJ1'];
 
             // recup de la carte select
             $carteselect = $request->get('carteselect');
             $categorie_carteselect = $cartes[$carteselect]->getCategorie()->getId();
+            $valeur_carte_select = $cartes[$carteselect]->getValeur();
 
-            // recup categorie
-            $categoriepose = $request->get('categoriepose');
+            if ($categorie_carteselect == 1 ) {
+                if (empty($tapis['pose_j1cat1'])){
+                    array_push($tapis['pose_j1cat1'], $carteselect);
 
-            // Actu le plateau avec la carte en fonction de la cat
-            switch ($categorie_carteselect) {
-                case 1:
-                    array_push($tapis['pose_j1cat1'],$carteselect);
-                    break;
-                case 2:
-                    array_push($tapis['pose_j1cat2'],$carteselect);
-                    break;
-                case 3:
-                    array_push($tapis['pose_j1cat3'],$carteselect);
-                    break;
-                case 4:
-                    array_push($tapis['pose_j1cat4'],$carteselect);
-                    break;
-                case 5:
-                    array_push($tapis['pose_j1cat5'],$carteselect);
-                    break;
+                    $main_j1 = array();
+                    $main_j1 = $plateau['mainJ1'];
+                    $new_main_j1 = $this->supprimeCarteMain($main_j1,$carteselect);
+
+                    $em = $this->getDoctrine()->getManager();
+                    $new_main_j1_encode = json_encode($new_main_j1);
+                    $situation->setMainJ1($new_main_j1_encode);
+                    $em->persist($situation);
+                    $em->flush();
+                } else {
+                    $derniere_carte = $this->derniereCarte($tapis['pose_j1cat1']);
+                    $valeur_carte_avant = $cartes[$derniere_carte]->getValeur();
+                    if ($valeur_carte_avant <= $valeur_carte_select) {
+                        array_push($tapis['pose_j1cat1'], $carteselect);
+
+                        $main_j1 = array();
+                        $main_j1 = $plateau['mainJ1'];
+                        $new_main_j1 = $this->supprimeCarteMain($main_j1,$carteselect);
+
+                        $em = $this->getDoctrine()->getManager();
+                        $new_main_j1_encode = json_encode($new_main_j1);
+                        $situation->setMainJ1($new_main_j1_encode);
+                        $em->persist($situation);
+                        $em->flush();
+                    } else {
+                        //message d'erreur
+                    }
+                }
+            }
+
+            if ($categorie_carteselect == 2 ) {
+                if (empty($tapis['pose_j1cat2'])){
+                    array_push($tapis['pose_j1cat2'], $carteselect);
+
+                    $main_j1 = array();
+                    $main_j1 = $plateau['mainJ1'];
+                    $new_main_j1 = $this->supprimeCarteMain($main_j1,$carteselect);
+
+                    $em = $this->getDoctrine()->getManager();
+                    $new_main_j1_encode = json_encode($new_main_j1);
+                    $situation->setMainJ1($new_main_j1_encode);
+                    $em->persist($situation);
+                    $em->flush();
+                } else {
+                    $derniere_carte = $this->derniereCarte($tapis['pose_j1cat2']);
+                    $valeur_carte_avant = $cartes[$derniere_carte]->getValeur();
+                    if ($valeur_carte_avant <= $valeur_carte_select) {
+                        array_push($tapis['pose_j1cat2'], $carteselect);
+
+                        $main_j1 = array();
+                        $main_j1 = $plateau['mainJ1'];
+                        $new_main_j1 = $this->supprimeCarteMain($main_j1,$carteselect);
+
+                        $em = $this->getDoctrine()->getManager();
+                        $new_main_j1_encode = json_encode($new_main_j1);
+                        $situation->setMainJ1($new_main_j1_encode);
+                        $em->persist($situation);
+                        $em->flush();
+                    } else {
+                        //message d'erreur
+                    }
+                }
+            }
+
+            if ($categorie_carteselect == 3 ) {
+                if (empty($tapis['pose_j1cat3'])){
+                    array_push($tapis['pose_j1cat3'], $carteselect);
+
+                    $main_j1 = array();
+                    $main_j1 = $plateau['mainJ1'];
+                    $new_main_j1 = $this->supprimeCarteMain($main_j1,$carteselect);
+
+                    $em = $this->getDoctrine()->getManager();
+                    $new_main_j1_encode = json_encode($new_main_j1);
+                    $situation->setMainJ1($new_main_j1_encode);
+                    $em->persist($situation);
+                    $em->flush();
+                } else {
+                    $derniere_carte = $this->derniereCarte($tapis['pose_j1cat3']);
+                    $valeur_carte_avant = $cartes[$derniere_carte]->getValeur();
+                    if ($valeur_carte_avant <= $valeur_carte_select) {
+                        array_push($tapis['pose_j1cat3'], $carteselect);
+
+                        $main_j1 = array();
+                        $main_j1 = $plateau['mainJ1'];
+                        $new_main_j1 = $this->supprimeCarteMain($main_j1,$carteselect);
+
+                        $em = $this->getDoctrine()->getManager();
+                        $new_main_j1_encode = json_encode($new_main_j1);
+                        $situation->setMainJ1($new_main_j1_encode);
+                        $em->persist($situation);
+                        $em->flush();
+                    } else {
+                        //message d'erreur
+                    }
+                }
+            }
+
+            if ($categorie_carteselect == 4 ) {
+                if (empty($tapis['pose_j1cat4'])){
+                    array_push($tapis['pose_j1cat4'], $carteselect);
+
+                    $main_j1 = array();
+                    $main_j1 = $plateau['mainJ1'];
+                    $new_main_j1 = $this->supprimeCarteMain($main_j1,$carteselect);
+
+                    $em = $this->getDoctrine()->getManager();
+                    $new_main_j1_encode = json_encode($new_main_j1);
+                    $situation->setMainJ1($new_main_j1_encode);
+                    $em->persist($situation);
+                    $em->flush();
+                } else {
+                    $derniere_carte = $this->derniereCarte($tapis['pose_j1cat4']);
+                    $valeur_carte_avant = $cartes[$derniere_carte]->getValeur();
+                    if ($valeur_carte_avant <= $valeur_carte_select) {
+                        array_push($tapis['pose_j1cat4'], $carteselect);
+
+                        $main_j1 = array();
+                        $main_j1 = $plateau['mainJ1'];
+                        $new_main_j1 = $this->supprimeCarteMain($main_j1,$carteselect);
+
+                        $em = $this->getDoctrine()->getManager();
+                        $new_main_j1_encode = json_encode($new_main_j1);
+                        $situation->setMainJ1($new_main_j1_encode);
+                        $em->persist($situation);
+                        $em->flush();
+                    } else {
+                        //message d'erreur
+                    }
+                }
+            }
+
+            if ($categorie_carteselect == 5 ) {
+                if (empty($tapis['pose_j1cat5'])){
+                    array_push($tapis['pose_j1cat5'], $carteselect);
+
+                    $main_j1 = array();
+                    $main_j1 = $plateau['mainJ1'];
+                    $new_main_j1 = $this->supprimeCarteMain($main_j1,$carteselect);
+
+                    $em = $this->getDoctrine()->getManager();
+                    $new_main_j1_encode = json_encode($new_main_j1);
+                    $situation->setMainJ1($new_main_j1_encode);
+                    $em->persist($situation);
+                    $em->flush();
+                } else {
+                    $derniere_carte = $this->derniereCarte($tapis['pose_j1cat5']);
+                    $valeur_carte_avant = $cartes[$derniere_carte]->getValeur();
+                    if ($valeur_carte_avant <= $valeur_carte_select) {
+                        array_push($tapis['pose_j1cat5'], $carteselect);
+
+                        $main_j1 = array();
+                        $main_j1 = $plateau['mainJ1'];
+                        $new_main_j1 = $this->supprimeCarteMain($main_j1,$carteselect);
+
+                        $em = $this->getDoctrine()->getManager();
+                        $new_main_j1_encode = json_encode($new_main_j1);
+                        $situation->setMainJ1($new_main_j1_encode);
+                        $em->persist($situation);
+                        $em->flush();
+                    } else {
+                        //message d'erreur
+                    }
+                }
             }
             $em = $this->getDoctrine()->getManager();
 
@@ -477,21 +631,9 @@ class JoueurController extends Controller
             $situation->setCartesPoseesJ1Cat4(json_encode($tapis['pose_j1cat4']));
             $situation->setCartesPoseesJ1Cat5(json_encode($tapis['pose_j1cat5']));
 
-
             $partie=$situation->getId();
             $em->persist($situation);
             $em->flush();
-
-            $main_j1 = array();
-            $main_j1 = $plateau['mainJ1'];
-            $new_main_j1 = $this->supprimeCarteMain($main_j1,$carteselect);
-
-            $em = $this->getDoctrine()->getManager();
-            $new_main_j1_encode = json_encode($new_main_j1);
-            $situation->setMainJ1($new_main_j1_encode);
-            $em->persist($situation);
-            $em->flush();
-
         }
 
         // Joueur 2
@@ -501,29 +643,198 @@ class JoueurController extends Controller
             // recup de la carte select
             $carteselect = $request->get('carteselect');
             $categorie_carteselect = $cartes[$carteselect]->getCategorie()->getId();
+            $valeur_carte_select = $cartes[$carteselect]->getValeur();
 
-            // recup categorie
-            $categoriepose = $request->get('categoriepose');
+            if ($categorie_carteselect == 1 ) {
+                if (empty($tapis['pose_j2cat1'])){
+                    array_push($tapis['pose_j2cat1'], $carteselect);
 
-            // Actu le plateau avec la carte en fonction de la cat
-            switch ($categorie_carteselect) {
-                case 1:
-                    array_push($tapis['pose_j2cat1'],$carteselect);
-                    break;
-                case 2:
-                    array_push($tapis['pose_j2cat2'],$carteselect);
-                    break;
-                case 3:
-                    array_push($tapis['pose_j2cat3'],$carteselect);
-                    break;
-                case 4:
-                    array_push($tapis['pose_j2cat4'],$carteselect);
-                    break;
-                case 5:
-                    array_push($tapis['pose_j2cat5'],$carteselect);
-                    break;
+                    $main_j2 = array();
+                    $main_j2 = $plateau['mainJ2'];
+                    $new_main_j2 = $this->supprimeCarteMain($main_j2,$carteselect);
+
+                    $em = $this->getDoctrine()->getManager();
+                    $new_main_j2_encode = json_encode($new_main_j2);
+                    $situation->setMainJ2($new_main_j2_encode);
+                    $em->persist($situation);
+                    $em->flush();
+                } else {
+                    $derniere_carte = $this->derniereCarte($tapis['pose_j2cat1']);
+                    $valeur_carte_avant = $cartes[$derniere_carte]->getValeur();
+                    if ($valeur_carte_avant <= $valeur_carte_select) {
+                        array_push($tapis['pose_j2cat1'], $carteselect);
+
+                        $main_j2 = array();
+                        $main_j2 = $plateau['mainJ2'];
+                        $new_main_j2 = $this->supprimeCarteMain($main_j2,$carteselect);
+
+                        $em = $this->getDoctrine()->getManager();
+                        $new_main_j2_encode = json_encode($new_main_j2);
+                        $situation->setMainJ2($new_main_j2_encode);
+                        $em->persist($situation);
+                        $em->flush();
+                    } else {
+                        //message d'erreur
+                    }
+                }
+            }
+
+            if ($categorie_carteselect == 2 ) {
+                if (empty($tapis['pose_j2cat2'])){
+                    array_push($tapis['pose_j2cat2'], $carteselect);
+
+                    $main_j2 = array();
+                    $main_j2 = $plateau['mainJ2'];
+                    $new_main_j2 = $this->supprimeCarteMain($main_j2,$carteselect);
+
+                    $em = $this->getDoctrine()->getManager();
+                    $new_main_j2_encode = json_encode($new_main_j2);
+                    $situation->setMainJ2($new_main_j2_encode);
+                    $em->persist($situation);
+                    $em->flush();
+                } else {
+                    $derniere_carte = $this->derniereCarte($tapis['pose_j2cat2']);
+                    $valeur_carte_avant = $cartes[$derniere_carte]->getValeur();
+                    if ($valeur_carte_avant <= $valeur_carte_select) {
+                        array_push($tapis['pose_j2cat2'], $carteselect);
+
+                        $main_j2 = array();
+                        $main_j2 = $plateau['mainJ2'];
+                        $new_main_j2 = $this->supprimeCarteMain($main_j2,$carteselect);
+
+                        $em = $this->getDoctrine()->getManager();
+                        $new_main_j2_encode = json_encode($new_main_j2);
+                        $situation->setMainJ2($new_main_j2_encode);
+                        $em->persist($situation);
+                        $em->flush();
+                    } else {
+                        //message d'erreur
+                    }
+                }
+            }
+
+            if ($categorie_carteselect == 3 ) {
+                if (empty($tapis['pose_j2cat3'])){
+                    array_push($tapis['pose_j2cat3'], $carteselect);
+
+                    $main_j2 = array();
+                    $main_j2 = $plateau['mainJ2'];
+                    $new_main_j2 = $this->supprimeCarteMain($main_j2,$carteselect);
+
+                    $em = $this->getDoctrine()->getManager();
+                    $new_main_j2_encode = json_encode($new_main_j2);
+                    $situation->setMainJ2($new_main_j2_encode);
+                    $em->persist($situation);
+                    $em->flush();
+                } else {
+                    $derniere_carte = $this->derniereCarte($tapis['pose_j2cat3']);
+                    $valeur_carte_avant = $cartes[$derniere_carte]->getValeur();
+                    if ($valeur_carte_avant <= $valeur_carte_select) {
+                        array_push($tapis['pose_j2cat3'], $carteselect);
+
+                        $main_j2 = array();
+                        $main_j2 = $plateau['mainJ2'];
+                        $new_main_j2 = $this->supprimeCarteMain($main_j2,$carteselect);
+
+                        $em = $this->getDoctrine()->getManager();
+                        $new_main_j2_encode = json_encode($new_main_j2);
+                        $situation->setMainJ2($new_main_j2_encode);
+                        $em->persist($situation);
+                        $em->flush();
+                    } else {
+                        //message d'erreur
+                    }
+                }
+            }
+
+            if ($categorie_carteselect == 4 ) {
+                if (empty($tapis['pose_j2cat4'])){
+                    array_push($tapis['pose_j2cat4'], $carteselect);
+
+                    $main_j2 = array();
+                    $main_j2 = $plateau['mainJ2'];
+                    $new_main_j2 = $this->supprimeCarteMain($main_j2,$carteselect);
+
+                    $em = $this->getDoctrine()->getManager();
+                    $new_main_j2_encode = json_encode($new_main_j2);
+                    $situation->setMainJ2($new_main_j2_encode);
+                    $em->persist($situation);
+                    $em->flush();
+                } else {
+                    $derniere_carte = $this->derniereCarte($tapis['pose_j2cat4']);
+                    $valeur_carte_avant = $cartes[$derniere_carte]->getValeur();
+                    if ($valeur_carte_avant <= $valeur_carte_select) {
+                        array_push($tapis['pose_j2cat4'], $carteselect);
+
+                        $main_j2 = array();
+                        $main_j2 = $plateau['mainJ2'];
+                        $new_main_j2 = $this->supprimeCarteMain($main_j2,$carteselect);
+
+                        $em = $this->getDoctrine()->getManager();
+                        $new_main_j2_encode = json_encode($new_main_j2);
+                        $situation->setMainJ2($new_main_j2_encode);
+                        $em->persist($situation);
+                        $em->flush();
+                    } else {
+                        //message d'erreur
+                    }
+                }
+            }
+
+            if ($categorie_carteselect == 5 ) {
+                if (empty($tapis['pose_j2cat5'])){
+                    array_push($tapis['pose_j2cat5'], $carteselect);
+
+                    $main_j2 = array();
+                    $main_j2 = $plateau['mainJ2'];
+                    $new_main_j2 = $this->supprimeCarteMain($main_j2,$carteselect);
+
+                    $em = $this->getDoctrine()->getManager();
+                    $new_main_j2_encode = json_encode($new_main_j2);
+                    $situation->setMainJ2($new_main_j2_encode);
+                    $em->persist($situation);
+                    $em->flush();
+                } else {
+                    $derniere_carte = $this->derniereCarte($tapis['pose_j2cat5']);
+                    $valeur_carte_avant = $cartes[$derniere_carte]->getValeur();
+                    if ($valeur_carte_avant <= $valeur_carte_select) {
+                        array_push($tapis['pose_j2cat5'], $carteselect);
+
+                        $main_j2 = array();
+                        $main_j2 = $plateau['mainJ2'];
+                        $new_main_j2 = $this->supprimeCarteMain($main_j2,$carteselect);
+
+                        $em = $this->getDoctrine()->getManager();
+                        $new_main_j2_encode = json_encode($new_main_j2);
+                        $situation->setMainJ2($new_main_j2_encode);
+                        $em->persist($situation);
+                        $em->flush();
+                    } else {
+                        //message d'erreur
+                    }
+                }
             }
             $em = $this->getDoctrine()->getManager();
+
+//            // Actu le plateau avec la carte en fonction de la cat
+//            switch ($categorie_carteselect) {
+//                case 1:
+//                    array_push($tapis['pose_j2cat1'],$carteselect);
+//                    break;
+//                case 2:
+//                    array_push($tapis['pose_j2cat2'],$carteselect);
+//                    break;
+//                case 3:
+//                    array_push($tapis['pose_j2cat3'],$carteselect);
+//                    break;
+//                case 4:
+//                    array_push($tapis['pose_j2cat4'],$carteselect);
+//                    break;
+//                case 5:
+//                    array_push($tapis['pose_j2cat5'],$carteselect);
+//                    break;
+//            }
+//            $em = $this->getDoctrine()->getManager();
 
             $situation->setCartesPoseesJ2Cat1(json_encode($tapis['pose_j2cat1']));
             $situation->setCartesPoseesJ2Cat2(json_encode($tapis['pose_j2cat2']));
@@ -535,17 +846,6 @@ class JoueurController extends Controller
             $partie=$situation->getId();
             $em->persist($situation);
             $em->flush();
-
-            $main_j2 = array();
-            $main_j2 = $plateau['mainJ2'];
-            $new_main_j2 = $this->supprimeCarteMain($main_j2,$carteselect);
-
-            $em = $this->getDoctrine()->getManager();
-            $new_main_j2_encode = json_encode($new_main_j2);
-            $situation->setMainJ2($new_main_j2_encode);
-            $em->persist($situation);
-            $em->flush();
-
         }
 
 
@@ -623,6 +923,8 @@ class JoueurController extends Controller
         // recup de la carte select
         $carteselect = $request->get('carteselect');
         $categorie_carteselect = $cartes[$carteselect]->getCategorie()->getId();
+
+
 
 
         // Actu le plateau avec la carte en fonction de la cat
@@ -1160,6 +1462,12 @@ class JoueurController extends Controller
         }
 
         return $t;
+    }
+
+    private function derniereCarte($array)
+    {
+        end($array);
+        return end($array);
     }
 
 
