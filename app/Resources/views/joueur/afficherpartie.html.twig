@@ -2,10 +2,10 @@
 
 {% block body %}
     <h1>Partie entre {{ partie.joueur1.username }} et {{ partie.joueur2.username }}</h1>
-    <div class="container">
+
 
         <form name="form1" method="get" id="1">
-
+            <div class="container">
                         <div>
                             <table class="table table-bordered">
                                 {# afficher les carte de l'adversaire #}
@@ -13,27 +13,27 @@
                                     <tr class="success">
                                         <td>
                                             {% for carte in tapis.pose_j1cat1 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                             {% endfor %}
                                         </td>
                                         <td>
                                             {% for carte in tapis.pose_j1cat2 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                             {% endfor %}
                                         </td>
                                         <td>
                                             {% for carte in tapis.pose_j1cat3 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                             {% endfor %}
                                         </td>
                                         <td>
                                             {% for carte in tapis.pose_j1cat4 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                             {% endfor %}
                                         </td>
                                         <td>
                                             {% for carte in tapis.pose_j1cat5 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                             {% endfor %}
                                         </td>
                                     </tr>
@@ -41,27 +41,27 @@
                                     <tr class="success">
                                         <td>
                                             {% for carte in tapis.pose_j2cat1 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                             {% endfor %}
                                         </td>
                                         <td>
                                             {% for carte in tapis.pose_j2cat2 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                             {% endfor %}
                                         </td>
                                         <td>
                                             {% for carte in tapis.pose_j2cat3 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                             {% endfor %}
                                         </td>
                                         <td>
                                             {% for carte in tapis.pose_j2cat4 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                             {% endfor %}
                                         </td>
                                         <td>
                                             {% for carte in tapis.pose_j2cat5 %}
-                                                {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                             {% endfor %}
                                         </td>
                                     </tr>
@@ -106,27 +106,27 @@
                                         <tr class="success">
                                             <td>
                                             {% for carte in tapis.pose_j1cat1 %}
-                                                 {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                             {% endfor %}
                                             </td>
                                             <td>
                                                 {% for carte in tapis.pose_j1cat2 %}
-                                                    {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                    <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                                 {% endfor %}
                                             </td>
                                             <td>
                                                 {% for carte in tapis.pose_j1cat3 %}
-                                                    {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                    <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                                 {% endfor %}
                                             </td>
                                             <td>
                                                 {% for carte in tapis.pose_j1cat4 %}
-                                                    {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                    <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                                 {% endfor %}
                                             </td>
                                             <td>
                                                 {% for carte in tapis.pose_j1cat5 %}
-                                                    {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                    <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                                 {% endfor %}
                                             </td>
                                         </tr>
@@ -134,27 +134,27 @@
                                         <tr class="success">
                                             <td>
                                                 {% for carte in tapis.pose_j2cat1 %}
-                                                    {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                    <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                                 {% endfor %}
                                             </td>
                                             <td>
                                                 {% for carte in tapis.pose_j2cat2 %}
-                                                    {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                    <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                                 {% endfor %}
                                             </td>
                                             <td>
                                                 {% for carte in tapis.pose_j2cat3 %}
-                                                    {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                    <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                                 {% endfor %}
                                             </td>
                                             <td>
                                                 {% for carte in tapis.pose_j2cat4 %}
-                                                    {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                    <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                                 {% endfor %}
                                             </td>
                                             <td>
                                                 {% for carte in tapis.pose_j2cat5 %}
-                                                    {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                                    <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                                 {% endfor %}
                                             </td>
                                         </tr>
@@ -162,16 +162,16 @@
                             </table>
                         </div>
 
-
+            </div>
                          <!-- pour afficher carte du joueur 1 -->
                     {% if partie.joueur1.id == user.id %}
                         <div>
                             <h2>Cartes de {{ partie.joueur1.username }}</h2>
                             <table class="table table-bordered">
-                                <tr class="info">
+                                <tr>
                                     {% for carte in plateau.mainJ1 %}
                                         <td>
-                                            {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_main">
                                         </td>
                                     {% endfor %}
                                 </tr>
@@ -191,7 +191,7 @@
                                 <tr class="info">
                                     {% for carte in plateau.mainJ2 %}
                                         <td>
-                                            {{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}
+                                            <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_main">
                                         </td>
                                     {% endfor %}
                                 </tr>
@@ -267,15 +267,15 @@
 
 
 
-    {{ dump(partie.situation) }}
+    {#{{ dump(partie.situation) }}#}
 
-    <h2>tour de : {{ dump(tourde) }}</h2>
+    {#<h2>tour de : {{ dump(tourde) }}</h2>#}
 
-    <h2>Joueur n° : {{ dump(user.id) }}</h2>
+    {#<h2>Joueur n° : {{ dump(user.id) }}</h2>#}
 
 
 
-    </div>
+
 {% endblock %}
 
 {# Modifier l'action du formulaire en fonction du bouton #}
