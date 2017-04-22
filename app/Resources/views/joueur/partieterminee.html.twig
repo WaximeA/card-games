@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>La partie est temrinée !</h3>
+                <br>
+                <form name="form2" method="get" id="2">
+                    <button type="button" value="fini" name="fini" id="fini" onclick="return OnButtonFini();">Découvre si tu as réussi à dompter les Funny Monsters</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block javascripts %}
+<script>
+    function OnButtonFini()
+    {
+        document.form2.action = "{{ path('partie_finie', {id:partie.id}) }}"
+        document.form2.submit();
+    }
+</script>
+{% endblock %}
