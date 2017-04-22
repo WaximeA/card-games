@@ -1,3 +1,11 @@
+ body  {
+    background: url("../img/background_partie.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 img.carte_main {
     width: 100%;
 
@@ -6,5 +14,10 @@ img.carte_main {
 img.carte_pose {
     width: 100px;
     padding: 0px;
-
 }
+
+
+/*img.rectopioche {*/
+    /*width: 100px;*/
+/*}*/
+

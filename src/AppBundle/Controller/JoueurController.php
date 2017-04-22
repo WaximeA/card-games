@@ -229,11 +229,12 @@ class JoueurController extends Controller
 
         $pioche = $situation->getPioche();
         $piochetab = json_decode($pioche);
+        $nbPioche = count($piochetab);
 
         if (empty($piochetab)){
             return $this->render(':joueur:partieterminee.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user, 'plateau' => $plateau,  'tapis' => $tapis]);
         }else{
-        return $this->render(':joueur:afficherpartie.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user, 'plateau' => $plateau, 'tourde' => $tourde, 'tapis' => $tapis, 'tapisdef' => $tapisdef, 'piochetab' => $piochetab]);
+        return $this->render(':joueur:afficherpartie.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user, 'plateau' => $plateau, 'tourde' => $tourde, 'tapis' => $tapis, 'tapisdef' => $tapisdef, 'piochetab' => $piochetab, 'nbPioche'=>$nbPioche]);
         }
     }
 
@@ -258,6 +259,8 @@ class JoueurController extends Controller
 
         // nouvelle pioche sans le $dernier
         $nouvellepioche = array_diff($piochetab, [$dernier]);
+//        $nbPioche = count($nouvellepioche);
+
 
         // récuperer l'id des deux joueurs
         $j1=$id->getJoueur1();
