@@ -1,5 +1,6 @@
 <?php
 namespace AppBundle\Controller;
+use AppBundle\Entity\Cartes;
 use AppBundle\Entity\User;
 use AppBundle\Entity\Parties;
 use AppBundle\Entity\Situation;
@@ -90,19 +91,12 @@ class JoueurController extends Controller
         $em->persist($situation);
         $em->flush();
 
-
-
-        //        // pas besoin de commenter, lis le nom de la varriable
-        //        $creationplateaujoueur = array('ecaille' => array(), 'plume' => array(), 'poil' => array(), 'alien' => array(), 'corne' => array());
-
         // Création d'une nouvelle partie
         $partie = new Parties();
         $partie->setJoueur1($user);
         $partie->setJoueur2($joueur);
         $partie->setSituation($situation);
         $partie->setTourde( $user->getId());
-        //        $situation->setCartesPoseesJ1(json_encode($creationplateaujoueur));
-        //        $situation->setCartesPoseesJ2(json_encode($creationplateaujoueur));
 
         // Actu BDD de partie
         $em->persist($partie);
@@ -127,21 +121,7 @@ class JoueurController extends Controller
         $plateau['mainJ1'] = json_decode($situation->getMainJ1());
         $plateau['mainJ2'] = json_decode($situation->getMainJ2());
 
-//        // recup dans cartes J1 posées dans un tapis
-//        $tapis['pose_j1cat1'] = json_decode($situation->getCartesPoseesJ1Cat1());
-//        $tapis['pose_j1cat2'] = json_decode($situation->getCartesPoseesJ1Cat2());
-//        $tapis['pose_j1cat3'] = json_decode($situation->getCartesPoseesJ1Cat3());
-//        $tapis['pose_j1cat4'] = json_decode($situation->getCartesPoseesJ1Cat4());
-//        $tapis['pose_j1cat5'] = json_decode($situation->getCartesPoseesJ1Cat5());
-//
-//        // recup dans cartes J2 posées dans un tapis
-//        $tapis['pose_j2cat1'] = json_decode($situation->getCartesPoseesJ2Cat1());
-//        $tapis['pose_j2cat2'] = json_decode($situation->getCartesPoseesJ2Cat2());
-//        $tapis['pose_j2cat3'] = json_decode($situation->getCartesPoseesJ2Cat3());
-//        $tapis['pose_j2cat4'] = json_decode($situation->getCartesPoseesJ2Cat4());
-//        $tapis['pose_j2cat5'] = json_decode($situation->getCartesPoseesJ2Cat5());
 
-                                    // recup des cartes posées j1 : en decode si vide / en ajout tab si plein
                                     if (!empty($situation->getCartesPoseesJ1Cat1())){
                                         $tapis['pose_j1cat1'] = json_decode($situation->getCartesPoseesJ1Cat1());
                                     }else {
@@ -207,9 +187,6 @@ class JoueurController extends Controller
 
 
 
-
-
-
 // recup des cartes defaussées : en decode si vide / en ajout tab si plein
         if (!empty($situation->getcartesDefausseesCat1())){
             $tapisdef['def_cat1'] = json_decode($situation->getcartesDefausseesCat1());
@@ -250,8 +227,16 @@ class JoueurController extends Controller
         // recup tour de
         $tourde = $id->getTourde();
 
-        return $this->render(':joueur:afficherpartie.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user, 'plateau' => $plateau, 'tourde' => $tourde, 'tapis' => $tapis, 'tapisdef' => $tapisdef]);
+        $pioche = $situation->getPioche();
+        $piochetab = json_decode($pioche);
+
+        if (empty($piochetab)){
+            return $this->render(':joueur:partieterminee.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user, 'plateau' => $plateau,  'tapis' => $tapis]);
+        }else{
+        return $this->render(':joueur:afficherpartie.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user, 'plateau' => $plateau, 'tourde' => $tourde, 'tapis' => $tapis, 'tapisdef' => $tapisdef, 'piochetab' => $piochetab]);
+        }
     }
+
 
     /**
      * @param Parties $id
@@ -259,7 +244,7 @@ class JoueurController extends Controller
      */
     public function piocherCarteAction(Parties $id)
     {
-        // $id = partie
+
 
         $cartes = $this->getDoctrine()->getRepository('AppBundle:Cartes')->getAll();
         $user = $this->getUser();
@@ -848,10 +833,15 @@ class JoueurController extends Controller
             $em->flush();
         }
 
+        $pioche = $situation->getPioche();
+        $piochetab = json_decode($pioche);
+
 
 //        return $this->render(':joueur:poser.html.twig', ['plateau' => $plateau, 'partie' => $id, 'carteselect' => $carteselect, 'j2_cat4' => $tapis['pose_j2cat5'], 'j1_cat4' => $tapis['pose_j1cat5']]);
         return $this->redirectToRoute('afficher_partie', ['id' => $id->getId(), 'tapis' => $tapis]);
+
     }
+
 
     /**
      * @param Parties $id
@@ -1449,6 +1439,245 @@ class JoueurController extends Controller
 
         return $this->redirectToRoute('afficher_partie', ['id' => $id->getId()]);
     }
+
+    /**
+     * @param Parties $id
+     * @Route("/partiefinie/{id}", name="partie_finie")
+     */
+    public function partieFinieAction(Parties $id)
+    {
+        $cartes = $this->getDoctrine()->getRepository('AppBundle:Cartes')->getAll();
+        $user = $this->getUser();
+        $situation = $id->getSituation();
+
+        // récuperer l'id des deux joueurs
+        $j1=$id->getJoueur1();
+        $idj1=$j1->getId();
+
+        $j2=$id->getJoueur2();
+        $idj2=$j2->getId();
+
+        // joueur actif
+        $jactif = $user->getId();
+
+
+
+
+        // tout recup
+        $tapis['pose_j1cat1'] = json_decode($situation->getCartesPoseesJ1Cat1());
+        $tapis['pose_j1cat2'] = json_decode($situation->getCartesPoseesJ1Cat2());
+        $tapis['pose_j1cat3'] = json_decode($situation->getCartesPoseesJ1Cat3());
+        $tapis['pose_j1cat4'] = json_decode($situation->getCartesPoseesJ1Cat4());
+        $tapis['pose_j1cat5'] = json_decode($situation->getCartesPoseesJ1Cat5());
+
+        $tapis['pose_j2cat1'] = json_decode($situation->getCartesPoseesJ2Cat1());
+        $tapis['pose_j2cat2'] = json_decode($situation->getCartesPoseesJ2Cat2());
+        $tapis['pose_j2cat3'] = json_decode($situation->getCartesPoseesJ2Cat3());
+        $tapis['pose_j2cat4'] = json_decode($situation->getCartesPoseesJ2Cat4());
+        $tapis['pose_j2cat5'] = json_decode($situation->getCartesPoseesJ2Cat5());
+
+
+
+        // SCORES
+        $pointJ1 = $id->getPointJ1();
+        $pointJ2 = $id->getPointJ2();
+
+
+            // POINTS DU JOUEUR 1
+            // catégorie 1
+            $nbExtra = 1;
+            $pointj1Cat1 = -20;
+            foreach ($tapis['pose_j1cat1'] as $ligneNum => $carteId)
+            {
+                $carteType=$cartes[$carteId]->getType();
+                $carteValeur=$cartes[$carteId]->getValeur();
+
+                if ($carteType == 'extra'){
+                    $pointj1Cat1  = $pointj1Cat1;
+                    $nbExtra = $nbExtra + 1;
+                } else {
+                    $pointj1Cat1  = $pointj1Cat1 + $carteValeur;
+                }
+            }
+            $pointj1Cat1 = $pointj1Cat1 * $nbExtra;
+            $pointJ1 = $pointJ1 + $pointj1Cat1;
+
+            // catégorie 2
+            $nbExtra = 1;
+            $pointj1Cat2 = -20;
+            foreach ($tapis['pose_j1cat2'] as $ligneNum => $carteId)
+            {
+                $carteType=$cartes[$carteId]->getType();
+                $carteValeur=$cartes[$carteId]->getValeur();
+
+                if ($carteType == 'extra'){
+                    $nbExtra = $nbExtra + 1;
+                } else {
+                    $pointj1Cat2  = $pointj1Cat2 + $carteValeur;
+                }
+            }
+            $pointj1Cat2 = $pointj1Cat2 * $nbExtra;
+            $pointJ1 = $pointJ1 + $pointj1Cat2;
+
+        // catégorie 3
+        $nbExtra = 1;
+        $pointj1Cat3 = -20;
+        foreach ($tapis['pose_j1cat3'] as $ligneNum => $carteId)
+        {
+            $carteType=$cartes[$carteId]->getType();
+            $carteValeur=$cartes[$carteId]->getValeur();
+
+            if ($carteType == 'extra'){
+                $nbExtra = $nbExtra + 1;
+            } else {
+                $pointj1Cat3  = $pointj1Cat3 + $carteValeur;
+            }
+        }
+        $pointj1Cat3 = $pointj1Cat3 * $nbExtra;
+        $pointJ1 = $pointJ1 + $pointj1Cat3;
+
+        // catégorie 4
+        $nbExtra = 1;
+        $pointj1Cat4 = -20;
+        foreach ($tapis['pose_j1cat4'] as $ligneNum => $carteId)
+        {
+            $carteType=$cartes[$carteId]->getType();
+            $carteValeur=$cartes[$carteId]->getValeur();
+
+            if ($carteType == 'extra'){
+                $nbExtra = $nbExtra + 1;
+            } else {
+                $pointj1Cat4  = $pointj1Cat4 + $carteValeur;
+            }
+        }
+        $pointj1Cat4 = $pointj1Cat4 * $nbExtra;
+        $pointJ1 = $pointJ1 + $pointj1Cat4;
+
+        // catégorie 5
+        $nbExtra = 1;
+        $pointj1Cat5 = -20;
+        foreach ($tapis['pose_j1cat5'] as $ligneNum => $carteId)
+        {
+            $carteType=$cartes[$carteId]->getType();
+            $carteValeur=$cartes[$carteId]->getValeur();
+
+            if ($carteType == 'extra'){
+                $nbExtra = $nbExtra + 1;
+            } else {
+                $pointj1Cat5  = $pointj1Cat5 + $carteValeur;
+            }
+        }
+        $pointj1Cat5 = $pointj1Cat5 * $nbExtra;
+        $pointJ1 = $pointJ1 + $pointj1Cat5;
+
+
+        // POINTS DU JOUEUR 2
+        // catégorie 1
+        $nbExtra = 1;
+        $pointj2Cat1 = -20;
+        foreach ($tapis['pose_j2cat1'] as $ligneNum => $carteId)
+        {
+            $carteType=$cartes[$carteId]->getType();
+            $carteValeur=$cartes[$carteId]->getValeur();
+
+            if ($carteType == 'extra'){
+                $nbExtra = $nbExtra + 1;
+            } else {
+                $pointj2Cat1  = $pointj2Cat1 + $carteValeur;
+            }
+        }
+        $pointj2Cat1 = $pointj2Cat1 * $nbExtra;
+        $pointJ2 = $pointJ2 + $pointj2Cat1;
+
+        // catégorie 2
+        $nbExtra = 1;
+        $pointj2Cat2 = -20;
+        foreach ($tapis['pose_j1cat2'] as $ligneNum => $carteId)
+        {
+            $carteType=$cartes[$carteId]->getType();
+            $carteValeur=$cartes[$carteId]->getValeur();
+
+            if ($carteType == 'extra'){
+                $nbExtra = $nbExtra + 1;
+            } else {
+                $pointj2Cat2  = $pointj2Cat2 + $carteValeur;
+            }
+        }
+        $pointj2Cat2 = $pointj2Cat2 * $nbExtra;
+        $pointJ2 = $pointJ2 + $pointj2Cat2;
+
+        // catégorie 3
+        $nbExtra = 1;
+        $pointj2Cat3 = -20;
+        foreach ($tapis['pose_j2cat3'] as $ligneNum => $carteId)
+        {
+            $carteType=$cartes[$carteId]->getType();
+            $carteValeur=$cartes[$carteId]->getValeur();
+
+            if ($carteType == 'extra'){
+                $nbExtra = $nbExtra + 1;
+            } else {
+                $pointj2Cat3  = $pointj2Cat3 + $carteValeur;
+            }
+        }
+        $pointj2Cat3 = $pointj2Cat3 * $nbExtra;
+        $pointJ2 = $pointJ2 + $pointj2Cat3;
+
+        // catégorie 4
+        $nbExtra = 1;
+        $pointj2Cat4 = -20;
+        foreach ($tapis['pose_j2cat4'] as $ligneNum => $carteId)
+        {
+            $carteType=$cartes[$carteId]->getType();
+            $carteValeur=$cartes[$carteId]->getValeur();
+
+            if ($carteType == 'extra'){
+                $nbExtra = $nbExtra + 1;
+            } else {
+                $pointj2Cat4  = $pointj2Cat4 + $carteValeur;
+            }
+        }
+        $pointj2Cat4 = $pointj2Cat4 * $nbExtra;
+        $pointJ2 = $pointJ2 + $pointj2Cat4;
+
+        // catégorie 5
+        $nbExtra = 1;
+        $pointj2Cat5 = -20;
+        foreach ($tapis['pose_j2cat5'] as $ligneNum => $carteId)
+        {
+            $carteType=$cartes[$carteId]->getType();
+            $carteValeur=$cartes[$carteId]->getValeur();
+
+            if ($carteType == 'extra'){
+                $nbExtra = $nbExtra + 1;
+            } else {
+                $pointj2Cat5  = $pointj2Cat5 + $carteValeur;
+            }
+        }
+        $pointj2Cat5 = $pointj2Cat5 * $nbExtra;
+        $pointJ2 = $pointJ2 + $pointj2Cat5;
+
+
+
+
+
+            return $this->render(':joueur:score.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user,  'tapis' => $tapis, 'pointJ1' => $pointJ1, 'pointJ2' => $pointJ2, 'nbExtra' => $nbExtra]);
+    }
+
+    private function countExtra($cartesPosees){
+        $cartes = $this->getDoctrine()->getRepository('AppBundle:Cartes')->getAll();
+
+        $t = array();
+        foreach ($cartesPosees as $carteId){
+            if ($cartes[$carteId]->getType() == 'extra'){
+                $t[] = $idDeLaCarte;
+            }
+        }
+        $combien = count($t);
+        return $combien;
+
+    }
+
 
     private function supprimeCarteMain($mainj1,$carteselect)
     {

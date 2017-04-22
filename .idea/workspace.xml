@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4fc0c65f-9666-4643-b76c-212a9b66238f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/joueur/afficherpartie.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/joueur/afficherpartie.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/JoueurController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/JoueurController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,26 +32,19 @@
     <favorites_list name="symfony_s4" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.77549523">
+    <splitter split-orientation="horizontal" split-proportion="0.8895877">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="pioche.html.twig" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/pioche.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="39" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="afficherpartie.html.twig" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/afficherpartie.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="15" column="231" lean-forward="false" selection-start-line="15" selection-start-column="231" selection-end-line="15" selection-end-column="231" />
+                <state relative-caret-position="426">
+                  <caret line="87" column="52" lean-forward="true" selection-start-line="87" selection-start-column="52" selection-end-line="87" selection-end-column="52" />
                   <folding>
-                    <element signature="e#12#26#0#Twig" expanded="true" />
+                    <element signature="n#tr#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="false" />
+                    <element signature="n#tr#1;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="false" />
+                    <element signature="n#tr#3;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="false" />
+                    <element signature="n#tr#4;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -60,40 +53,42 @@
           <file leaf-file-name="JoueurController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/JoueurController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-75">
-                  <caret line="635" column="25" lean-forward="false" selection-start-line="635" selection-start-column="25" selection-end-line="635" selection-end-column="25" />
+                <state relative-caret-position="-750">
+                  <caret line="353" column="0" lean-forward="false" selection-start-line="344" selection-start-column="7" selection-end-line="353" selection-end-column="0" />
                   <folding>
-                    <marker date="1492458617000" expanded="false" signature="37138:37161" ph=":joueur:poser" />
+                    <element signature="e#38#66#0#PHP" expanded="true" />
+                    <marker date="1492810828000" expanded="false" signature="36108:36131" ph=":joueur:poser" />
+                    <marker date="1492810828000" expanded="true" signature="59539:59952" ph="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+          <file leaf-file-name="partieterminee.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/partieterminee.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+                <state relative-caret-position="345">
+                  <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="stylepartie.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/assets/css/stylepartie.css">
+          <file leaf-file-name="poser.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/poser.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+                <state relative-caret-position="240">
+                  <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Cartes.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Cartes.php">
+          <file leaf-file-name="score.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/score.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1545">
-                  <caret line="103" column="29" lean-forward="false" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="29" />
+                <state relative-caret-position="45">
+                  <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="4" selection-end-column="36" />
                   <folding />
                 </state>
               </provider>
@@ -106,10 +101,12 @@
           <file leaf-file-name="JoueurController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/JoueurController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1460">
-                  <caret line="847" column="25" lean-forward="false" selection-start-line="847" selection-start-column="25" selection-end-line="847" selection-end-column="25" />
+                <state relative-caret-position="9036">
+                  <caret line="1650" column="39" lean-forward="false" selection-start-line="1650" selection-start-column="39" selection-end-line="1650" selection-end-column="39" />
                   <folding>
-                    <marker date="1492458617000" expanded="false" signature="37138:37161" ph=":joueur:poser" />
+                    <element signature="e#38#66#0#PHP" expanded="true" />
+                    <marker date="1492810828000" expanded="false" signature="36108:36131" ph=":joueur:poser" />
+                    <marker date="1492810828000" expanded="true" signature="59539:59952" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -127,7 +124,6 @@
       <find>part</find>
       <find>party</find>
       <find>situation</find>
-      <find>pioche</find>
       <find>partie</find>
       <find>jo</find>
       <find>id</find>
@@ -141,6 +137,12 @@
       <find>pose_j1cat1</find>
       <find>tapisdeff</find>
       <find>valeur</find>
+      <find>pioche</find>
+      <find>getid</find>
+      <find>$plateau['pioche']</find>
+      <find>type</find>
+      <find>else</find>
+      <find>getcarte</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,8 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Joueurs.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Chat.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/CartesController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/CategoriesController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/PartiesController.php" />
@@ -201,9 +201,11 @@
         <option value="$PROJECT_DIR$/app/Resources/views/joueur/defausser.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/joueur/poser.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Situation.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/JoueurController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/web/assets/css/stylepartie.css" />
+        <option value="$PROJECT_DIR$/app/Resources/views/joueur/partieterminee.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/joueur/score.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/JoueurController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/joueur/afficherpartie.html.twig" />
       </list>
     </option>
@@ -216,9 +218,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="3" />
+    <option name="x" value="28" />
     <option name="y" value="22" />
-    <option name="width" value="1635" />
+    <option name="width" value="1610" />
     <option name="height" value="985" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -256,6 +258,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -279,94 +282,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="symfony_s4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="symfony_s4" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="symfony_s4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="symfony_s4" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="symfony_s4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="symfony_s4" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cartes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="symfony_s4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="symfony_s4" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -550,7 +465,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -709,12 +623,14 @@
       <workItem from="1491829552222" duration="35506000" />
       <workItem from="1492260799667" duration="12129000" />
       <workItem from="1492445852203" duration="9216000" />
-      <workItem from="1492525012753" duration="5220000" />
+      <workItem from="1492525012753" duration="9866000" />
+      <workItem from="1492768466373" duration="19474000" />
+      <workItem from="1492881515346" duration="365000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240586000" />
+    <option name="totallyTimeSpent" value="265071000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -726,16 +642,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="3" y="22" width="1635" height="985" extended-state="0" />
+    <frame x="28" y="22" width="1610" height="985" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23603265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07716837" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09630459" sideWeight="0.19397363" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.009416196" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19596864" sideWeight="0.20216836" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.009566327" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09630459" sideWeight="0.80602634" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19596864" sideWeight="0.79783165" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -762,8 +678,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/cartes/edit.html.twig" />
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/cartes/index.html.twig" />
     <entry file="file://$PROJECT_DIR$/app/Resources/views/cartes/new.html.twig" />
     <entry file="file://$PROJECT_DIR$/app/Resources/views/cartes/show.html.twig" />
     <entry file="file://$PROJECT_DIR$/app/Resources/views/categories/edit.html.twig" />
@@ -836,13 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="36" column="16" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="36" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -947,35 +854,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/pioche.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Cartes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1545">
-          <caret line="103" column="29" lean-forward="false" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/poser.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/defausser.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -987,10 +869,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/css/stylepartie.css">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/pioche.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="26" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Cartes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="103" column="29" lean-forward="false" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1003,22 +892,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/css/stylepartie.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/score.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="4" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/partieterminee.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/poser.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/JoueurController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="635" column="25" lean-forward="false" selection-start-line="635" selection-start-column="25" selection-end-line="635" selection-end-column="25" />
+        <state relative-caret-position="-750">
+          <caret line="353" column="0" lean-forward="false" selection-start-line="344" selection-start-column="7" selection-end-line="353" selection-end-column="0" />
           <folding>
-            <marker date="1492458617000" expanded="false" signature="37138:37161" ph=":joueur:poser" />
+            <element signature="e#38#66#0#PHP" expanded="true" />
+            <marker date="1492810828000" expanded="false" signature="36108:36131" ph=":joueur:poser" />
+            <marker date="1492810828000" expanded="true" signature="59539:59952" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/afficherpartie.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="231" lean-forward="false" selection-start-line="15" selection-start-column="231" selection-end-line="15" selection-end-column="231" />
+        <state relative-caret-position="426">
+          <caret line="87" column="52" lean-forward="true" selection-start-line="87" selection-start-column="52" selection-end-line="87" selection-end-column="52" />
           <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
+            <element signature="n#tr#0;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="false" />
+            <element signature="n#tr#1;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="false" />
+            <element signature="n#tr#3;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="false" />
+            <element signature="n#tr#4;n#table#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
