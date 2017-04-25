@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Bienvenue sur FUNNY MONSTER{% endblock %}</title>
@@ -15,20 +15,14 @@
 
     </head>
     <body>
-        {% block header %}
-        {% endblock %}
+        {% block header %}{% endblock %}
         {% block body %}{% endblock %}
 
-        <footer>
-            <p>
-                © Copyright , 2017 - <a href="http://89.234.182.91/donkeygames/">Donkey game.</a>
-                <img src="{{ asset('assets/img/donkey_game_logo.png') }}" alt="" class="dkl_footer">
-            </p>
-        </footer>
 
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
         <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('assets/js/jquery-3.1.1.slim.min.js') }}"></script>
+        <script src="{{ asset('assets/js/angular.min.js') }}"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

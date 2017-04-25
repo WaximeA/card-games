@@ -223,6 +223,7 @@ class JoueurController extends Controller
             $tapisdef['def_cat5'] = array();
         }
 
+        $idd = $id->getId();
 
         // recup tour de
         $tourde = $id->getTourde();
@@ -234,7 +235,7 @@ class JoueurController extends Controller
         if (empty($piochetab)){
             return $this->render(':joueur:partieterminee.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user, 'plateau' => $plateau,  'tapis' => $tapis]);
         }else{
-        return $this->render(':joueur:afficherpartie.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user, 'plateau' => $plateau, 'tourde' => $tourde, 'tapis' => $tapis, 'tapisdef' => $tapisdef, 'piochetab' => $piochetab, 'nbPioche'=>$nbPioche]);
+        return $this->render(':joueur:afficherpartie.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user, 'plateau' => $plateau, 'tourde' => $tourde, 'tapis' => $tapis, 'tapisdef' => $tapisdef, 'piochetab' => $piochetab, 'nbPioche'=>$nbPioche, 'idd'=>$idd]);
         }
     }
 
@@ -823,6 +824,8 @@ class JoueurController extends Controller
 //                    break;
 //            }
 //            $em = $this->getDoctrine()->getManager();
+
+
 
             $situation->setCartesPoseesJ2Cat1(json_encode($tapis['pose_j2cat1']));
             $situation->setCartesPoseesJ2Cat2(json_encode($tapis['pose_j2cat2']));
@@ -1464,8 +1467,6 @@ class JoueurController extends Controller
         $jactif = $user->getId();
 
 
-
-
         // tout recup
         $tapis['pose_j1cat1'] = json_decode($situation->getCartesPoseesJ1Cat1());
         $tapis['pose_j1cat2'] = json_decode($situation->getCartesPoseesJ1Cat2());
@@ -1661,11 +1662,42 @@ class JoueurController extends Controller
         $pointJ2 = $pointJ2 + $pointj2Cat5;
 
 
+        // classement
+        $em = $this->getDoctrine()->getManager();
+
+        $cumulPT_j1 = $j1->getCumulPT();
+        $partieGG_1 = $j1->getPartiesGG();
+
+        $cumulPT_j2 = $j2->getCumulPT();
+        $partieGG_2 = $j2->getPartiesGG();
+
+        $cumulPT_j1 = $cumulPT_j1 + $pointJ1;
+        $cumulPT_j2 = $cumulPT_j2 + $pointJ2;
+
+        if ($pointJ1 > $pointJ2){
+            $partieGG_1 =  $partieGG_1 + 1;
+        } else {
+            $partieGG_2 =  $partieGG_2 + 1;
+        }
+
+        $j1=$id->getJoueur1();
+
+        $j1->setCumulPT($cumulPT_j1);
+        $j1->setPartiesGG($partieGG_1);
+        $j2->setCumulPT($cumulPT_j2);
+        $j2->setPartiesGG($partieGG_2);
 
 
+        $em->persist($user);
+        $em->flush();
 
-            return $this->render(':joueur:score.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user,  'tapis' => $tapis, 'pointJ1' => $pointJ1, 'pointJ2' => $pointJ2, 'nbExtra' => $nbExtra]);
+
+            return $this->render(':joueur:score.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user,  'tapis' => $tapis, 'pointJ1' => $pointJ1, 'pointJ2' => $pointJ2, 'nbExtra' => $nbExtra, 'cumulPT_j1' => $cumulPT_j1, 'cumulPT_j2' => $cumulPT_j2, 'partieGG_1'=>$partieGG_1,'partieGG_2'=>$partieGG_2]);
     }
+
+
+
+
 
     private function countExtra($cartesPosees){
         $cartes = $this->getDoctrine()->getRepository('AppBundle:Cartes')->getAll();
@@ -1701,6 +1733,5 @@ class JoueurController extends Controller
         end($array);
         return end($array);
     }
-
 
 }

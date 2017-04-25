@@ -33,10 +33,7 @@
                         <a class="page-scroll" href="#">Accueil</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="http://89.234.182.91/jeu">Jouer</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#evenements">Parents</a>
+                        <a class="page-scroll" href="http://89.234.182.91/promo/#parents">Parents</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="http://89.234.182.91/promo/#contact">Contact</a>
@@ -49,12 +46,14 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="{{ path('fos_user_profile_show') }}">Profil</a></li>
                                     <li><a href="{{ path('joueur_homepage') }}">  Jouer  </a></li>
+                                    {% if is_granted("ROLE_ADMIN") %}
+                                        <li><a href="{{ path('admin') }}"> Administration</a></li>
+                                    {% endif %}
                                     <li role="separator" class="divider"></li>
                                     <li><a href="{{ path('fos_user_security_logout') }}">  {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></li>
-
                                     {% else %}
                                     <li><a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-                                        {% endif %}
+                                    {% endif %}
                                 </ul>
                             </li>
                         </ul>

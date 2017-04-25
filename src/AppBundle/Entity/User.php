@@ -26,6 +26,71 @@ class User extends BaseUser
      */
     private $nom;
 
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="cumulPT", type="integer")
+     */
+    private $cumulPT = 0;
+
+            /**
+             * Set cumulPT
+             *
+             * @param integer $cumulPT
+             *
+             * @return User
+             */
+            public function setCumulPT($cumulPT)
+            {
+                $this->cumulPT = $cumulPT;
+                return $this;
+            }
+
+            /**
+             * Get cumulPT
+             *
+             * @return int
+             */
+            public function getCumulPT()
+            {
+                return $this->cumulPT;
+            }
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="partiesGG", type="integer")
+     */
+    private $partiesGG = 0;
+
+            /**
+             * Set partiesGG
+             *
+             * @param integer $partiesGG
+             *
+             * @return User
+             */
+            public function setPartiesGG($partiesGG)
+            {
+                $this->partiesGG = $partiesGG;
+                return $this;
+            }
+
+            /**
+             * Get partiesGG
+             *
+             * @return int
+             */
+            public function getPartiesGG()
+            {
+                return $this->partiesGG;
+            }
+
+
+
+
+
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Parties", mappedBy="joueur1")
      */
@@ -153,6 +218,9 @@ class User extends BaseUser
     {
         return $this->parties_2;
     }
+
+
+
 }
 
 

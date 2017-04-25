@@ -88,6 +88,7 @@ easy_admin:
         menu:
             - { label: 'Retours sur FUNNY MONSTER', url: 'http://89.234.182.91/jeu/' }
             - { entity: 'User', icon: 'user' }
+            - { entity: 'Parties', icon: 'play' }
     entities:
             User:
                 label: 'Utilisateurs'
@@ -103,7 +104,14 @@ easy_admin:
                         - { property: 'email', type: 'email', label: 'Adresse e-mail' }
                         # admin edit/suppr users -> passwords and roles :
                         - { property: 'plainPassword', type: 'text', type_options: { required: false }, label: 'Mot de passe' }
-                        - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN' } } }
+                        - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN' }}}
                         - { property: 'enabled', label: 'Activer l''utilisateur' }
 
+            Parties:
+                label: 'Parties'
+                class: AppBundle\Entity\Parties
+                list:
+                    fields: ['id', 'joueur1_id', 'joueur2_id', 'debut', 'fin', 'point_j1', 'point_j2']
+                    title: "Liste de l'ensemble des parties crées"
+                    max_results: 20
 
