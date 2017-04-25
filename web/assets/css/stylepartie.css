@@ -13,11 +13,14 @@ img.carte_main {
 
 img.carte_pose {
     width: 100px;
-    padding: 0px;
+    padding: 10px;
+    margin-right: -85px;
 }
 
 
-/*img.rectopioche {*/
-    /*width: 100px;*/
-/*}*/
+img.rectopioche {
+    width: 100px;
+    margin-right: -85px;
+    display: inline-block;
+}
 

@@ -68,6 +68,7 @@ class Parties
     private $situation;
 
 
+
     /**
      * Get id
      *

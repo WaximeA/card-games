@@ -3,7 +3,7 @@
 {% block stylesheets %} <link rel="stylesheet" href="{{ asset('assets/css/stylepartie.css') }}">{% endblock %}
 
 {% block body %}
-    <h1>Partie entre {{ partie.joueur1.username }} et {{ partie.joueur2.username }}</h1>
+    <h1 id="main_title" style="color:white;">Partie entre {{ partie.joueur1.username }} et {{ partie.joueur2.username }}</h1>
 
 
         <form name="form1" method="get" id="1">
@@ -71,27 +71,27 @@
 
                                {# NOMS - ZONE CATEGORIES#}
                                 <tr>
-                                    <td style="background-image: url('{{ asset('assets/img/cartes/famille_ecailles.png') }}'); background-size: cover; background-repeat: no-repeat; width: 150px; height: 210px;">
+                                    <td style="background-image: url('{{ asset('assets/img/cartes/famille_ecailles.png') }}'); background-size: cover; background-repeat: no-repeat; width: 230px; height: 180px;">
                                         {% for carte in tapisdef.def_cat1 %}
                                             <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                         {% endfor %}
                                     </td>
-                                    <td style="background-image: url('{{ asset('assets/img/cartes/famille_plumes.png') }}'); background-size: cover; background-repeat: no-repeat; width: 150px; height: 210px;">
+                                    <td style="background-image: url('{{ asset('assets/img/cartes/famille_plumes.png') }}'); background-size: cover; background-repeat: no-repeat; width: 230px; height: 180px;">
                                         {% for carte in tapisdef.def_cat2 %}
                                             <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                         {% endfor %}
                                     </td>
-                                    <td style="background-image: url('{{ asset('assets/img/cartes/famille_poils.png') }}'); background-size: cover; background-repeat: no-repeat; width: 150px; height: 210px;">
+                                    <td style="background-image: url('{{ asset('assets/img/cartes/famille_poils.png') }}'); background-size: cover; background-repeat: no-repeat; width: 230px; height: 180px;">
                                         {% for carte in tapisdef.def_cat3 %}
                                             <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                         {% endfor %}
                                     </td>
-                                    <td style="background-image: url('{{ asset('assets/img/cartes/famille_alien.png') }}'); background-size: cover; background-repeat: no-repeat; width: 150px; height: 210px;">
+                                    <td style="background-image: url('{{ asset('assets/img/cartes/famille_alien.png') }}'); background-size: cover; background-repeat: no-repeat; width: 230px; height: 180px;">
                                         {% for carte in tapisdef.def_cat4 %}
                                             <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                         {% endfor %}
                                     </td>
-                                    <td style="background-image: url('{{ asset('assets/img/cartes/famille_cornes.png') }}'); background-size: cover; background-repeat: no-repeat; width: 150px; height: 210px;">
+                                    <td style="background-image: url('{{ asset('assets/img/cartes/famille_cornes.png') }}'); background-size: cover; background-repeat: no-repeat; width: 230px; height: 180px;">
                                         {% for carte in tapisdef.def_cat5 %}
                                             <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_pose">
                                         {% endfor %}
@@ -161,99 +161,132 @@
             </div>
 
 
-            <div class="container boutons">
-                <div class="row">
 
-                {# Si c'est le tour du joueur & si c'est le joueur 1 & si son plateau = 8 --> afficher placer sinon piocher & piocher dans defausse si > 0#}
+
+                <div class="container boutons">
+                    <hr>
+                    <div class="row">
                 {% if tourde == user.id %}
+                    {# Si c'est le tour du joueur & si c'est le joueur 1 & si son plateau = 8 --> afficher placer sinon piocher & piocher dans defausse si > 0#}
                     {% if partie.joueur1.id == user.id %}
                         {% if plateau.mainJ1|length  == 8 %}
                             <div class="col-lg-2">
-                            <button type="button" class="btn btn-default" value="placer" name="placer" id="placer" onclick="return OnButton1();">Placer cette carte</button>
+                                <button type="button" class="btn btn-default" value="placer" name="placer" id="placer" onclick="return OnButton1();">Placer cette carte</button>
                             </div>
                             <div class="col-lg-2">
-                            <button type="button" class="btn btn-default" value="defausser" name="defausser" id="defausser" onclick="return OnButton2();">Defausser cette carte</button>
+                                <button type="button" class="btn btn-default" value="defausser" name="defausser" id="defausser" onclick="return OnButton2();">Defausser cette carte</button>
                             </div>
                         {% else  %}
                             <br><br>
                             <div class="col-lg-2 col-lg-offset-10">
-
-                                <div><img src="{{ asset('assets/img/cartes/carte_verso.png') }}" alt="carte recto pioche" class="rectopioche img-responsive"></div>
-                            <button  type="button" class="btn btn-default" value="piocher" name="piocher" id="piocher" onclick="return OnButton0();"> Piocher une carte : {{ nbPioche }}</button>
+                                <div>
+                                    <img src="{{ asset('assets/img/cartes/carte_verso.png') }}" alt="carte recto pioche" class="rectopioche img-responsive">
+                                    <img src="{{ asset('assets/img/cartes/carte_verso.png') }}" alt="carte recto pioche" class="rectopioche img-responsive">
+                                    <img src="{{ asset('assets/img/cartes/carte_verso.png') }}" alt="carte recto pioche" class="rectopioche img-responsive">
+                                    <img src="{{ asset('assets/img/cartes/carte_verso.png') }}" alt="carte recto pioche" class="rectopioche img-responsive">
+                                </div>
+                                <button  type="button" class="btn btn-default" value="piocher" name="piocher" class="piocher-btn" onclick="return OnButton0();"> Piocher une carte : {{ nbPioche }}</button>
                             </div>
-
-
-                </div>
-                <div class="row">
-                        <br><br>
-                </div>
-                <div class="row">
-                        <div class="col-lg-12 col-lg-offset-1">
-                            {% if tapisdef.def_cat1|length > 0 %}
-                                <div class="col-lg-2">
-                                <button type="button" class="btn btn-default pioche" value="piocher_def1" name="piocher_def1" id="piocher_def1" onclick="return OnButton3();">Piocher chez les écailles</button>
-                                </div>
-                            {% endif %}
-                            {% if tapisdef.def_cat2|length > 0 %}
-                                <div class="col-lg-2">
-                                <button type="button" class="btn btn-default pioche" value="piocher_def2" name="piocher_def2" id="piocher_def2" onclick="return OnButton4();">Piocher chez les plumes</button>
-                                </div>
-                            {% endif %}
-                            {% if tapisdef.def_cat3|length > 0 %}
-                                <div class="col-lg-2">
-                                <button type="button" class="btn btn-default pioche" value="piocher_def3" name="piocher_def3" id="piocher_def3" onclick="return OnButton5();">Piocher chez les poils</button>
-                                </div>
-                            {% endif %}
-                            {% if tapisdef.def_cat4|length > 0 %}
-                                <div class="col-lg-2">
-                                <button type="button" class="btn btn-default pioche" value="piocher_def4" name="piocher_def4" id="piocher_def4" onclick="return OnButton6();">Piocher chez les aliens</button>
-                                </div>
-                            {% endif %}
-                            {% if tapisdef.def_cat5|length > 0 %}
-                                <div class="col-lg-2">
-                                <button type="button" class="btn btn-default pioche" value="piocher_def5" name="piocher_def5" id="piocher_def5" onclick="return OnButton7();">Piocher chez les cornes</button>
-                                </div>
-                            {% endif %}
+                    </div>
+                    <div class="row"><br><br></div>
+                    <div class="row">
+                            <div class="col-lg-12 col-lg-offset-1">
+                                {% if tapisdef.def_cat1|length > 0 %}
+                                    <div class="col-lg-2">
+                                    <button type="button" class="btn btn-default pioche" value="piocher_def1" name="piocher_def1" id="piocher_def1" onclick="return OnButton3();">Piocher chez les écailles</button>
+                                    </div>
+                                {% endif %}
+                                {% if tapisdef.def_cat2|length > 0 %}
+                                    <div class="col-lg-2">
+                                    <button type="button" class="btn btn-default pioche" value="piocher_def2" name="piocher_def2" id="piocher_def2" onclick="return OnButton4();">Piocher chez les plumes</button>
+                                    </div>
+                                {% endif %}
+                                {% if tapisdef.def_cat3|length > 0 %}
+                                    <div class="col-lg-2">
+                                    <button type="button" class="btn btn-default pioche" value="piocher_def3" name="piocher_def3" id="piocher_def3" onclick="return OnButton5();">Piocher chez les poils</button>
+                                    </div>
+                                {% endif %}
+                                {% if tapisdef.def_cat4|length > 0 %}
+                                    <div class="col-lg-2">
+                                    <button type="button" class="btn btn-default pioche" value="piocher_def4" name="piocher_def4" id="piocher_def4" onclick="return OnButton6();">Piocher chez les aliens</button>
+                                    </div>
+                                {% endif %}
+                                {% if tapisdef.def_cat5|length > 0 %}
+                                    <div class="col-lg-2">
+                                    <button type="button" class="btn btn-default pioche" value="piocher_def5" name="piocher_def5" id="piocher_def5" onclick="return OnButton7();">Piocher chez les cornes</button>
+                                    </div>
+                                {% endif %}
+                            </div>
+                    </div>
                         {% endif %}
-                        </div>
-                    {% else  %}
-                        {% if plateau.mainJ2|length  == 8 %}
-                            <button type="button" value="placer" name="placer" id="placer" onclick="return OnButton1();">Placer cette carte</button>
-                            <button type="button" value="defausser" name="defausser" id="defausser" onclick="return OnButton2();">Defausser cette carte</button>
-                        {% else  %}
-                            <br><br>
-                            <button type="button" value="piocher" name="piocher" id="piocher" onclick="return OnButton0();">Piocher une carte</button>
-                            <br>
-                            {% if tapisdef.def_cat1|length > 0 %}
-                                <button type="button" value="piocher_def1" name="piocher_def1" id="piocher_def1" onclick="return OnButton3();">Piocher chez les écailles</button>
-                            {% endif %}
-                            {% if tapisdef.def_cat2|length > 0 %}
-                                <button type="button" value="piocher_def2" name="piocher_def2" id="piocher_def2" onclick="return OnButton4();">Piocher chez les plumes</button>
-                            {% endif %}
-                            {% if tapisdef.def_cat3|length > 0 %}
-                                <button type="button" value="piocher_def3" name="piocher_def3" id="piocher_def3" onclick="return OnButton5();">Piocher chez les poils</button>
-                            {% endif %}
-                            {% if tapisdef.def_cat4|length > 0 %}
-                                <button type="button" value="piocher_def4" name="piocher_def4" id="piocher_def4" onclick="return OnButton6();">Piocher chez les aliens</button>
-                            {% endif %}
-                            {% if tapisdef.def_cat5|length > 0 %}
-                                <button type="button" value="piocher_def5" name="piocher_def5" id="piocher_def5" onclick="return OnButton7();">Piocher chez les cornes</button>
-                            {% endif %}
+            {% else  %}
+                            <div class="row">
+                            {% if plateau.mainJ2|length  == 8 %}
+                                    <div class="col-lg-2">
+                                        <button type="button" class="btn btn-default" value="placer" name="placer" id="placer" onclick="return OnButton1();">Placer cette carte</button>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <button type="button" class="btn btn-default" value="defausser" name="defausser" id="defausser" onclick="return OnButton2();">Defausser cette carte</button>
+                                    </div>
+                            {% else  %}
+                                <br><br>
+                                <div class="col-lg-2 col-lg-offset-10">
+                                    <div>
+                                        <img src="{{ asset('assets/img/cartes/carte_verso.png') }}" alt="carte recto pioche" class="rectopioche img-responsive">
+                                        <img src="{{ asset('assets/img/cartes/carte_verso.png') }}" alt="carte recto pioche" class="rectopioche img-responsive">
+                                        <img src="{{ asset('assets/img/cartes/carte_verso.png') }}" alt="carte recto pioche" class="rectopioche img-responsive">
+                                        <img src="{{ asset('assets/img/cartes/carte_verso.png') }}" alt="carte recto pioche" class="rectopioche img-responsive">
+                                    </div>
+                                    <button  type="button" class="btn btn-default" value="piocher" name="piocher" class="piocher-btn" onclick="return OnButton0();"> Piocher une carte : {{ nbPioche }}</button>
+                                </div>
+                            </div>
+                            <div class="row"><br><br></div>
+                            <div class="row">
+                                <div class="col-lg-12 col-lg-offset-1">
+                                    {% if tapisdef.def_cat1|length > 0 %}
+                                        <div class="col-lg-2">
+                                            <button type="button" class="btn btn-default pioche" value="piocher_def1" name="piocher_def1" id="piocher_def1" onclick="return OnButton3();">Piocher chez les écailles</button>
+                                        </div>
+                                    {% endif %}
+                                    {% if tapisdef.def_cat2|length > 0 %}
+                                        <div class="col-lg-2">
+                                            <button type="button" class="btn btn-default pioche" value="piocher_def2" name="piocher_def2" id="piocher_def2" onclick="return OnButton4();">Piocher chez les plumes</button>
+                                        </div>
+                                    {% endif %}
+                                    {% if tapisdef.def_cat3|length > 0 %}
+                                        <div class="col-lg-2">
+                                            <button type="button" class="btn btn-default pioche" value="piocher_def3" name="piocher_def3" id="piocher_def3" onclick="return OnButton5();">Piocher chez les poils</button>
+                                        </div>
+                                    {% endif %}
+                                    {% if tapisdef.def_cat4|length > 0 %}
+                                        <div class="col-lg-2">
+                                            <button type="button" class="btn btn-default pioche" value="piocher_def4" name="piocher_def4" id="piocher_def4" onclick="return OnButton6();">Piocher chez les aliens</button>
+                                        </div>
+                                    {% endif %}
+                                    {% if tapisdef.def_cat5|length > 0 %}
+                                        <div class="col-lg-2">
+                                            <button type="button" class="btn btn-default pioche" value="piocher_def5" name="piocher_def5" id="piocher_def5" onclick="return OnButton7();">Piocher chez les cornes</button>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
                         {% endif %}
                     {% endif %}
-                {% else  %}
+            {% else  %}
                     <p>Vous ne pouvez pas jouer, l'adversaire est en train de jouer</p>
-                {% endif %}
+            {% endif %}
                 </div>
-            </div>
+
+
+
 
 
                          <!-- pour afficher carte du joueur 1 -->
                     {% if partie.joueur1.id == user.id %}
                         <div>
-                            <h2>Cartes de {{ partie.joueur1.username }}</h2>
+                            <h2>Vos cartes ({{ partie.joueur1.username }})</h2>
                             <table class="table table-bordered">
-                                <tr class="success">
+                                <tr class="info">
                                     {% for carte in plateau.mainJ1 %}
                                         <td><input name="carteselect" value="{{ cartes[carte].id }}" type="radio"></td>
                                     {% endfor %}
@@ -272,14 +305,14 @@
                         <!-- pour afficher carte du joueur 2 -->
                     {% elseif partie.joueur2.id == user.id %}
                         <div>
-                            <h2>Cartes de {{ partie.joueur2.username }}</h2>
+                            <h2>Vos cartes ({{ partie.joueur2.username }})</h2>
                             <table class="table table-bordered">
-                                <tr class="success">
+                                <tr class="info">
                                     {% for carte in plateau.mainJ2 %}
                                         <td><input name="carteselect" value="{{ cartes[carte].id }}" type="radio"></td>
                                     {% endfor %}
                                 </tr>
-                                <tr class="info">
+                                <tr>
                                     {% for carte in plateau.mainJ2 %}
                                         <td>
                                             <img src="{{ asset('assets/img/cartes/' ~ cartes[carte].image ) }}" alt="{{ cartes[carte].categorie.libelle }} {{ cartes[carte].valeur }} {{ cartes[carte].type }}" class="carte_main">
@@ -291,9 +324,6 @@
                         </div>
                     {% endif %}
         </form>
-
-
-
 
     {{ dump(partie.situation) }}
 
@@ -308,6 +338,8 @@
 
 {# Modifier l'action du formulaire en fonction du bouton #}
 {% block javascripts %}
+    <script src="{{ asset('assets/js/angular.min.js') }}"></script>
+
     <script>
 
     function OnButton0()
@@ -357,4 +389,16 @@
     }
     </script>
 
+
+
+    <script type="text/javascript">
+        if ( {{ tourde }} != {{ user.id }} ) {
+            setInterval(
+                function ()
+                {
+                    window.location.href = "{{ path('afficher_partie', {'id': idd }  ) }}";
+                    console.log('test.');
+                },3000);
+        }
+    </script>
 {% endblock %}
