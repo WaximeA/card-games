@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('assets/css/finpartie.css') }}">{% endblock %}
+
 {% block body %}
-    <div class="container">
+    <div class="container text-center">
         <div class="row">
             <div class="col-lg-12">
-                <h3>La partie est temrinée !</h3>
+                <h3 class="titre">La partie est temrinée !</h3>
                 <br>
                 <form name="form2" method="get" id="2">
-                    <button type="button" value="fini" name="fini" id="fini" onclick="return OnButtonFini();">Découvre si tu as réussi à dompter les Funny Monsters</button>
+                    <button type="button" value="fini" name="fini" class="btn_score" onclick="return OnButtonFini();"><h2>Découvre si tu as réussi à <br>dompter les Funny Monsters</h2></button>
                 </form>
             </div>
         </div>

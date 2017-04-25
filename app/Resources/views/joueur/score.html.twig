@@ -1,23 +1,81 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('assets/css/finpartie.css') }}">{% endblock %}
+
+
 {% block body %}
-    {{ dump(partie.situation) }}
-    {{ dump(tapis['pose_j1cat2']) }}
-    {{ dump(pointJ1) }}
-    {{ dump(pointJ2) }}
-    <br>
-    {{ dump(nbExtra) }}
-    <p>partie gg 1</p>
-    {{ dump(partieGG_1) }}
-    <p>partie gg 2</p>
-    {{ dump(partieGG_2) }}
+    <div class="container" style="background-color: rgba(255,255,255,0.5); padding:20px; margin-top: 50px;">
+        <div class="row">
+            <div class="col-lg-12 text-center">
 
-    <p>cumul 1</p>
-    {{ dump(cumulPT_j1 ) }}
-    <p>cumul 2</p>
-    {{ dump(cumulPT_j2 ) }}
+                {% if user.id == idj1 %}
+                        {% if pointJ1 < pointJ2 %}
+                            <h1 class="titre" style="color:red">Désolé {{ user.username }} mais c'est une DÉFAITE ...</h1>
+                        {% else %}
+                            <h1 class="titre" style="color:green">Félicitation {{ user.username }}, c'est une VICTOIRE !!!</h1>
+                            <div class="btn3">
+                                <a href=""><h2>Télécharge ton diplôme de dresseur de monstres</h2></a>
+                            </div>
+                        {% endif %}
+                {% endif %}
+
+                {% if user.id == idj2 %}
+                    {% if pointJ2 < pointJ1 %}
+                        <h1 class="titre" style="color:red">Désolé {{ user.username }} mais c'est une DÉFAITE ...</h1>
+                    {% else %}
+                        <h1 class="titre" style="color:green">Félicitation {{ user.username }}, c'est une VICTOIRE !!!</h1>
+                        <div class="btn3">
+                            <a href="{{ asset('assets/img/diplome2.png') }}"><h2>Télécharge ton diplôme de dresseur de monstres</h2></a>
+                        </div>
+                    {% endif %}
+                {% endif %}
+                            <div class="btn2"><a href="{{ path('joueur_parties_add') }}"><h2>Rejouer une partie</h2></a></div>
+                            <div class="btn4"><a href="{{ path('classement') }}"><h2>Voir le classement</h2></a></div>
 
 
+
+                <div>
+                    <br>
+                    <h1>Statistiques : </h1>
+                    <table class="table table-bordered">
+                            <tr class="info">
+                                <td><b>Joueurs</b></td>
+                                <td><b>Points</b></td>
+                                <td><b>Parties gagnées</b></td>
+                                <td><b>Cumule de points</b></td>
+                            </tr>
+
+
+                            <tr class="info">
+                                <td>{{ usernamej1 }}</td>
+                                <td>{{ pointJ1}}</td>
+                                <td>{{ partieGG_1 }}</td>
+                                <td>{{ cumulPT_j1}}</td>
+                            </tr>
+
+                            <tr class="info">
+                                <td>{{ usernamej2 }}</td>
+                                <td>{{ pointJ2}}</td>
+                                <td>{{ partieGG_2 }}</td>
+                                <td>{{ cumulPT_j2}}</td>
+                            </tr>
+
+
+                    </table>
+
+                </div>
+
+
+                    <div class="partieCentre">
+                        <div class="btn5" style="float: left;">
+                            <a href="http://89.234.182.91/jeu"><h2>Retour à l'accueil</h2></a>
+                        </div>
+                    </div>
+
+
+            </div>
+        </div>
+    </div>
 
 
 
