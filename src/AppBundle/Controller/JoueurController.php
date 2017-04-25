@@ -1381,9 +1381,11 @@ class JoueurController extends Controller
         // récuperer l'id des deux joueurs
         $j1=$id->getJoueur1();
         $idj1=$j1->getId();
+        $usernamej1=$j1->getUsername();
 
         $j2=$id->getJoueur2();
         $idj2=$j2->getId();
+        $usernamej2=$j2->getUsername();
 
         // joueur actif
         $jactif = $user->getId();
@@ -1459,9 +1461,11 @@ class JoueurController extends Controller
         // récuperer l'id des deux joueurs
         $j1=$id->getJoueur1();
         $idj1=$j1->getId();
+        $usernamej1=$j1->getUsername();
 
         $j2=$id->getJoueur2();
         $idj2=$j2->getId();
+        $usernamej2=$j2->getUsername();
 
         // joueur actif
         $jactif = $user->getId();
@@ -1692,7 +1696,7 @@ class JoueurController extends Controller
         $em->flush();
 
 
-            return $this->render(':joueur:score.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user,  'tapis' => $tapis, 'pointJ1' => $pointJ1, 'pointJ2' => $pointJ2, 'nbExtra' => $nbExtra, 'cumulPT_j1' => $cumulPT_j1, 'cumulPT_j2' => $cumulPT_j2, 'partieGG_1'=>$partieGG_1,'partieGG_2'=>$partieGG_2]);
+            return $this->render(':joueur:score.html.twig', ['cartes' => $cartes, 'partie' => $id, 'user' => $user,  'tapis' => $tapis, 'pointJ1' => $pointJ1, 'pointJ2' => $pointJ2, 'nbExtra' => $nbExtra, 'cumulPT_j1' => $cumulPT_j1, 'cumulPT_j2' => $cumulPT_j2, 'partieGG_1'=>$partieGG_1,'partieGG_2'=>$partieGG_2, 'jactif'=>$jactif, 'idj1' => $idj1,'idj2'=> $idj2,'usernamej2' => $usernamej2,'usernamej1' => $usernamej1 ]);
     }
 
 

@@ -3,6 +3,7 @@
 {% block title %}Défiez les FUNNY MONSTERS bientôt !{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('assets/css/stylefouser.css') }}">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 {% endblock %}
 
 {% block font %}
@@ -17,6 +18,7 @@
         {% block fos_user_content %}
             {% include "@FOSUser/Registration/register_content.html.twig" %}
         {% endblock fos_user_content %}
+
         <br>
         <p> <span>Vous avez déjà un compte ?</span><a href="{{ path('fos_user_security_login') }}"> Connectez-vous ici !</a></p>
         <p class="home-button">
