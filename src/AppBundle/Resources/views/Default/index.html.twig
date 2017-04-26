@@ -3,8 +3,9 @@
 {% block title %}Défiez les FUNNY MONSTERS bientôt !{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/countdown.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/stylefouser.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/stylehome.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/stylefouser.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/stylehome.css') }}"/>
+
 {% endblock %}
 
 {% block font %}
@@ -36,7 +37,7 @@
                         <a class="page-scroll" href="http://89.234.182.91/promo/#parents">Parents</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="{{ path('forum') }}">Forum</a>
+                        <a class="page-scroll" href="{{ path('discutea_forum_homepage') }}">Forum</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="{{ path('classement') }}">Classement</a>
@@ -77,13 +78,18 @@
 {% endblock %}
 
 {% block body %}
-        <div class="container" id="accueil">
+
+        <div class="container" id="accueil" style="background-color: rgba(255,255,255,0.7); padding:20px; margin-top: 100px;">
             <div class="row">
-                <div class="col-lg-6 text-center">
-                    <a href="http://89.234.182.91/promo"><button type="button" class="btn btn-success btn-lg">En savoir plus</button></a>
+                <div class="col-lg-12">
+                    <h1 class="titre"> Et toi, quel monstres es-tu ? </h1>
                 </div>
-                <div class="col-lg-6 text-center">
-                    <a href="{{ path('fos_user_registration_register') }}"><button type="button" class="btn btn-success btn-lg">Inscrivez-vous ici !</button></a>
+
+                <div class="col-lg-6 text-center btn2">
+                    <a href="http://89.234.182.91/promo">En savoir plus</a>
+                </div>
+                <div class="col-lg-6 text-center btn2">
+                    <a href="{{ path('fos_user_registration_register') }}">Inscrivez-vous ici !</a>
                 </div>
             </div>
         </div>

@@ -1,9 +1,18 @@
 body {
-	background: url("../img/funnymonstersbg.png") no-repeat center center fixed;
+	background: url("../img/background_familly.png") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+}
+
+@font-face {
+	font-family: "mafont";
+	src: url('../fonts/TheSalvador-Condensed.otf');
+}
+
+body {
+	font-family: "mafont";
 }
 
 footer {
@@ -47,4 +56,40 @@ header img {
 
 h4 {
 	color: rgb(178, 188, 218);
+}
+
+
+.btn2 a {
+	text-align: center;
+	color: white;
+	background: rgba(20, 193, 224, 1);
+	display: inline-block;
+	padding: 0px 10px 10px;
+	text-decoration: none;
+	font-size: 170%;
+	font-weight: bold;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 3px 3px 3px rgba(0,0,0,0.8);
+	margin: 3px;
+	transition: all 0.5s ease-in-out;
+	padding:30px;
+	margin-top: 50px;
+
+}
+
+.btn2 a:hover {
+	background: rgba(255,255,255,1);
+	color: #14c1e0;
+	transform: scale(1.1,1.1);
+	transition: all 0.5s ease-in-out;
+}
+
+.titre {
+	text-align: center;
+	font-size: 60px;
+	color: #000;
 }

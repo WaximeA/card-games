@@ -66,20 +66,4 @@ class DefaultController extends Controller
 
     }
 
-    /**
-     *
-     * @Route("/forum", name="forum")
-     */
-    public function Forum()
-    {
-        $em = $this->getDoctrine()->getManager();
-        $user = $this->getUser();
-        $joueurs = $this->getDoctrine()->getRepository('AppBundle:User')->findBy(array(), array('partiesGG'=>'desc'));
-
-        $joueurspt = $this->getDoctrine()->getRepository('AppBundle:User')->findBy(array(), array('cumulPT'=>'desc'));
-
-
-        return $this->render(':joueur:forum.html.twig', ['joueurs'=>$joueurs, 'joueurspt' => $joueurspt]);
-
-    }
 }
