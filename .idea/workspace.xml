@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fc0c65f-9666-4643-b76c-212a9b66238f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/views/joueur/forum.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/css/countdown.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/favicon.ico" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/joueur/afficherpartie.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/joueur/afficherpartie.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/JoueurController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/JoueurController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/Default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/css/stylefouser.css" afterPath="$PROJECT_DIR$/web/assets/css/stylefouser.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/css/stylehome.css" afterPath="$PROJECT_DIR$/web/assets/css/stylehome.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/css/stylepartie.css" afterPath="$PROJECT_DIR$/web/assets/css/stylepartie.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,7 +30,7 @@
     <favorites_list name="symfony_s4" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="security.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/security.yml">
           <provider selected="true" editor-type-id="text-editor">
@@ -73,9 +56,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="495">
               <caret line="33" column="49" lean-forward="false" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="49" />
-              <folding>
-                <element signature="e#12#37#0#Twig" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,9 +66,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
               <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-              <folding>
-                <element signature="e#170#193#0#Twig" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,40 +76,36 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#354#365#0#Twig" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="afficherpartie.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="afficherpartie.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/afficherpartie.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="74" lean-forward="false" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="74" />
+            <state relative-caret-position="120">
+              <caret line="8" column="122" lean-forward="false" selection-start-line="8" selection-start-column="122" selection-end-line="8" selection-end-column="122" />
               <folding>
-                <element signature="e#1010#1335#0#Twig" expanded="false" />
-                <element signature="e#1471#1796#0#Twig" expanded="false" />
-                <element signature="e#1932#2257#0#Twig" expanded="false" />
-                <element signature="e#2393#2718#0#Twig" expanded="false" />
-                <element signature="e#2854#3179#0#Twig" expanded="false" />
-                <element signature="e#3472#3797#0#Twig" expanded="false" />
-                <element signature="e#3933#4258#0#Twig" expanded="false" />
-                <element signature="e#4394#4719#0#Twig" expanded="false" />
-                <element signature="e#4855#5180#0#Twig" expanded="false" />
-                <element signature="e#9250#9575#0#Twig" expanded="false" />
-                <element signature="e#9723#10056#0#Twig" expanded="false" />
-                <element signature="e#10204#10537#0#Twig" expanded="false" />
-                <element signature="e#10685#11018#0#Twig" expanded="false" />
-                <element signature="e#11166#11499#0#Twig" expanded="false" />
-                <element signature="e#11816#12149#0#Twig" expanded="false" />
-                <element signature="e#12297#12630#0#Twig" expanded="false" />
-                <element signature="e#12778#13111#0#Twig" expanded="false" />
-                <element signature="e#13259#13592#0#Twig" expanded="false" />
-                <element signature="e#13740#14073#0#Twig" expanded="false" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="e#28675#28690#0#Twig" expanded="true" />
+                <element signature="e#990#1315#0#Twig" expanded="false" />
+                <element signature="e#1451#1776#0#Twig" expanded="false" />
+                <element signature="e#1912#2237#0#Twig" expanded="false" />
+                <element signature="e#2373#2698#0#Twig" expanded="false" />
+                <element signature="e#2834#3159#0#Twig" expanded="false" />
+                <element signature="e#3452#3777#0#Twig" expanded="false" />
+                <element signature="e#3913#4238#0#Twig" expanded="false" />
+                <element signature="e#4374#4699#0#Twig" expanded="false" />
+                <element signature="e#4835#5160#0#Twig" expanded="false" />
+                <element signature="e#9230#9555#0#Twig" expanded="false" />
+                <element signature="e#9703#10036#0#Twig" expanded="false" />
+                <element signature="e#10184#10517#0#Twig" expanded="false" />
+                <element signature="e#10665#10998#0#Twig" expanded="false" />
+                <element signature="e#11146#11479#0#Twig" expanded="false" />
+                <element signature="e#11796#12129#0#Twig" expanded="false" />
+                <element signature="e#12277#12610#0#Twig" expanded="false" />
+                <element signature="e#12758#13091#0#Twig" expanded="false" />
+                <element signature="e#13239#13572#0#Twig" expanded="false" />
+                <element signature="e#13720#14053#0#Twig" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -139,31 +114,22 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
+            <state relative-caret-position="1215">
               <caret line="81" column="124" lean-forward="false" selection-start-line="81" selection-start-column="51" selection-end-line="81" selection-end-column="124" />
-              <folding>
-                <element signature="e#12#28#0#Twig" expanded="true" />
-                <element signature="e#2039#2049#0#Twig" expanded="true" />
-                <element signature="e#2967#2982#0#Twig" expanded="true" />
-                <element signature="e#3140#3145#0#Twig" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/DForumBundle/views/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="51" column="38" lean-forward="true" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+            <state relative-caret-position="332">
+              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#2057#2087#0#Twig" expanded="true" />
-                <element signature="e#2792#2816#0#Twig" expanded="true" />
-                <element signature="e#2950#2973#0#Twig" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#2057#2087#0#Twig" expanded="false" />
+                <element signature="e#2651#2672#0#Twig" expanded="false" />
+                <element signature="e#2950#2973#0#Twig" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -265,8 +231,8 @@
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/web/assets/css/stylepartie.css" />
-        <option value="$PROJECT_DIR$/app/Resources/views/joueur/afficherpartie.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/DForumBundle/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/joueur/afficherpartie.html.twig" />
       </list>
     </option>
   </component>
@@ -316,8 +282,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -826,6 +790,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -989,11 +955,12 @@
       <workItem from="1492768466373" duration="19474000" />
       <workItem from="1492881515346" duration="12488000" />
       <workItem from="1493031796319" duration="51940000" />
+      <workItem from="1493237081768" duration="566000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="329134000" />
+    <option name="totallyTimeSpent" value="329700000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1008,13 +975,13 @@
     <frame x="0" y="22" width="1680" height="986" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17887668" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18070818" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19596864" sideWeight="0.20659971" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.010760401" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1756152" sideWeight="0.7934003" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1756152" sideWeight="0.7934003" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1065,7 +1032,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1073,7 +1039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1875">
           <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1081,7 +1046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1006">
           <caret line="630" column="4" lean-forward="false" selection-start-line="630" selection-start-column="4" selection-end-line="633" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1105,9 +1069,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1115,9 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1146,9 +1104,9 @@
         <state relative-caret-position="120">
           <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
           <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-            <element signature="e#186#200#0#Twig" expanded="true" />
-            <element signature="e#258#276#0#Twig" expanded="true" />
+            <element signature="e#12#26#0#Twig" expanded="false" />
+            <element signature="e#186#200#0#Twig" expanded="false" />
+            <element signature="e#258#276#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1158,8 +1116,8 @@
         <state relative-caret-position="360">
           <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
           <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-            <element signature="e#951#966#0#Twig" expanded="true" />
+            <element signature="e#12#26#0#Twig" expanded="false" />
+            <element signature="e#951#966#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1179,7 +1137,7 @@
         <state relative-caret-position="735">
           <caret line="37" column="24" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="37" selection-end-column="24" />
           <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
+            <element signature="e#12#26#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1189,7 +1147,7 @@
         <state relative-caret-position="525">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="e#12#37#0#Twig" expanded="true" />
+            <element signature="e#12#37#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1198,23 +1156,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1035">
           <caret line="31" column="87" lean-forward="false" selection-start-line="31" selection-start-column="87" selection-end-line="31" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/forum.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/forum.html.twig" />
     <entry file="file://$PROJECT_DIR$/app/AppCache.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1222,12 +1171,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="538">
           <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#66#0#PHP" expanded="true" />
-            <element signature="e#1359#1375#1#PHP" expanded="true" />
-            <element signature="e#1481#1497#1#PHP" expanded="true" />
-            <element signature="e#1574#1604#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1235,7 +1178,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="24" column="53" lean-forward="false" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1243,7 +1185,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1251,7 +1192,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1259,18 +1199,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/css/countdown.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/css/countdown.css" />
     <entry file="file://$PROJECT_DIR$/web/assets/img/background_familly.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1280,7 +1212,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="21" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1289,11 +1220,11 @@
         <state relative-caret-position="151">
           <caret line="1350" column="38" lean-forward="false" selection-start-line="1350" selection-start-column="38" selection-end-line="1350" selection-end-column="38" />
           <folding>
-            <element signature="e#38#66#0#PHP" expanded="true" />
-            <element signature="e#615#639#0#PHP" expanded="true" />
-            <element signature="e#54377#54394#0#PHP" expanded="true" />
-            <element signature="e#57493#57510#0#PHP" expanded="true" />
-            <element signature="e#65494#65519#0#PHP" expanded="true" />
+            <element signature="e#38#66#0#PHP" expanded="false" />
+            <element signature="e#615#639#0#PHP" expanded="false" />
+            <element signature="e#54377#54394#0#PHP" expanded="false" />
+            <element signature="e#57493#57510#0#PHP" expanded="false" />
+            <element signature="e#65494#65519#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1308,8 +1239,8 @@
         <state relative-caret-position="195">
           <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
           <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-            <element signature="e#790#802#0#Twig" expanded="true" />
+            <element signature="e#12#26#0#Twig" expanded="false" />
+            <element signature="e#790#802#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1319,10 +1250,10 @@
         <state relative-caret-position="30">
           <caret line="6" column="107" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="107" />
           <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-            <element signature="e#186#266#0#HTML" expanded="true" />
-            <element signature="e#1668#1686#0#Twig" expanded="true" />
-            <element signature="e#1795#1805#0#Twig" expanded="true" />
+            <element signature="e#12#26#0#Twig" expanded="false" />
+            <element signature="e#186#266#0#HTML" expanded="false" />
+            <element signature="e#1668#1686#0#Twig" expanded="false" />
+            <element signature="e#1795#1805#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1331,7 +1262,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="725">
           <caret line="94" column="1" lean-forward="false" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1339,7 +1269,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1408,9 +1337,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="33" column="49" lean-forward="false" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="49" />
-          <folding>
-            <element signature="e#12#37#0#Twig" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1428,7 +1355,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1436,9 +1362,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-          <folding>
-            <element signature="e#170#193#0#Twig" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1446,9 +1370,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#354#365#0#Twig" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1456,65 +1378,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="12" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
+        <state relative-caret-position="1215">
           <caret line="81" column="124" lean-forward="false" selection-start-line="81" selection-start-column="51" selection-end-line="81" selection-end-column="124" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/DForumBundle/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding>
-            <element signature="e#12#28#0#Twig" expanded="true" />
-            <element signature="e#2039#2049#0#Twig" expanded="true" />
-            <element signature="e#2967#2982#0#Twig" expanded="true" />
-            <element signature="e#3140#3145#0#Twig" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#2057#2087#0#Twig" expanded="false" />
+            <element signature="e#2651#2672#0#Twig" expanded="false" />
+            <element signature="e#2950#2973#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/afficherpartie.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="74" lean-forward="false" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="74" />
+        <state relative-caret-position="120">
+          <caret line="8" column="122" lean-forward="false" selection-start-line="8" selection-start-column="122" selection-end-line="8" selection-end-column="122" />
           <folding>
-            <element signature="e#1010#1335#0#Twig" expanded="false" />
-            <element signature="e#1471#1796#0#Twig" expanded="false" />
-            <element signature="e#1932#2257#0#Twig" expanded="false" />
-            <element signature="e#2393#2718#0#Twig" expanded="false" />
-            <element signature="e#2854#3179#0#Twig" expanded="false" />
-            <element signature="e#3472#3797#0#Twig" expanded="false" />
-            <element signature="e#3933#4258#0#Twig" expanded="false" />
-            <element signature="e#4394#4719#0#Twig" expanded="false" />
-            <element signature="e#4855#5180#0#Twig" expanded="false" />
-            <element signature="e#9250#9575#0#Twig" expanded="false" />
-            <element signature="e#9723#10056#0#Twig" expanded="false" />
-            <element signature="e#10204#10537#0#Twig" expanded="false" />
-            <element signature="e#10685#11018#0#Twig" expanded="false" />
-            <element signature="e#11166#11499#0#Twig" expanded="false" />
-            <element signature="e#11816#12149#0#Twig" expanded="false" />
-            <element signature="e#12297#12630#0#Twig" expanded="false" />
-            <element signature="e#12778#13111#0#Twig" expanded="false" />
-            <element signature="e#13259#13592#0#Twig" expanded="false" />
-            <element signature="e#13740#14073#0#Twig" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#28675#28690#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/DForumBundle/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="51" column="38" lean-forward="true" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#2057#2087#0#Twig" expanded="true" />
-            <element signature="e#2792#2816#0#Twig" expanded="true" />
-            <element signature="e#2950#2973#0#Twig" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#990#1315#0#Twig" expanded="false" />
+            <element signature="e#1451#1776#0#Twig" expanded="false" />
+            <element signature="e#1912#2237#0#Twig" expanded="false" />
+            <element signature="e#2373#2698#0#Twig" expanded="false" />
+            <element signature="e#2834#3159#0#Twig" expanded="false" />
+            <element signature="e#3452#3777#0#Twig" expanded="false" />
+            <element signature="e#3913#4238#0#Twig" expanded="false" />
+            <element signature="e#4374#4699#0#Twig" expanded="false" />
+            <element signature="e#4835#5160#0#Twig" expanded="false" />
+            <element signature="e#9230#9555#0#Twig" expanded="false" />
+            <element signature="e#9703#10036#0#Twig" expanded="false" />
+            <element signature="e#10184#10517#0#Twig" expanded="false" />
+            <element signature="e#10665#10998#0#Twig" expanded="false" />
+            <element signature="e#11146#11479#0#Twig" expanded="false" />
+            <element signature="e#11796#12129#0#Twig" expanded="false" />
+            <element signature="e#12277#12610#0#Twig" expanded="false" />
+            <element signature="e#12758#13091#0#Twig" expanded="false" />
+            <element signature="e#13239#13572#0#Twig" expanded="false" />
+            <element signature="e#13720#14053#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
