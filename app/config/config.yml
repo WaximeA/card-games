@@ -60,6 +60,10 @@ doctrine:
         auto_generate_proxy_classes: "%kernel.debug%"
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
+        resolve_target_entities:
+            Symfony\Component\Security\Core\User\UserInterface: AppBundle\Entity\User
+
+
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -104,14 +108,45 @@ easy_admin:
                         - { property: 'email', type: 'email', label: 'Adresse e-mail' }
                         # admin edit/suppr users -> passwords and roles :
                         - { property: 'plainPassword', type: 'text', type_options: { required: false }, label: 'Mot de passe' }
-                        - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN' }}}
+                        - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN'}}}
                         - { property: 'enabled', label: 'Activer l''utilisateur' }
 
             Parties:
                 label: 'Parties'
                 class: AppBundle\Entity\Parties
                 list:
-                    fields: ['id', 'joueur1_id', 'joueur2_id', 'debut', 'fin', 'point_j1', 'point_j2']
+                    fields: ['id', 'debut', 'fin', 'point_j1', 'point_j2']
                     title: "Liste de l'ensemble des parties crées"
                     max_results: 20
 
+
+# Stof Doctrine Extensions
+stof_doctrine_extensions:
+    orm:
+        default:
+            sluggable: true
+
+# Configuration for knp paginator: don't forget to customize page_name
+knp_paginator:
+    page_range: 3
+    default_options:
+        page_name: Forum FUNNY MONSTER
+        sort_field_name: sort
+        sort_direction_name: direction
+        distinct: true
+    template:
+        pagination: KnpPaginatorBundle:Pagination:sliding.html.twig
+        sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig
+
+# Configuration for discutea forum
+discutea_forum:
+    preview:
+        enabled: true
+    knp_paginator:
+        page_name: Forum FUNNY MONSTER
+        topics:
+            enabled: true
+            per_page: 10
+        posts:
+            enabled: true
+            per_page: 10
