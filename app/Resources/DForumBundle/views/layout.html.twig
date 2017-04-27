@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <title>{{ pagetitle }}</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link href="{{ asset('assets/css/stylehome.css') }}" >
+    <link href="{{ asset('assets/css/stylefouser.css') }}" >
     <style>
         body {
             padding-top: 50px;
@@ -21,7 +21,7 @@
     </style>
     {% block stylesheets %}{% endblock %}
   </head>
-  <body style="background-image: url('{{ asset('assets/img/background_familly.png') }}')">
+  <body >
     <nav class="navbar  navbar-fixed-top navbar-right navbar-default navbar-custom ">
       <div class="container">
         <img style="width: 100px; margin-top:5px; margin-bottom: 5px;" src="{{ asset('assets/img/logo2.png') }}" alt="">
@@ -64,7 +64,7 @@
       </div>
     </nav>
 
-    <div class="container" style="background-color: rgba(255,255,255,0.7); padding:20px; margin-top: 100px;">
+    <div class="container" style="background-color: rgba(255,255,255,0.9); padding:20px; margin-top: 100px;">
       <div class="starter-template" >
 
       {% for label, flashes in app.session.flashbag.all %}

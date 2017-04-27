@@ -1356,7 +1356,7 @@ class JoueurController extends Controller
 
         $idd = $id->getId();
 
-        return $this->redirectToRoute('afficher_partie', ['idd' => $idd]);
+        return $this->redirectToRoute('afficher_partie', ['idd' => $idd, 'id'=>$id->getId()]);
     }
 
     /**
