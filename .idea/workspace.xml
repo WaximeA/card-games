@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fc0c65f-9666-4643-b76c-212a9b66238f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/joueur/afficherpartie.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/joueur/afficherpartie.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/DForumBundle/views/layout.html.twig" afterPath="$PROJECT_DIR$/app/Resources/DForumBundle/views/layout.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/JoueurController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/JoueurController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/Default/index.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,21 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="security.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <file leaf-file-name="JoueurController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/JoueurController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="26" lean-forward="false" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="49" lean-forward="false" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
+            <state relative-caret-position="211">
+              <caret line="1358" column="91" lean-forward="false" selection-start-line="1358" selection-start-column="73" selection-end-line="1358" selection-end-column="91" />
               <folding />
             </state>
           </provider>
@@ -54,18 +47,18 @@
       <file leaf-file-name="login.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="49" lean-forward="false" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="49" />
+            <state relative-caret-position="540">
+              <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login_content.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig">
+      <file leaf-file-name="score.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/score.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+            <state relative-caret-position="30">
+              <caret line="6" column="107" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="107" />
               <folding />
             </state>
           </provider>
@@ -81,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="afficherpartie.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="afficherpartie.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/afficherpartie.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="-45">
               <caret line="8" column="122" lean-forward="false" selection-start-line="8" selection-start-column="122" selection-end-line="8" selection-end-column="122" />
               <folding>
                 <element signature="e#990#1315#0#Twig" expanded="false" />
@@ -111,11 +104,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="addpartie.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/addpartie.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1215">
-              <caret line="81" column="124" lean-forward="false" selection-start-line="81" selection-start-column="51" selection-end-line="81" selection-end-column="124" />
+            <state relative-caret-position="445">
+              <caret line="84" column="67" lean-forward="false" selection-start-line="84" selection-start-column="67" selection-end-line="84" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -124,13 +127,33 @@
       <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/DForumBundle/views/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+            <state relative-caret-position="92">
+              <caret line="12" column="52" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="52" />
               <folding>
-                <element signature="e#2057#2087#0#Twig" expanded="false" />
-                <element signature="e#2651#2672#0#Twig" expanded="false" />
-                <element signature="e#2950#2973#0#Twig" expanded="false" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#2713#2737#0#Twig" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stylehome.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/assets/css/stylehome.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1410">
+              <caret line="94" column="1" lean-forward="false" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stylepartie.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/assets/css/stylepartie.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="52" lean-forward="false" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="81" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -198,7 +221,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/parties/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/parties/show.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/joueur/partie.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/joueur/addpartie.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/joueur/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/joueur/mesparties.html.twig" />
         <option value="$PROJECT_DIR$/vendor/javiereguiluz/easyadmin-bundle/Controller/AdminController.php" />
@@ -226,13 +248,14 @@
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/web/assets/css/stylefouser.css" />
         <option value="$PROJECT_DIR$/web/assets/css/stylehome.css" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/JoueurController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/web/assets/css/stylepartie.css" />
-        <option value="$PROJECT_DIR$/app/Resources/DForumBundle/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/joueur/afficherpartie.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/DForumBundle/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/JoueurController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/joueur/addpartie.html.twig" />
       </list>
     </option>
   </component>
@@ -955,12 +978,12 @@
       <workItem from="1492768466373" duration="19474000" />
       <workItem from="1492881515346" duration="12488000" />
       <workItem from="1493031796319" duration="51940000" />
-      <workItem from="1493237081768" duration="566000" />
+      <workItem from="1493237081768" duration="4395000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="329700000" />
+    <option name="totallyTimeSpent" value="333529000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1032,6 +1055,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1039,6 +1063,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1875">
           <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1046,6 +1071,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1006">
           <caret line="630" column="4" lean-forward="false" selection-start-line="630" selection-start-column="4" selection-end-line="633" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1111,17 +1137,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/addpartie.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="false" />
-            <element signature="e#951#966#0#Twig" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/img/cartes/plumes_7.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1164,6 +1179,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1171,6 +1187,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="538">
           <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#66#0#PHP" expanded="true" />
+            <element signature="e#1359#1375#1#PHP" expanded="true" />
+            <element signature="e#1481#1497#1#PHP" expanded="true" />
+            <element signature="e#1574#1604#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1178,6 +1200,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="24" column="53" lean-forward="false" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1215,20 +1238,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/JoueurController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="1350" column="38" lean-forward="false" selection-start-line="1350" selection-start-column="38" selection-end-line="1350" selection-end-column="38" />
-          <folding>
-            <element signature="e#38#66#0#PHP" expanded="false" />
-            <element signature="e#615#639#0#PHP" expanded="false" />
-            <element signature="e#54377#54394#0#PHP" expanded="false" />
-            <element signature="e#57493#57510#0#PHP" expanded="false" />
-            <element signature="e#65494#65519#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/img/logo2.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1242,26 +1251,6 @@
             <element signature="e#12#26#0#Twig" expanded="false" />
             <element signature="e#790#802#0#Twig" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/score.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="6" column="107" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="107" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="false" />
-            <element signature="e#186#266#0#HTML" expanded="false" />
-            <element signature="e#1668#1686#0#Twig" expanded="false" />
-            <element signature="e#1795#1805#0#Twig" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/css/stylehome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="94" column="1" lean-forward="false" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1333,14 +1322,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="49" lean-forward="false" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/DForumBundle/views/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1376,34 +1357,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/css/stylepartie.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="12" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+        <state relative-caret-position="15">
+          <caret line="1" column="52" lean-forward="false" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="81" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/web/assets/css/stylehome.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="81" column="124" lean-forward="false" selection-start-line="81" selection-start-column="51" selection-end-line="81" selection-end-column="124" />
+        <state relative-caret-position="1410">
+          <caret line="94" column="1" lean-forward="false" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/DForumBundle/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        <state relative-caret-position="92">
+          <caret line="12" column="52" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="52" />
           <folding>
-            <element signature="e#2057#2087#0#Twig" expanded="false" />
-            <element signature="e#2651#2672#0#Twig" expanded="false" />
-            <element signature="e#2950#2973#0#Twig" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2713#2737#0#Twig" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/JoueurController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="1358" column="91" lean-forward="false" selection-start-line="1358" selection-start-column="73" selection-end-line="1358" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/score.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="6" column="107" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="84" column="67" lean-forward="false" selection-start-line="84" selection-start-column="67" selection-end-line="84" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/afficherpartie.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="-45">
           <caret line="8" column="122" lean-forward="false" selection-start-line="8" selection-start-column="122" selection-end-line="8" selection-end-column="122" />
           <folding>
             <element signature="e#990#1315#0#Twig" expanded="false" />
@@ -1426,6 +1440,14 @@
             <element signature="e#13239#13572#0#Twig" expanded="false" />
             <element signature="e#13720#14053#0#Twig" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/joueur/addpartie.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
